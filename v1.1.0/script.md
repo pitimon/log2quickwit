@@ -17,3 +17,11 @@ curl -u $QW_USER:$QW_PASS -XDELETE https://quickwit.a.uni.net.th/api/v1/indexes/
 # ตรวจสอบผลลัพธ์
 curl -u $QW_USER:$QW_PASS 'https://quickwit.a.uni.net.th/api/v1/nro-logs/search?query=*&max_hits=5'
 ```
+
+- Go
+```
+go mod init log2quickwit
+go mod tidy
+go build -o log2quickwit
+./log2quickwit
+```

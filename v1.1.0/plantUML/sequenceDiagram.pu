@@ -1,0 +1,98 @@
+@startuml
+!pragma teoz true
+skinparam maxMessageSize 200
+
+title Log2Quickwit v1.1.0 Sequence Diagram
+
+actor User
+participant Main
+participant Config
+participant LogFile
+participant Watcher
+participant LogParser
+participant QuickwitClient
+participant StatsDisplay
+
+note over Main
+  log2quickwit v1.1.0
+  Description: This program reads log files and sends the data to Quickwit for indexing.
+  Major changes from v1.0.0:
+  1. Implemented inotify for efficient file change detection
+  2. Improved log processing to only index new data
+  3. Enhanced error handling and logging
+  4. Added program header with version information
+  5. Implemented more robust config loading
+end note
+
+User -> Main: Start program
+activate Main
+
+Main -> Main: Log "Starting log2quickwit v1.1.0"
+
+Main -> Config: loadConfig("src2index.properties")
+activate Config
+Config --> Main: Return Config struct
+deactivate Config
+
+Main -> StatsDisplay: Start showStats goroutine
+activate StatsDisplay
+
+Main -> Watcher: fsnotify.NewWatcher()
+activate Watcher
+Watcher --> Main: Return watcher
+
+Main -> LogFile: os.Open(config.LogFilePath)
+activate LogFile
+LogFile --> Main: Return file handle
+
+Main -> Main: processExistingData(file, &lastPosition, config)
+activate Main
+Main -> LogParser: parseLine(line) for each line
+activate LogParser
+LogParser --> Main: Return LogEntry
+deactivate LogParser
+Main -> QuickwitClient: sendToQuickwitWithRetry(entries, config)
+activate QuickwitClient
+QuickwitClient --> Main: Send result
+deactivate QuickwitClient
+deactivate Main
+
+Main -> Watcher: Add(config.LogFilePath)
+Watcher --> Main: Confirmation
+
+loop Watch for file changes
+    Watcher -> Main: File write event
+    Main -> Main: processNewData(file, &lastPosition, config)
+    activate Main
+    Main -> LogFile: readNewEntries(file, &lastPosition)
+    LogFile --> Main: Return new entries
+    Main -> LogParser: parseLine(line) for each new line
+    activate LogParser
+    LogParser --> Main: Return LogEntry
+    deactivate LogParser
+    Main -> QuickwitClient: sendToQuickwitWithRetry(newEntries, config)
+    activate QuickwitClient
+    QuickwitClient --> Main: Send result
+    deactivate QuickwitClient
+    deactivate Main
+end
+
+loop Every minute (in parallel)
+    StatsDisplay -> StatsDisplay: Wait 1 minute
+    StatsDisplay -> QuickwitClient: getQuickwitIndexingStats(config)
+    activate QuickwitClient
+    QuickwitClient --> StatsDisplay: Return QuickwitStats
+    deactivate QuickwitClient
+    StatsDisplay -> StatsDisplay: Log statistics
+end
+
+User -> Main: Stop program
+Main -> Watcher: Close()
+deactivate Watcher
+Main -> LogFile: Close()
+deactivate LogFile
+Main -> StatsDisplay: Stop goroutine
+deactivate StatsDisplay
+deactivate Main
+
+@enduml

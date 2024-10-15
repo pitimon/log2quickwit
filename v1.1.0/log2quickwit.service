@@ -1,0 +1,17 @@
+[Unit]
+Description=Log2Quickwit Service
+After=network.target
+
+[Service]
+ExecStart=path/to/log2quickwit
+WorkingDirectory=path/to/run
+User=USER
+Group=GROUP
+Restart=always
+RestartSec=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=log2quickwit
+
+[Install]
+WantedBy=multi-user.target

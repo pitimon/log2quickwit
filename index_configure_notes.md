@@ -114,25 +114,161 @@
 
 ---
 
-[new configure](./misc/new_index.md) การเปลี่ยนแปลงหลักๆ และเหตุผล:
+[new configure](./misc/new_index.md) 
 
-เพิ่ม search_settings: ปรับแต่งการค้นหาให้มีประสิทธิภาพมากขึ้น
-ปรับ indexing_settings:
+แน่นอนครับ ผมจะสร้าง index configuration ที่สมบูรณ์โดยรวมข้อเสนอแนะทั้งหมดเข้าไป คุณสามารถใช้นี้เป็นจุดเริ่มต้นสำหรับการพิจารณากับทีมงานได้:
 
-เพิ่ม commit_timeout_secs เพื่อลดความถี่ในการ commit
-เพิ่ม docstore_compression_level เพื่อประหยัดพื้นที่มากขึ้น
-เพิ่ม docstore_blocksize และ split_num_docs_target เพื่อรองรับข้อมูลขนาดใหญ่
-ปรับ merge_policy เพื่อลดความถี่ในการ merge และเพิ่มประสิทธิภาพ
-เพิ่ม heap_size เพื่อรองรับการประมวลผลข้อมูลขนาดใหญ่
+```json
+{
+  "version": "0.8",
+  "index_id": "nro-logs",
+  "doc_mapping": {
+    "field_mappings": [
+      {
+        "name": "timestamp",
+        "type": "datetime",
+        "stored": true,
+        "indexed": true,
+        "fast": true,
+        "input_formats": ["rfc3339", "%b %d %H:%M:%S", "%Y-%m-%d %H:%M:%S"],
+        "output_format": "rfc3339"
+      },
+      {
+        "name": "hostname",
+        "type": "text",
+        "stored": true,
+        "indexed": true,
+        "tokenizer": "raw",
+        "fast": true
+      },
+      {
+        "name": "process",
+        "type": "text",
+        "stored": true,
+        "indexed": true,
+        "tokenizer": "raw",
+        "fast": true
+      },
+      {
+        "name": "pid",
+        "type": "i64",
+        "stored": true
+      },
+      {
+        "name": "message_type",
+        "type": "text",
+        "stored": true,
+        "indexed": true,
+        "tokenizer": "raw",
+        "fast": true
+      },
+      {
+        "name": "destination_ip",
+        "type": "ip",
+        "stored": true,
+        "indexed": true,
+        "fast": true
+      },
+      {
+        "name": "username",
+        "type": "text",
+        "stored": true,
+        "indexed": true,
+        "tokenizer": "default",
+        "record": "position",
+        "fast": true
+      },
+      {
+        "name": "station_id",
+        "type": "text",
+        "stored": true,
+        "indexed": true,
+        "tokenizer": "raw",
+        "fast": true
+      },
+      {
+        "name": "realm",
+        "type": "text",
+        "stored": true,
+        "indexed": true,
+        "tokenizer": "raw",
+        "fast": true
+      },
+      {
+        "name": "service_provider",
+        "type": "text",
+        "stored": true,
+        "indexed": true,
+        "tokenizer": "raw",
+        "fast": true
+      },
+      {
+        "name": "full_message",
+        "type": "text",
+        "stored": true,
+        "indexed": true,
+        "tokenizer": "default",
+        "record": "position",
+        "fast": true
+      }
+    ],
+    "timestamp_field": "timestamp"
+  },
+  "search_settings": {
+    "default_search_fields": ["full_message"],
+    "search_batch_size": 1000,
+    "max_concurrent_searches": 6
+  },
+  "indexing_settings": {
+    "commit_timeout_secs": 10,
+    "docstore_compression_level": 9,
+    "docstore_blocksize": 2000000,
+    "split_num_docs_target": 20000000,
+    "merge_policy": {
+      "type": "stable_log",
+      "min_level_num_docs": 200000,
+      "merge_factor": 12,
+      "max_merge_factor": 15,
+      "maturation_period": "3days"
+    },
+    "resources": {
+      "heap_size": "4.0 GB"
+    }
+  },
+  "retention_policy": {
+    "delete_after": "90days"
+  },
+  "shards": [
+    {
+      "tag": "shard1",
+      "number_of_replicas": 1
+    },
+    {
+      "tag": "shard2",
+      "number_of_replicas": 1
+    }
+  ]
+}
 
+```
 
-เพิ่ม retention_policy: จัดการข้อมูลเก่าอัตโนมัติ
-เพิ่ม shards: กระจายข้อมูลและการค้นหา
+การเปลี่ยนแปลงหลักๆ และเหตุผล:
+
+1. เพิ่ม `search_settings`: ปรับแต่งการค้นหาให้มีประสิทธิภาพมากขึ้น
+2. ปรับ `indexing_settings`:
+   - เพิ่ม `commit_timeout_secs` เพื่อลดความถี่ในการ commit
+   - เพิ่ม `docstore_compression_level` เพื่อประหยัดพื้นที่มากขึ้น
+   - เพิ่ม `docstore_blocksize` และ `split_num_docs_target` เพื่อรองรับข้อมูลขนาดใหญ่
+   - ปรับ `merge_policy` เพื่อลดความถี่ในการ merge และเพิ่มประสิทธิภาพ
+   - เพิ่ม `heap_size` เพื่อรองรับการประมวลผลข้อมูลขนาดใหญ่
+3. เพิ่ม `retention_policy`: จัดการข้อมูลเก่าอัตโนมัติ
+4. เพิ่ม `shards`: กระจายข้อมูลและการค้นหา
 
 ข้อควรระวัง:
+- การเพิ่ม `heap_size` ต้องแน่ใจว่าระบบมี RAM เพียงพอ
+- การใช้ `shards` อาจต้องการทรัพยากรเพิ่มเติม แต่จะช่วยในการ scale
+- `retention_policy` จะลบข้อมูลเก่า ต้องแน่ใจว่าตรงตามความต้องการ
 
-การเพิ่ม heap_size ต้องแน่ใจว่าระบบมี RAM เพียงพอ
-การใช้ shards อาจต้องการทรัพยากรเพิ่มเติม แต่จะช่วยในการ scale
-retention_policy จะลบข้อมูลเก่า ต้องแน่ใจว่าตรงตามความต้องการ
+ควรพิจารณาค่าต่างๆ เหล่านี้ร่วมกับข้อมูลการใช้งานจริง และอาจต้องปรับแต่งเพิ่มเติมตามลักษณะข้อมูลและทรัพยากรที่มี
 
 ---

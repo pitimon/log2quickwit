@@ -15,7 +15,7 @@ log2quickwit เป็นโปรแกรมภาษา Go ที่ออก
 - ![usecase](./plantUML/usecase.png)
 - ![seq](./plantUML/sequence.png)
 - ![activity](./plantUML/activity.png)
-- ![class](./plantUML/class.pu)
+- ![class](./plantUML/class.png)
 
 
 ## ส่วนประกอบหลัก

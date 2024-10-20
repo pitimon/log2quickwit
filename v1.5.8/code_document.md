@@ -12,8 +12,10 @@
 log2quickwit เป็นโปรแกรมภาษา Go ที่ออกแบบมาเพื่ออ่านไฟล์ log จาก eduroam-th.uni.net.th, แยกวิเคราะห์ข้อมูล log และส่งข้อมูลที่วิเคราะห์แล้วไปยัง Quickwit เพื่อทำการจัดทำดัชนี โปรแกรมนี้รองรับรูปแบบ timestamp หลากหลายและมีการจัดการข้อผิดพลาดที่แข็งแกร่ง
 
 
-![usecase](./plantUML/usecase.png)
-![seq](./plantUML/sequence.png)
+- ![usecase](./plantUML/usecase.png)
+- ![seq](./plantUML/sequence.png)
+- ![activity](./plantUML/activity.png)
+- ![class](./plantUML/class.pu)
 
 
 ## ส่วนประกอบหลัก

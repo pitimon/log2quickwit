@@ -1,0 +1,44 @@
+@startuml
+title log2quickwit Activity Diagram
+
+start
+:Load Configuration;
+fork
+  :Process Existing Log Data;
+  while (More log entries?) is (yes)
+    :Parse Log Entry;
+    :Parse Timestamp;
+    :Extract Message Type;
+    :Parse Additional Fields;
+    :Add to Batch;
+    if (Batch Full?) then (yes)
+      :Send Batch to Quickwit;
+      if (Send Successful?) then (no)
+        :Retry with Smaller Batch;
+      endif
+    endif
+  endwhile (no)
+fork again
+  :Watch for File Changes;
+  while (File Changed?) is (yes)
+    :Process New Log Data;
+    while (More new entries?) is (yes)
+      :Parse New Log Entry;
+      :Add to Batch;
+      if (Batch Full?) then (yes)
+        :Send Batch to Quickwit;
+        if (Send Successful?) then (no)
+          :Retry with Smaller Batch;
+        endif
+      endif
+    endwhile (no)
+  endwhile (no)
+fork again
+  while (Program Running?) is (yes)
+    :Wait 1 Minute;
+    :Get Quickwit Indexing Stats;
+    :Show Stats;
+  endwhile (no)
+end fork
+stop
+@enduml

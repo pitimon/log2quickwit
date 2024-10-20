@@ -1,0 +1,64 @@
+@startuml
+title log2quickwit Class Diagram
+
+class Config {
+  +LogFilePath: string
+  +QuickwitURL: string
+  +Username: string
+  +Password: string
+  +BatchSize: int
+  +MaxRetries: int
+  +loadConfig(filename: string): Config
+}
+
+class LogEntry {
+  +Timestamp: string
+  +Hostname: string
+  +Process: string
+  +PID: int64
+  +MessageType: string
+  +DestinationIP: string
+  +Username: string
+  +StationID: string
+  +Realm: string
+  +ServiceProvider: string
+  +FullMessage: string
+}
+
+class QuickwitStats {
+  +ValidDocs: int
+  +ErrorDocs: int
+  +ParseErrors: int
+}
+
+class MainProgram {
+  -config: Config
+  -lastPosition: int64
+  +main()
+  -processLogFile(config: Config): error
+  -showStats(config: Config)
+}
+
+class LogProcessor {
+  +processExistingData(file: *os.File, lastPosition: *int64, config: Config): error
+  +processNewData(file: *os.File, lastPosition: *int64, config: Config): error
+  -readNewEntries(file: *os.File, lastPosition: *int64): ([]LogEntry, error)
+  -parseLine(line: string): (LogEntry, error)
+  -parseTimestamp(timestampStr: string): (time.Time, error)
+  -extractMessageType(message: string): string
+  -parseAdditionalFields(entry: *LogEntry, message: string)
+}
+
+class QuickwitAPI {
+  +sendToQuickwitWithRetry(entries: []LogEntry, config: Config): error
+  -sendToQuickwit(entries: []LogEntry, config: Config): error
+  +getQuickwitIndexingStats(config: Config): (QuickwitStats, error)
+}
+
+MainProgram --> Config : uses
+MainProgram --> LogProcessor : uses
+MainProgram --> QuickwitAPI : uses
+LogProcessor ..> LogEntry : creates
+QuickwitAPI ..> QuickwitStats : retrieves
+
+@enduml

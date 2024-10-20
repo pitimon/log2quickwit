@@ -1,0 +1,44 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor User
+actor System
+
+rectangle log2quickwit {
+    usecase "Load Configuration" as UC1
+    usecase "Process Existing Log Data" as UC2
+    usecase "Watch for File Changes" as UC3
+    usecase "Process New Log Data" as UC4
+    usecase "Parse Log Entry" as UC5
+    usecase "Parse Timestamp" as UC6
+    usecase "Extract Message Type" as UC7
+    usecase "Parse Additional Fields" as UC8
+    usecase "Send Data to Quickwit" as UC9
+    usecase "Retry on Failure" as UC10
+    usecase "Get Quickwit Indexing Stats" as UC11
+    usecase "Show Stats" as UC12
+    usecase "Handle Errors" as UC13
+}
+
+User --> UC1
+User --> UC2
+User --> UC3
+User --> UC12
+
+System --> UC2
+System --> UC3
+System --> UC4
+System --> UC11
+
+UC2 ..> UC5 : includes
+UC2 ..> UC9 : includes
+UC4 ..> UC5 : includes
+UC4 ..> UC9 : includes
+UC5 ..> UC6 : includes
+UC5 ..> UC7 : includes
+UC5 ..> UC8 : includes
+UC9 ..> UC10 : extends
+UC9 ..> UC13 : extends
+UC11 ..> UC12 : includes
+
+@enduml

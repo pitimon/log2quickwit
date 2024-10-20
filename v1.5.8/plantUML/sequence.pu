@@ -1,0 +1,58 @@
+@startuml
+title Detailed log2quickwit Sequence Diagram
+
+actor User
+participant "Main" as Main
+participant "Config" as Config
+participant "FileWatcher" as FileWatcher
+participant "LogProcessor" as LogProcessor
+participant "QuickwitAPI" as QuickwitAPI
+
+User -> Main : Start program
+activate Main
+
+Main -> Config : loadConfig("src2index.properties")
+activate Config
+Config --> Main : Return Config object
+deactivate Config
+
+Main -> FileWatcher : Create new watcher
+activate FileWatcher
+
+Main -> LogProcessor : processExistingData(file, lastPosition, config)
+activate LogProcessor
+loop For each line in file
+    LogProcessor -> LogProcessor : parseLine(line)
+    LogProcessor -> LogProcessor : parseTimestamp(timestampStr)
+    LogProcessor -> LogProcessor : extractMessageType(message)
+    LogProcessor -> LogProcessor : parseAdditionalFields(entry, message)
+end
+LogProcessor -> QuickwitAPI : sendToQuickwitWithRetry(entries, config)
+activate QuickwitAPI
+QuickwitAPI --> LogProcessor : Response
+deactivate QuickwitAPI
+LogProcessor --> Main : Processing complete
+deactivate LogProcessor
+
+loop Watch for file changes
+    FileWatcher -> Main : File change event
+    Main -> LogProcessor : processNewData(file, lastPosition, config)
+    activate LogProcessor
+    LogProcessor -> LogProcessor : readNewEntries(file, lastPosition)
+    LogProcessor -> QuickwitAPI : sendToQuickwitWithRetry(newEntries, config)
+    activate QuickwitAPI
+    QuickwitAPI --> LogProcessor : Response
+    deactivate QuickwitAPI
+    LogProcessor --> Main : New data processing complete
+    deactivate LogProcessor
+end
+
+loop Every minute
+    Main -> QuickwitAPI : getQuickwitIndexingStats(config)
+    activate QuickwitAPI
+    QuickwitAPI --> Main : Return QuickwitStats
+    deactivate QuickwitAPI
+    Main -> Main : showStats(stats)
+end
+
+@enduml

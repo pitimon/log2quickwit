@@ -21,7 +21,7 @@
 go.work
 
 .DS_Store
-#Thunder_client/*
+Thunder_client/*/output/
 qw-auth.properties
 eduroam-accept
 agg-uid

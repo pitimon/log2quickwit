@@ -1,0 +1,629 @@
+{
+  "query_info": {
+    "domain": "rmutp.ac.th",
+    "days": 90,
+    "start_date": "2024-07-25 05:28:58",
+    "end_date": "2024-10-22 05:28:58"
+  },
+  "description": "Aggregated Access-Accept events for the specified domain and time range.",
+  "summary": {
+    "total_users": 46,
+    "total_providers": 23
+  },
+  "provider_stats": [
+    {
+      "provider": "eduroam.rmutr.ac.th",
+      "user_count": 17,
+      "users": [
+        "teeranai.d@rmutp.ac.th",
+        "kawin.l@rmutp.ac.th",
+        "yothin.n@rmutp.ac.th",
+        "rapeepon.t@rmutp.ac.th",
+        "thanakit.w@rmutp.ac.th",
+        "warin.s@rmutp.ac.th",
+        "chayakorn.p@rmutp.ac.th",
+        "phattharachai.p@rmutp.ac.th",
+        "nares.p@rmutp.ac.th",
+        "kamontip.w@rmutp.ac.th",
+        "kiattinan.l@rmutp.ac.th",
+        "kriengkri.l@rmutp.ac.th",
+        "sukanya.che@rmutp.ac.th",
+        "075750305223-0@rmutp.ac.th",
+        "weerayuth.k@rmutp.ac.th",
+        "nuttaphorn.p@rmutp.ac.th",
+        "wetarin.t@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.dusit.ac.th",
+      "user_count": 17,
+      "users": [
+        "sutthipong.ku@rmutp.ac.th",
+        "sthaphorn.w@rmutp.ac.th",
+        "rapeepon.t@rmutp.ac.th",
+        "rattinat.a@rmutp.ac.th",
+        "maytiyanin.k@rmutp.ac.th",
+        "jhitsayarat.s@rmutp.ac.th",
+        "nattachote.r@rmutp.ac.th",
+        "nares.p@rmutp.ac.th",
+        "nantayaporn.s@rmutp.ac.th",
+        "thanyawat.b@rmutp.ac.th",
+        "kiattinan.l@rmutp.ac.th",
+        "donlaporn.sr@rmutp.ac.th",
+        "075750305223-0@rmutp.ac.th",
+        "kamontip.w@rmutp.ac.th",
+        "sakon.pr@rmutp.ac.th",
+        "khanate.j@rmutp.ac.th",
+        "thanakit.w@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.chula.ac.th",
+      "user_count": 14,
+      "users": [
+        "056250405018-7@rmutp.ac.th",
+        "075750305223-0@rmutp.ac.th",
+        "thanyawat.b@rmutp.ac.th",
+        "nares.p@rmutp.ac.th",
+        "076150101128-9@rmutp.ac.th",
+        "kreadtisak.l@rmutp.ac.th",
+        "kamolphan.j@rmutp.ac.th",
+        "khanate.j@rmutp.ac.th",
+        "gumporn.s@rmutp.ac.th",
+        "076250304205-8@rmutp.ac.th",
+        "rattinat.a@rmutp.ac.th",
+        "somsamorn.p@rmutp.ac.th",
+        "woraphak.n@rmutp.ac.th",
+        "wetarin.t@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.cdti.ac.th",
+      "user_count": 10,
+      "users": [
+        "nattachote.r@rmutp.ac.th",
+        "nares.p@rmutp.ac.th",
+        "srattra.l@rmutp.ac.th",
+        "sutthipong.ku@rmutp.ac.th",
+        "rattinat.a@rmutp.ac.th",
+        "thanyawat.b@rmutp.ac.th",
+        "jhitsayarat.s@rmutp.ac.th",
+        "kawin.l@rmutp.ac.th",
+        "076660305393-1@rmutp.ac.th",
+        "sukanya.che@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.ku.ac.th",
+      "user_count": 8,
+      "users": [
+        "kamontip.w@rmutp.ac.th",
+        "kamolphan.j@rmutp.ac.th",
+        "nares.p@rmutp.ac.th",
+        "075750305223-0@rmutp.ac.th",
+        "rapeepon.t@rmutp.ac.th",
+        "sukanya.che@rmutp.ac.th",
+        "phattharachai.p@rmutp.ac.th",
+        "076650304139-0@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.kmutnb.ac.th",
+      "user_count": 5,
+      "users": [
+        "056510107031-8@rmutp.ac.th",
+        "kamolphan.j@rmutp.ac.th",
+        "phattharachai.p@rmutp.ac.th",
+        "056510107037-5@rmutp.ac.th",
+        "056510107012-8@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.swu.ac.th",
+      "user_count": 3,
+      "users": [
+        "076250304205-8@rmutp.ac.th",
+        "kreadtisak.l@rmutp.ac.th",
+        "sthaphorn.w@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.ru.ac.th",
+      "user_count": 3,
+      "users": [
+        "076250304205-8@rmutp.ac.th",
+        "donlaporn.sr@rmutp.ac.th",
+        "khanate.j@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.uni.net.th",
+      "user_count": 2,
+      "users": [
+        "rattinat.a@rmutp.ac.th",
+        "nattachote.r@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.kmitl.ac.th",
+      "user_count": 2,
+      "users": [
+        "kamolphan.j@rmutp.ac.th",
+        "khanate.j@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.rmutsb.ac.th",
+      "user_count": 2,
+      "users": [
+        "kiattinan.l@rmutp.ac.th",
+        "maytiyanin.k@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.kmutt.ac.th",
+      "user_count": 2,
+      "users": [
+        "075750305223-0@rmutp.ac.th",
+        "kamolphan.j@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "etlr2.eduroam.org",
+      "user_count": 2,
+      "users": [
+        "076450316705-9@rmutp.ac.th",
+        "maytiyanin.k@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.rmutk.ac.th",
+      "user_count": 2,
+      "users": [
+        "nares.p@rmutp.ac.th",
+        "kamontip.w@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.su.ac.th",
+      "user_count": 2,
+      "users": [
+        "sompoch.k@rmutp.ac.th",
+        "036650805640-0@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.nu.ac.th",
+      "user_count": 1,
+      "users": [
+        "donlaporn.sr@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.tu.ac.th",
+      "user_count": 1,
+      "users": [
+        "woraphak.n@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "etlr1.eduroam.org",
+      "user_count": 1,
+      "users": [
+        "076450316705-9@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.buu.ac.th",
+      "user_count": 1,
+      "users": [
+        "076250304205-8@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.rmutt.ac.th",
+      "user_count": 1,
+      "users": [
+        "anan.r@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.psu.ac.th",
+      "user_count": 1,
+      "users": [
+        "sthaphorn.w@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.siamu.ac.th",
+      "user_count": 1,
+      "users": [
+        "warin.s@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.nstda.or.th",
+      "user_count": 1,
+      "users": [
+        "warin.s@rmutp.ac.th"
+      ]
+    }
+  ],
+  "user_stats": [
+    {
+      "username": "076650304139-0@rmutp.ac.th",
+      "days_active": 30,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "076150101128-9@rmutp.ac.th",
+      "days_active": 26,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "076250304205-8@rmutp.ac.th",
+      "days_active": 19,
+      "providers": [
+        "eduroam.swu.ac.th",
+        "eduroam.ru.ac.th",
+        "eduroam.buu.ac.th",
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "nares.p@rmutp.ac.th",
+      "days_active": 16,
+      "providers": [
+        "eduroam.rmutk.ac.th",
+        "eduroam.cdti.ac.th",
+        "eduroam.dusit.ac.th",
+        "eduroam.rmutr.ac.th",
+        "eduroam.ku.ac.th",
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "076450316705-9@rmutp.ac.th",
+      "days_active": 15,
+      "providers": [
+        "etlr1.eduroam.org",
+        "etlr2.eduroam.org"
+      ]
+    },
+    {
+      "username": "nattachote.r@rmutp.ac.th",
+      "days_active": 15,
+      "providers": [
+        "eduroam.dusit.ac.th",
+        "eduroam.cdti.ac.th",
+        "eduroam.uni.net.th"
+      ]
+    },
+    {
+      "username": "kamontip.w@rmutp.ac.th",
+      "days_active": 14,
+      "providers": [
+        "eduroam.rmutk.ac.th",
+        "eduroam.ku.ac.th",
+        "eduroam.dusit.ac.th",
+        "eduroam.rmutr.ac.th"
+      ]
+    },
+    {
+      "username": "sutthipong.ku@rmutp.ac.th",
+      "days_active": 14,
+      "providers": [
+        "eduroam.dusit.ac.th",
+        "eduroam.cdti.ac.th"
+      ]
+    },
+    {
+      "username": "donlaporn.sr@rmutp.ac.th",
+      "days_active": 13,
+      "providers": [
+        "eduroam.dusit.ac.th",
+        "eduroam.ru.ac.th",
+        "eduroam.nu.ac.th"
+      ]
+    },
+    {
+      "username": "056250405018-7@rmutp.ac.th",
+      "days_active": 13,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "075750305223-0@rmutp.ac.th",
+      "days_active": 11,
+      "providers": [
+        "eduroam.ku.ac.th",
+        "eduroam.kmutt.ac.th",
+        "eduroam.rmutr.ac.th",
+        "eduroam.dusit.ac.th",
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "thanyawat.b@rmutp.ac.th",
+      "days_active": 9,
+      "providers": [
+        "eduroam.dusit.ac.th",
+        "eduroam.chula.ac.th",
+        "eduroam.cdti.ac.th"
+      ]
+    },
+    {
+      "username": "rapeepon.t@rmutp.ac.th",
+      "days_active": 7,
+      "providers": [
+        "eduroam.rmutr.ac.th",
+        "eduroam.ku.ac.th",
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "076660305393-1@rmutp.ac.th",
+      "days_active": 7,
+      "providers": [
+        "eduroam.cdti.ac.th"
+      ]
+    },
+    {
+      "username": "kamolphan.j@rmutp.ac.th",
+      "days_active": 6,
+      "providers": [
+        "eduroam.kmitl.ac.th",
+        "eduroam.kmutnb.ac.th",
+        "eduroam.kmutt.ac.th",
+        "eduroam.ku.ac.th",
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "rattinat.a@rmutp.ac.th",
+      "days_active": 6,
+      "providers": [
+        "eduroam.dusit.ac.th",
+        "eduroam.uni.net.th",
+        "eduroam.cdti.ac.th",
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "thanakit.w@rmutp.ac.th",
+      "days_active": 6,
+      "providers": [
+        "eduroam.rmutr.ac.th",
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "kreadtisak.l@rmutp.ac.th",
+      "days_active": 5,
+      "providers": [
+        "eduroam.swu.ac.th",
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "sukanya.che@rmutp.ac.th",
+      "days_active": 5,
+      "providers": [
+        "eduroam.ku.ac.th",
+        "eduroam.cdti.ac.th",
+        "eduroam.rmutr.ac.th"
+      ]
+    },
+    {
+      "username": "kiattinan.l@rmutp.ac.th",
+      "days_active": 5,
+      "providers": [
+        "eduroam.rmutsb.ac.th",
+        "eduroam.dusit.ac.th",
+        "eduroam.rmutr.ac.th"
+      ]
+    },
+    {
+      "username": "woraphak.n@rmutp.ac.th",
+      "days_active": 4,
+      "providers": [
+        "eduroam.tu.ac.th",
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "phattharachai.p@rmutp.ac.th",
+      "days_active": 4,
+      "providers": [
+        "eduroam.kmutnb.ac.th",
+        "eduroam.ku.ac.th",
+        "eduroam.rmutr.ac.th"
+      ]
+    },
+    {
+      "username": "khanate.j@rmutp.ac.th",
+      "days_active": 4,
+      "providers": [
+        "eduroam.dusit.ac.th",
+        "eduroam.kmitl.ac.th",
+        "eduroam.ru.ac.th",
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "sthaphorn.w@rmutp.ac.th",
+      "days_active": 4,
+      "providers": [
+        "eduroam.dusit.ac.th",
+        "eduroam.swu.ac.th",
+        "eduroam.psu.ac.th"
+      ]
+    },
+    {
+      "username": "teeranai.d@rmutp.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.rmutr.ac.th"
+      ]
+    },
+    {
+      "username": "warin.s@rmutp.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.rmutr.ac.th",
+        "eduroam.nstda.or.th",
+        "eduroam.siamu.ac.th"
+      ]
+    },
+    {
+      "username": "jhitsayarat.s@rmutp.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.dusit.ac.th",
+        "eduroam.cdti.ac.th"
+      ]
+    },
+    {
+      "username": "sompoch.k@rmutp.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "maytiyanin.k@rmutp.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.rmutsb.ac.th",
+        "eduroam.dusit.ac.th",
+        "etlr2.eduroam.org"
+      ]
+    },
+    {
+      "username": "wetarin.t@rmutp.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.chula.ac.th",
+        "eduroam.rmutr.ac.th"
+      ]
+    },
+    {
+      "username": "056510107037-5@rmutp.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.kmutnb.ac.th"
+      ]
+    },
+    {
+      "username": "kawin.l@rmutp.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.cdti.ac.th",
+        "eduroam.rmutr.ac.th"
+      ]
+    },
+    {
+      "username": "nuttaphorn.p@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutr.ac.th"
+      ]
+    },
+    {
+      "username": "weerayuth.k@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutr.ac.th"
+      ]
+    },
+    {
+      "username": "nantayaporn.s@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "yothin.n@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutr.ac.th"
+      ]
+    },
+    {
+      "username": "036650805640-0@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "somsamorn.p@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "056510107012-8@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.kmutnb.ac.th"
+      ]
+    },
+    {
+      "username": "sakon.pr@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "anan.r@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutt.ac.th"
+      ]
+    },
+    {
+      "username": "srattra.l@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.cdti.ac.th"
+      ]
+    },
+    {
+      "username": "056510107031-8@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.kmutnb.ac.th"
+      ]
+    },
+    {
+      "username": "chayakorn.p@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutr.ac.th"
+      ]
+    },
+    {
+      "username": "gumporn.s@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "kriengkri.l@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutr.ac.th"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "description": "This file contains aggregated data of Access-Reject events for users from the specified domain.",
+  "query_summary": "- Event Type: Access-Reject for user\n- Domain: psru\n- Source: from eduroam.psru\n- Time Range: 2023-10-20 20:14:58 to 2024-10-19 20:14:58\n- Data Period: Last 365 days from the query execution date",
+  "aggregation_logic": "1. Collected all \"Access-Reject\" events for users from the specified domain within the given time range.\n2. Extracted unique usernames (in the format user@domain.ac.th) from the full message of each event.\n3. Counted the occurrences of each unique username.\n4. Sorted the results by count in descending order.\nNote: Data was collected in 30-day intervals to ensure completeness and improve performance.",
+  "note": "This data represents authentication failures and may be useful for identifying potential issues with user accounts or analyzing patterns in failed login attempts.",
+  "start_timestamp": 1697807698,
+  "end_timestamp": 1729343698,
+  "start_time": "2023-10-20 20:14:58",
+  "end_time": "2024-10-19 20:14:58",
+  "results": [
+    {
+      "user": "eduromon@psru.ac.th",
+      "count": 6346
+    },
+    {
+      "user": "phatthanan.s@psru.ac.th",
+      "count": 1891
+    },
+    {
+      "user": "Tbeerasak@psru.ac.th",
+      "count": 1506
+    },
+    {
+      "user": "kannika.pr@psru.ac.th",
+      "count": 184
+    },
+    {
+      "user": "wrs15@psru.ac.th",
+      "count": 121
+    },
+    {
+      "user": "sukonkan@psru.ac.th",
+      "count": 40
+    },
+    {
+      "user": "panithanb@psru.ac.th",
+      "count": 29
+    },
+    {
+      "user": "dolawan.w@psru.ac.th",
+      "count": 24
+    },
+    {
+      "user": "suchin@psru.ac.th",
+      "count": 23
+    },
+    {
+      "user": "uraiwan.j@psru.ac.th",
+      "count": 20
+    },
+    {
+      "user": "chitsirin@psru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "kovit63@psru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "6612247046@psru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "6612239034@psru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "chetta@psru.ac.th",
+      "count": 1
+    }
+  ]
+}

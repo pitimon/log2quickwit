@@ -1,0 +1,385 @@
+{
+  "query_info": {
+    "domain": "cmu.ac.th",
+    "days": 1,
+    "start_date": "2024-08-01 00:00:00",
+    "end_date": "2024-08-02 00:00:00"
+  },
+  "description": "Aggregated Access-Accept events for the specified domain and time range.",
+  "summary": {
+    "total_users": 37,
+    "total_providers": 12
+  },
+  "provider_stats": [
+    {
+      "provider": "etlr1.eduroam.org",
+      "user_count": 19,
+      "users": [
+        "phanthip_jaikaew@cmu.ac.th",
+        "kittisak_tontan@cmu.ac.th",
+        "pornsawan.sik@cmu.ac.th",
+        "noppason_pa@cmu.ac.th",
+        "poti.chao@cmu.ac.th",
+        "kullanun_me@cmu.ac.th",
+        "supasin_s@cmu.ac.th",
+        "sitthidat_t@cmu.ac.th",
+        "ainus_s@cmu.ac.th",
+        "jutamas_kongs@cmu.ac.th",
+        "ruedeemars.yub@cmu.ac.th",
+        "daranporn_ch@cmu.ac.th",
+        "panat_nan@cmu.ac.th",
+        "dolaya_s@cmu.ac.th",
+        "tannaporn_j@cmu.ac.th",
+        "kanlayaporn_kongmali@cmu.ac.th",
+        "nattaporn.o@cmu.ac.th",
+        "apichaya_b@cmu.ac.th",
+        "chalantorn_donngam@cmu.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.chula.ac.th",
+      "user_count": 3,
+      "users": [
+        "nawee.kungwan@cmu.ac.th",
+        "usanee.k@cmu.ac.th",
+        "kitisak.aus@cmu.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.cri.or.th",
+      "user_count": 3,
+      "users": [
+        "saowanee_pasertsuk@cmu.ac.th",
+        "natchaphon_foud@cmu.ac.th",
+        "wittawat_punya@cmu.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.ku.ac.th",
+      "user_count": 3,
+      "users": [
+        "apimook.w@cmu.ac.th",
+        "peerawit_ch@cmu.ac.th",
+        "pichawut.m@cmu.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.mju.ac.th",
+      "user_count": 2,
+      "users": [
+        "atthachai_bunprasert@cmu.ac.th",
+        "ronnaphob.ua@cmu.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.kku.ac.th",
+      "user_count": 1,
+      "users": [
+        "pratchaporn.j@cmu.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.up.ac.th",
+      "user_count": 1,
+      "users": [
+        "suthep.s@cmu.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam-mon.uni.net.th",
+      "user_count": 1,
+      "users": [
+        "eduroam.monitor@cmu.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.nida.ac.th",
+      "user_count": 1,
+      "users": [
+        "pattama.j@cmu.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.nu.ac.th",
+      "user_count": 1,
+      "users": [
+        "nopporn.boon@cmu.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.psu.ac.th",
+      "user_count": 1,
+      "users": [
+        "thanapat.sang@cmu.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.nstda.or.th",
+      "user_count": 1,
+      "users": [
+        "sorawit_sanin@cmu.ac.th"
+      ]
+    }
+  ],
+  "user_stats": [
+    {
+      "username": "kittisak_tontan@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "usanee.k@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "pratchaporn.j@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.kku.ac.th"
+      ]
+    },
+    {
+      "username": "pattama.j@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.nida.ac.th"
+      ]
+    },
+    {
+      "username": "kullanun_me@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "sorawit_sanin@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.nstda.or.th"
+      ]
+    },
+    {
+      "username": "poti.chao@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "supasin_s@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "natchaphon_foud@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.cri.or.th"
+      ]
+    },
+    {
+      "username": "atthachai_bunprasert@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.mju.ac.th"
+      ]
+    },
+    {
+      "username": "dolaya_s@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "ronnaphob.ua@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.mju.ac.th"
+      ]
+    },
+    {
+      "username": "ainus_s@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "nattaporn.o@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "pichawut.m@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "ruedeemars.yub@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "nopporn.boon@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.nu.ac.th"
+      ]
+    },
+    {
+      "username": "chalantorn_donngam@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "phanthip_jaikaew@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "saowanee_pasertsuk@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.cri.or.th"
+      ]
+    },
+    {
+      "username": "apimook.w@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "kitisak.aus@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "apichaya_b@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "peerawit_ch@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "thanapat.sang@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.psu.ac.th"
+      ]
+    },
+    {
+      "username": "nawee.kungwan@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "daranporn_ch@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "pornsawan.sik@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "tannaporn_j@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "panat_nan@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "jutamas_kongs@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "kanlayaporn_kongmali@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "wittawat_punya@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.cri.or.th"
+      ]
+    },
+    {
+      "username": "noppason_pa@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "eduroam.monitor@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam-mon.uni.net.th"
+      ]
+    },
+    {
+      "username": "sitthidat_t@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "suthep.s@cmu.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.up.ac.th"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "query_info": {
+    "domain": "rmutp.ac.th",
+    "days": 1,
+    "start_date": "2024-08-01 00:00:00",
+    "end_date": "2024-08-02 00:00:00"
+  },
+  "description": "Aggregated Access-Accept events for the specified domain and time range.",
+  "summary": {
+    "total_users": 5,
+    "total_providers": 2
+  },
+  "provider_stats": [
+    {
+      "provider": "eduroam.rmutr.ac.th",
+      "user_count": 4,
+      "users": [
+        "phattharachai.p@rmutp.ac.th",
+        "thanakit.w@rmutp.ac.th",
+        "kamontip.w@rmutp.ac.th",
+        "sukanya.che@rmutp.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.dusit.ac.th",
+      "user_count": 1,
+      "users": [
+        "kiattinan.l@rmutp.ac.th"
+      ]
+    }
+  ],
+  "user_stats": [
+    {
+      "username": "kiattinan.l@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "sukanya.che@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutr.ac.th"
+      ]
+    },
+    {
+      "username": "phattharachai.p@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutr.ac.th"
+      ]
+    },
+    {
+      "username": "thanakit.w@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutr.ac.th"
+      ]
+    },
+    {
+      "username": "kamontip.w@rmutp.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutr.ac.th"
+      ]
+    }
+  ]
+}

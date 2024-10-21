@@ -1,0 +1,664 @@
+{
+  "description": "This file contains aggregated data of Access-Reject events for users from the specified domain.",
+  "query_summary": "- Event Type: Access-Reject for user\n- Domain: buu\n- Source: from eduroam.buu\n- Time Range: 2023-10-20 19:13:27 to 2024-10-19 19:13:27\n- Data Period: Last 365 days from the query execution date",
+  "aggregation_logic": "1. Collected all \"Access-Reject\" events for users from the specified domain within the given time range.\n2. Extracted unique usernames (in the format user@domain.ac.th) from the full message of each event.\n3. Counted the occurrences of each unique username.\n4. Sorted the results by count in descending order.\nNote: Data was collected in 30-day intervals to ensure completeness and improve performance.",
+  "note": "This data represents authentication failures and may be useful for identifying potential issues with user accounts or analyzing patterns in failed login attempts.",
+  "start_timestamp": 1697804007,
+  "end_timestamp": 1729340007,
+  "start_time": "2023-10-20 19:13:27",
+  "end_time": "2024-10-19 19:13:27",
+  "results": [
+    {
+      "user": "63030733@buu.ac.th",
+      "count": 1705
+    },
+    {
+      "user": "buuwifiguest@buu.ac.th",
+      "count": 1294
+    },
+    {
+      "user": "59160534@buu.ac.th",
+      "count": 1061
+    },
+    {
+      "user": "nattapan@buu.ac.th",
+      "count": 775
+    },
+    {
+      "user": "62080073@buu.ac.th",
+      "count": 614
+    },
+    {
+      "user": "62030379@buu.ac.th",
+      "count": 588
+    },
+    {
+      "user": "63160184@buu.ac.th",
+      "count": 355
+    },
+    {
+      "user": "62080120@buu.ac.th",
+      "count": 328
+    },
+    {
+      "user": "59021141@buu.ac.th",
+      "count": 318
+    },
+    {
+      "user": "62070080@buu.ac.th",
+      "count": 315
+    },
+    {
+      "user": "wantanasi@buu.ac.th",
+      "count": 311
+    },
+    {
+      "user": "63080128@buu.ac.th",
+      "count": 296
+    },
+    {
+      "user": "59130032@buu.ac.th",
+      "count": 267
+    },
+    {
+      "user": "62130020@buu.ac.th",
+      "count": 233
+    },
+    {
+      "user": "weerapat.th@buu.ac.th",
+      "count": 212
+    },
+    {
+      "user": "prasertsak@buu.ac.th",
+      "count": 212
+    },
+    {
+      "user": "62090200@buu.ac.th",
+      "count": 201
+    },
+    {
+      "user": "62160086@buu.ac.th",
+      "count": 197
+    },
+    {
+      "user": "anukul@buu.ac.th",
+      "count": 185
+    },
+    {
+      "user": "pusit@buu.ac.th",
+      "count": 185
+    },
+    {
+      "user": "62060149@buu.ac.th",
+      "count": 172
+    },
+    {
+      "user": "attaporn@buu.ac.th",
+      "count": 169
+    },
+    {
+      "user": "lalita.ch@buu.ac.th",
+      "count": 166
+    },
+    {
+      "user": "62160084@buu.ac.th",
+      "count": 154
+    },
+    {
+      "user": "64080006@buu.ac.th",
+      "count": 152
+    },
+    {
+      "user": "somshy@buu.ac.th",
+      "count": 149
+    },
+    {
+      "user": "59910233@buu.ac.th",
+      "count": 136
+    },
+    {
+      "user": "witawat@buu.ac.th",
+      "count": 133
+    },
+    {
+      "user": "60160175@buu.ac.th",
+      "count": 117
+    },
+    {
+      "user": "59020925@buu.ac.th",
+      "count": 114
+    },
+    {
+      "user": "62140812@buu.ac.th",
+      "count": 108
+    },
+    {
+      "user": "supphasin@buu.ac.th",
+      "count": 104
+    },
+    {
+      "user": "60080125@buu.ac.th",
+      "count": 102
+    },
+    {
+      "user": "66920055@buu.ac.th",
+      "count": 96
+    },
+    {
+      "user": "62050014@buu.ac.th",
+      "count": 95
+    },
+    {
+      "user": "62050126@buu.ac.th",
+      "count": 95
+    },
+    {
+      "user": "62080041@buu.ac.th",
+      "count": 90
+    },
+    {
+      "user": "thouchanok@buu.ac.th",
+      "count": 86
+    },
+    {
+      "user": "62020179@buu.ac.th",
+      "count": 85
+    },
+    {
+      "user": "watcraft@buu.ac.th",
+      "count": 81
+    },
+    {
+      "user": "65440094@buu.ac.th",
+      "count": 74
+    },
+    {
+      "user": "63080038@buu.ac.th",
+      "count": 70
+    },
+    {
+      "user": "62210018@buu.ac.th",
+      "count": 66
+    },
+    {
+      "user": "66050473@buu.ac.th",
+      "count": 64
+    },
+    {
+      "user": "62160010@buu.ac.th",
+      "count": 60
+    },
+    {
+      "user": "63160208@buu.ac.th",
+      "count": 60
+    },
+    {
+      "user": "66430140@buu.ac.th",
+      "count": 58
+    },
+    {
+      "user": "63040289@buu.ac.th",
+      "count": 54
+    },
+    {
+      "user": "nopparat@buu.ac.th",
+      "count": 54
+    },
+    {
+      "user": "62160327@buu.ac.th",
+      "count": 51
+    },
+    {
+      "user": "62050066@buu.ac.th",
+      "count": 50
+    },
+    {
+      "user": "64080077@buu.ac.th",
+      "count": 48
+    },
+    {
+      "user": "62070127@buu.ac.th",
+      "count": 47
+    },
+    {
+      "user": "61010076@buu.ac.th",
+      "count": 46
+    },
+    {
+      "user": "62070128@buu.ac.th",
+      "count": 45
+    },
+    {
+      "user": "sawamin@buu.ac.th",
+      "count": 44
+    },
+    {
+      "user": "60020060@buu.ac.th",
+      "count": 40
+    },
+    {
+      "user": "arachaporn.an@buu.ac.th",
+      "count": 38
+    },
+    {
+      "user": "59910279@buu.ac.th",
+      "count": 37
+    },
+    {
+      "user": "65920027@buu.ac.th",
+      "count": 35
+    },
+    {
+      "user": "62160102@buu.ac.th",
+      "count": 34
+    },
+    {
+      "user": "60160116@buu.ac.th",
+      "count": 34
+    },
+    {
+      "user": "61080177@buu.ac.th",
+      "count": 30
+    },
+    {
+      "user": "59440191@buu.ac.th",
+      "count": 30
+    },
+    {
+      "user": "62920316@buu.ac.th",
+      "count": 29
+    },
+    {
+      "user": "62030576@buu.ac.th",
+      "count": 28
+    },
+    {
+      "user": "59910281@buu.ac.th",
+      "count": 28
+    },
+    {
+      "user": "vorrapob@buu.ac.th",
+      "count": 27
+    },
+    {
+      "user": "thanongsak@buu.ac.th",
+      "count": 24
+    },
+    {
+      "user": "64050563@buu.ac.th",
+      "count": 24
+    },
+    {
+      "user": "58350207@buu.ac.th",
+      "count": 24
+    },
+    {
+      "user": "61030099@buu.ac.th",
+      "count": 22
+    },
+    {
+      "user": "66070007@buu.ac.th",
+      "count": 22
+    },
+    {
+      "user": "62050179@buu.ac.th",
+      "count": 22
+    },
+    {
+      "user": "60080360@buu.ac.th",
+      "count": 22
+    },
+    {
+      "user": "63020613@buu.ac.th",
+      "count": 20
+    },
+    {
+      "user": "64160038@buu.ac.th",
+      "count": 20
+    },
+    {
+      "user": "61140620@buu.ac.th",
+      "count": 20
+    },
+    {
+      "user": "62080187@buu.ac.th",
+      "count": 20
+    },
+    {
+      "user": "63920231@buu.ac.th",
+      "count": 20
+    },
+    {
+      "user": "58160454@buu.ac.th",
+      "count": 19
+    },
+    {
+      "user": "62070124@buu.ac.th",
+      "count": 17
+    },
+    {
+      "user": "62130181@buu.ac.th",
+      "count": 16
+    },
+    {
+      "user": "amornchat.se@buu.ac.th",
+      "count": 16
+    },
+    {
+      "user": "58050488@buu.ac.th",
+      "count": 15
+    },
+    {
+      "user": "60140354@buu.ac.th",
+      "count": 15
+    },
+    {
+      "user": "karnpitcha@buu.ac.th",
+      "count": 15
+    },
+    {
+      "user": "63910160@buu.ac.th",
+      "count": 14
+    },
+    {
+      "user": "BUU\\terayut@buu.ac.th",
+      "count": 14
+    },
+    {
+      "user": "62060042@buu.ac.th",
+      "count": 13
+    },
+    {
+      "user": "64010143@buu.ac.th",
+      "count": 12
+    },
+    {
+      "user": "60060131@buu.ac.th",
+      "count": 12
+    },
+    {
+      "user": "62160325@buu.ac.th",
+      "count": 12
+    },
+    {
+      "user": "58090444@buu.ac.th",
+      "count": 10
+    },
+    {
+      "user": "61030032@buu.ac.th",
+      "count": 10
+    },
+    {
+      "user": "areewan@buu.ac.th",
+      "count": 10
+    },
+    {
+      "user": "58550072@buu.ac.th",
+      "count": 9
+    },
+    {
+      "user": "sutin@buu.ac.th",
+      "count": 9
+    },
+    {
+      "user": "62050222@buu.ac.th",
+      "count": 9
+    },
+    {
+      "user": "63430037@buu.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sakchaic@buu.ac.th",
+      "count": 8
+    },
+    {
+      "user": "59020409@buu.ac.th",
+      "count": 8
+    },
+    {
+      "user": "66160328@buu.ac.th",
+      "count": 8
+    },
+    {
+      "user": "kittisak@buu.ac.th",
+      "count": 7
+    },
+    {
+      "user": "62160108@buu.ac.th",
+      "count": 7
+    },
+    {
+      "user": "62030249@buu.ac.th",
+      "count": 7
+    },
+    {
+      "user": "62030304@buu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "60430264@buu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "bumrungsak@buu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "62160164@buu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "63080263@buu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "63030531@buu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "61020565@buu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "63030132@buu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "59910282@buu.ac.th",
+      "count": 5
+    },
+    {
+      "user": "57090358@buu.ac.th",
+      "count": 5
+    },
+    {
+      "user": "62070082@buu.ac.th",
+      "count": 5
+    },
+    {
+      "user": "doldao@buu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "61210052@buu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "60200074@buu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "pitsanu.kh@buu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "62920011@buu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "vasuton@buu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "62050268@buu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "63030365@buu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sudarat.td@buu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "65060186@buu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "62030327@buu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "66020645@buu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "62920041@buu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "64810102@buu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "62080142@buu.ac.th",
+      "count": 3
+    },
+    {
+      "user": "64210032@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "62210002@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "65020746@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "58050502@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "60200045@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sawatwo@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "58050594@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "60020905@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "62160157@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "janjiraw@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "chinnawut@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "640800@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "operateuser@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "62060147@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "62200047@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "66080079@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "59050748@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "62030244@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "55910293@buu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "67200055@buu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "nujjaree@buu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "64080977@buu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "66920314@buu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "patcharh@buu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "62030088@buu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "kittipanc@buu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "nirmaolp@buu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "67440158@buu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "59440203@buu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "57070101@buu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "54040579@buu.ac.th",
+      "count": 1
+    }
+  ]
+}

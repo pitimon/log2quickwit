@@ -1,0 +1,172 @@
+{
+  "description": "This file contains aggregated data of Access-Reject events for users from the specified domain.",
+  "query_summary": "- Event Type: Access-Reject for user\n- Domain: rmutp\n- Source: from eduroam.rmutp\n- Time Range: 2023-10-20 10:28:48 to 2024-10-19 10:28:48\n- Data Period: Last 365 days from the query execution date",
+  "aggregation_logic": "1. Collected all \"Access-Reject\" events for users from the specified domain within the given time range.\n2. Extracted unique usernames (in the format user@domain.ac.th) from the full message of each event.\n3. Counted the occurrences of each unique username.\n4. Sorted the results by count in descending order.\nNote: Data was collected in 30-day intervals to ensure completeness and improve performance.",
+  "note": "This data represents authentication failures and may be useful for identifying potential issues with user accounts or analyzing patterns in failed login attempts.",
+  "start_timestamp": 1697772528,
+  "end_timestamp": 1729308528,
+  "start_time": "2023-10-20 10:28:48",
+  "end_time": "2024-10-19 10:28:48",
+  "results": [
+    {
+      "user": "gumporn.s@rmutp.ac.th",
+      "count": 416
+    },
+    {
+      "user": "srattra.l@rmutp.ac.th",
+      "count": 347
+    },
+    {
+      "user": "kiattinan.l@rmutp.ac.th",
+      "count": 309
+    },
+    {
+      "user": "kamontip.w@rmutp.ac.th",
+      "count": 193
+    },
+    {
+      "user": "anantat.t@rmutp.ac.th",
+      "count": 135
+    },
+    {
+      "user": "somsamorn.p@rmutp.ac.th",
+      "count": 90
+    },
+    {
+      "user": "WARITTA-B@rmutp.ac.th",
+      "count": 70
+    },
+    {
+      "user": "poosit.r@rmutp.ac.th",
+      "count": 64
+    },
+    {
+      "user": "nattachote.r@rmutp.ac.th",
+      "count": 26
+    },
+    {
+      "user": "rapeepon.t@rmutp.ac.th",
+      "count": 21
+    },
+    {
+      "user": "076450316705-9@rmutp.ac.th",
+      "count": 16
+    },
+    {
+      "user": "0565101070573@rmutp.ac.th",
+      "count": 12
+    },
+    {
+      "user": "076650304139-0@rmutp.ac.th",
+      "count": 12
+    },
+    {
+      "user": "lamai.b@rmutp.ac.th",
+      "count": 12
+    },
+    {
+      "user": "075750305223-0@rmutp.ac.th",
+      "count": 10
+    },
+    {
+      "user": "yothin.n@rmutp.ac.th",
+      "count": 8
+    },
+    {
+      "user": "teerapol-j@rmutp.ac.th",
+      "count": 7
+    },
+    {
+      "user": "woraphak.n@rmutp.ac.th",
+      "count": 6
+    },
+    {
+      "user": "076150101128-9@rmutp.ac.th",
+      "count": 6
+    },
+    {
+      "user": "kamolphan.j@rmutp.ac.th",
+      "count": 3
+    },
+    {
+      "user": "nichaphat-d@rmutp.ac.th",
+      "count": 3
+    },
+    {
+      "user": "Teerapol-j@rmutp.ac.th",
+      "count": 3
+    },
+    {
+      "user": "chayangkool-s@rmutp.ac.th",
+      "count": 2
+    },
+    {
+      "user": "setthanan-m@rmutp.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sakon.pr@rmutp.ac.th",
+      "count": 2
+    },
+    {
+      "user": "waraporn-d@rmutp.ac.th",
+      "count": 2
+    },
+    {
+      "user": "Naphatsorn-c@rmutp.ac.th",
+      "count": 2
+    },
+    {
+      "user": "nares.p@rmutp.ac.th",
+      "count": 2
+    },
+    {
+      "user": "donlaporn.sr@rmutp.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sukanya.che@rmutp.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sompoch.k@rmutp.ac.th",
+      "count": 2
+    },
+    {
+      "user": "thanakit.w@rmutp.ac.th",
+      "count": 2
+    },
+    {
+      "user": "naphatsorn-c@rmutp.ac.th",
+      "count": 1
+    },
+    {
+      "user": "056510107037-5@rmutp.ac.th",
+      "count": 1
+    },
+    {
+      "user": "teerapol@rmutp.ac.th",
+      "count": 1
+    },
+    {
+      "user": "phakhaphon-s@rmutp.ac.th",
+      "count": 1
+    },
+    {
+      "user": "chanatchayanan.r@rmutp.ac.th",
+      "count": 1
+    },
+    {
+      "user": "kreadtisak.l@rmutp.ac.th",
+      "count": 1
+    },
+    {
+      "user": "056560403522-2@rmutp.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sattabongkod-t@rmutp.ac.th",
+      "count": 1
+    }
+  ]
+}

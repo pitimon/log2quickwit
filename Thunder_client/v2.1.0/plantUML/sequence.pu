@@ -1,0 +1,45 @@
+@startuml
+participant "Main" as Main
+participant "Properties" as Props
+participant "Worker" as Worker
+participant "HTTP Client" as HTTP
+participant "Quickwit API" as Quickwit
+participant "Result Processor" as Processor
+participant "Output Generator" as Output
+participant "File System" as FS
+
+Main -> Props: readProperties("qw-auth.properties")
+Main -> Main: Parse command-line arguments
+Main -> Main: Calculate time range (getTimestampRange())
+Main -> Main: Initialize channels and worker pool
+
+loop For each day in the specified range
+    Main -> Worker: Submit job
+    activate Worker
+    Worker -> HTTP: Create HTTP request
+    HTTP -> Quickwit: Send POST request to /api/v1/nro-logs/search
+    Quickwit --> HTTP: Return HTTP response
+    HTTP --> Worker: Return response body
+    Worker -> Worker: Parse response
+    Worker -> Processor: Send LogEntry to resultChan
+    Worker -> Main: Report progress
+    deactivate Worker
+end
+
+Main -> Main: Wait for all workers to finish
+Main -> Processor: Process all results
+activate Processor
+Processor -> Processor: Aggregate user and provider stats
+Processor --> Main: Return aggregated Result
+deactivate Processor
+
+Main -> Output: createSimplifiedOutputData()
+activate Output
+Output -> Output: Generate JSON structure
+Output --> Main: Return SimplifiedOutputData
+deactivate Output
+
+Main -> FS: Create output directory
+Main -> FS: Write JSON to file
+Main -> Main: Calculate and display execution times
+@enduml

@@ -1,0 +1,54 @@
+@startuml
+left to right direction
+actor "User" as user
+actor "Quickwit Search Engine" as quickwit
+
+rectangle "eduroam-accept System v2.1.0" {
+  usecase "Run Program" as UC1
+  usecase "Read Properties" as UC2
+  usecase "Parse Arguments" as UC3
+  usecase "Calculate Time Range" as UC4
+  usecase "Initialize Worker Pool" as UC5
+  usecase "Submit Jobs" as UC6
+  usecase "Process Quickwit Query" as UC7
+  usecase "Parse Query Results" as UC8
+  usecase "Aggregate User Stats" as UC9
+  usecase "Aggregate Provider Stats" as UC10
+  usecase "Generate Simplified Output" as UC11
+  usecase "Write JSON Output" as UC12
+  usecase "Report Progress" as UC13
+  usecase "Display Execution Summary" as UC14
+}
+
+user --> UC1
+UC1 ..> UC2 : <<include>>
+UC1 ..> UC3 : <<include>>
+UC1 ..> UC4 : <<include>>
+UC1 ..> UC5 : <<include>>
+UC1 ..> UC6 : <<include>>
+UC1 ..> UC11 : <<include>>
+UC1 ..> UC12 : <<include>>
+UC1 ..> UC13 : <<include>>
+UC1 ..> UC14 : <<include>>
+
+UC6 ..> UC7 : <<include>>
+UC7 --> quickwit : queries
+UC7 ..> UC8 : <<include>>
+UC8 ..> UC9 : <<include>>
+UC8 ..> UC10 : <<include>>
+
+database "Properties File" as props
+database "File System" as fs
+
+UC2 ..> props : reads
+UC12 ..> fs : writes
+
+note right of UC5
+  Implemented in v2.1.0
+  for improved performance
+end note
+
+note right of UC13
+  New feature in v2.1.0
+end note
+@enduml

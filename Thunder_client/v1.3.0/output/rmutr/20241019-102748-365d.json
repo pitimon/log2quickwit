@@ -1,0 +1,308 @@
+{
+  "description": "This file contains aggregated data of Access-Reject events for users from the specified domain.",
+  "query_summary": "- Event Type: Access-Reject for user\n- Domain: rmutr\n- Source: from eduroam.rmutr\n- Time Range: 2023-10-20 10:27:48 to 2024-10-19 10:27:48\n- Data Period: Last 365 days from the query execution date",
+  "aggregation_logic": "1. Collected all \"Access-Reject\" events for users from the specified domain within the given time range.\n2. Extracted unique usernames (in the format user@domain.ac.th) from the full message of each event.\n3. Counted the occurrences of each unique username.\n4. Sorted the results by count in descending order.\nNote: Data was collected in 30-day intervals to ensure completeness and improve performance.",
+  "note": "This data represents authentication failures and may be useful for identifying potential issues with user accounts or analyzing patterns in failed login attempts.",
+  "start_timestamp": 1697772468,
+  "end_timestamp": 1729308468,
+  "start_time": "2023-10-20 10:27:48",
+  "end_time": "2024-10-19 10:27:48",
+  "results": [
+    {
+      "user": "1651021341175@rmutr.ac.th",
+      "count": 388
+    },
+    {
+      "user": "niroj.jar@rmutr.ac.th",
+      "count": 87
+    },
+    {
+      "user": "2671010141185@rmutr.ac.th",
+      "count": 69
+    },
+    {
+      "user": "warinthorn.kac@rmutr.ac.th",
+      "count": 68
+    },
+    {
+      "user": "1651050641161@rmutr.ac.th",
+      "count": 67
+    },
+    {
+      "user": "banchar.kao@rmutr.ac.th",
+      "count": 66
+    },
+    {
+      "user": "3671051341123@rmutr.ac.th",
+      "count": 62
+    },
+    {
+      "user": "3641051521114@rmutr.ac.th",
+      "count": 54
+    },
+    {
+      "user": "somjai.sri@rmutr.ac.th",
+      "count": 53
+    },
+    {
+      "user": "chamaiporn.kon@rmutr.ac.th",
+      "count": 44
+    },
+    {
+      "user": "1641020341172@rmutr.ac.th",
+      "count": 39
+    },
+    {
+      "user": "montakarn.pir@rmutr.ac.th",
+      "count": 36
+    },
+    {
+      "user": "sombat.som@rmutr.ac.th",
+      "count": 36
+    },
+    {
+      "user": "chalerm.jin@rmutr.ac.th",
+      "count": 30
+    },
+    {
+      "user": "2661031341185@rmutr.ac.th",
+      "count": 26
+    },
+    {
+      "user": "sawittree.jai@rmutr.ac.th",
+      "count": 18
+    },
+    {
+      "user": "3641051541108@rmutr.ac.th",
+      "count": 17
+    },
+    {
+      "user": "panuwat.kit@rmutr.ac.th",
+      "count": 14
+    },
+    {
+      "user": "2651031741156@rmutr.ac.th",
+      "count": 12
+    },
+    {
+      "user": "udomvit.k@rmutr.ac.th",
+      "count": 10
+    },
+    {
+      "user": "pattaradanai.met@rmutr.ac.th",
+      "count": 9
+    },
+    {
+      "user": "2651032441313@rmutr.ac.th",
+      "count": 9
+    },
+    {
+      "user": "hr@rmutr.ac.th",
+      "count": 9
+    },
+    {
+      "user": "jutamas.won@rmutr.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sararwut.pen@rmutr.ac.th",
+      "count": 7
+    },
+    {
+      "user": "mayuree.saw@rmutr.ac.th",
+      "count": 6
+    },
+    {
+      "user": " activity@rmutr.ac.th",
+      "count": 6
+    },
+    {
+      "user": "3641050621130@rmutr.ac.th",
+      "count": 6
+    },
+    {
+      "user": "nalinee.s@rmutr.ac.th",
+      "count": 6
+    },
+    {
+      "user": "supak.pia@rmutr.ac.th",
+      "count": 5
+    },
+    {
+      "user": "2661052741356@rmutr.ac.th",
+      "count": 5
+    },
+    {
+      "user": "marissa.pas@rmutr.ac.th",
+      "count": 5
+    },
+    {
+      "user": "chaichana.jai@rmutr.ac.th",
+      "count": 4
+    },
+    {
+      "user": "kawinnipha.tor.@rmutr.ac.th",
+      "count": 4
+    },
+    {
+      "user": "anuchit.aur@rmutr.ac.th",
+      "count": 4
+    },
+    {
+      "user": "2661031741149@rmutr.ac.th",
+      "count": 4
+    },
+    {
+      "user": "vijitrut.bun@rmutr.ac.th",
+      "count": 4
+    },
+    {
+      "user": "kanapot.yod@rmutr.ac.th",
+      "count": 4
+    },
+    {
+      "user": "zhao.fuyang@rmutr.ac.th",
+      "count": 4
+    },
+    {
+      "user": "duangthida.tar@rmutr.ac.th",
+      "count": 4
+    },
+    {
+      "user": "nisanad.ing@rmutr.ac.th",
+      "count": 4
+    },
+    {
+      "user": "2671050643350@rmutr.ac.th",
+      "count": 4
+    },
+    {
+      "user": "banchar.kao,,@rmutr.ac.th",
+      "count": 3
+    },
+    {
+      "user": "wannakorn.mal@rmutr.ac.th",
+      "count": 3
+    },
+    {
+      "user": "naratorn.man@rmutr.ac.th",
+      "count": 3
+    },
+    {
+      "user": "2661032341168@rmutr.ac.th",
+      "count": 3
+    },
+    {
+      "user": "pitipon.pat@rmutr.ac.th",
+      "count": 3
+    },
+    {
+      "user": "sittirat.ngo@rmutr.ac.th",
+      "count": 2
+    },
+    {
+      "user": "2661010142161@rmutr.ac.th",
+      "count": 2
+    },
+    {
+      "user": "rungarun.rod@rmutr.ac.th",
+      "count": 2
+    },
+    {
+      "user": "2651050641430@rmutr.ac.th",
+      "count": 2
+    },
+    {
+      "user": "saranya.boo@rmutr.ac.th",
+      "count": 2
+    },
+    {
+      "user": "3651051941156@rmutr.ac.th",
+      "count": 2
+    },
+    {
+      "user": "2661010142133@rmutr.ac.th",
+      "count": 2
+    },
+    {
+      "user": "1651010441147@rmutr.ac.th",
+      "count": 2
+    },
+    {
+      "user": "wiworn.won@rmutr.ac.th",
+      "count": 2
+    },
+    {
+      "user": "eduroam-mon@rmutr.ac.th",
+      "count": 2
+    },
+    {
+      "user": "soratja.kla@rmutr.ac.th",
+      "count": 2
+    },
+    {
+      "user": "tean-ek.sor@rmutr.ac.th",
+      "count": 2
+    },
+    {
+      "user": "tanutcha.tet@rmutr.ac.th",
+      "count": 2
+    },
+    {
+      "user": "1661010541117@rmutr.ac.th",
+      "count": 2
+    },
+    {
+      "user": "1651021341184@rmutr.ac.th",
+      "count": 1
+    },
+    {
+      "user": "   watcharin.w@rmutr.ac.th",
+      "count": 1
+    },
+    {
+      "user": "kawinnipha.tor@rmutr.ac.th",
+      "count": 1
+    },
+    {
+      "user": "1631051841140@rmutr.ac.th",
+      "count": 1
+    },
+    {
+      "user": "1651050746360@rmutr.ac.th",
+      "count": 1
+    },
+    {
+      "user": "1651010141152@rmutr.ac.th",
+      "count": 1
+    },
+    {
+      "user": "1651050646360@rmutr.ac.th",
+      "count": 1
+    },
+    {
+      "user": "rattikarn.kha@rmutr.ac.th",
+      "count": 1
+    },
+    {
+      "user": "siriwat.pru@rmutr.ac.th",
+      "count": 1
+    },
+    {
+      "user": "monrawee.tho@rmutr.ac.th",
+      "count": 1
+    },
+    {
+      "user": "1651010441131@rmutr.ac.th",
+      "count": 1
+    },
+    {
+      "user": "665020801247@rmutr.ac.th",
+      "count": 1
+    },
+    {
+      "user": "3641051341128@rmutr.ac.th",
+      "count": 1
+    }
+  ]
+}

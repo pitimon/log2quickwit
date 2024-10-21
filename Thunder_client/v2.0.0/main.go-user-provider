@@ -1,0 +1,508 @@
+/*
+Program: agg-uid (Aggregate User IDs)
+Version: 2.0.0
+Description: This program aggregates Access-Accept events for users from a specified domain
+             using the Quickwit search engine. It collects data over a specified time range,
+             processes the results, and outputs the aggregated data to a JSON file.
+
+Usage: ./agg-uid <domain> [days]
+  <domain>: The domain to search for (e.g., 'example.ac.th' or 'etlr1')
+  [days]: Optional. The number of days to look back from the current date. Default is 1.
+
+Features:
+- Concurrent querying using goroutines for improved performance
+- Flexible time range specification
+- Aggregation of user access accept events
+- Output of results in JSON format with timing information
+
+Changes in version 2.0.0:
+- Changed query from "Access-Reject" to "Access-Accept"
+- Updated result processing to count days of activity instead of event occurrences
+- Added service provider information to the output
+- Restructured output to show data by username and service provider
+- Improved error handling and logging
+
+Author: [Your Name]
+Date: [Current Date]
+License: [License Information if applicable]
+*/
+
+package main
+
+import (
+    "bufio"
+    "encoding/json"
+    "fmt"
+	"io"
+    "log"
+    "net/http"
+    "os"
+    "sort"
+    "strconv"
+    "strings"
+    "sync"
+    "time"
+)
+
+type Properties struct {
+    QWUser string
+    QWPass string
+    QWURL  string
+}
+
+type LogEntry struct {
+    Username        string    `json:"username"`
+    ServiceProvider string    `json:"service_provider"`
+    Timestamp       time.Time `json:"timestamp"`
+}
+
+type UserStats struct {
+    DaysActive int
+    Providers  map[string]bool
+}
+
+type ProviderStats struct {
+    Users map[string]bool
+}
+
+type Result struct {
+    Users     map[string]*UserStats
+    Providers map[string]*ProviderStats
+}
+
+type OutputData struct {
+    QueryInfo            QueryInfo           `json:"query_info"`
+    Description          string              `json:"description"`
+    QuerySummary         string              `json:"query_summary"`
+    AggregationLogic     string              `json:"aggregation_logic"`
+    Note                 string              `json:"note"`
+    StartTimestamp       int64               `json:"start_timestamp"`
+    EndTimestamp         int64               `json:"end_timestamp"`
+    StartTime            string              `json:"start_time"`
+    EndTime              string              `json:"end_time"`
+    UsernameStats        []UserStatOutput    `json:"username_stats"`
+    ServiceProviderStats []ProviderStatOutput `json:"service_provider_stats"`
+}
+
+type QueryInfo struct {
+    Domain    string `json:"domain"`
+    Days      int    `json:"days"`
+    StartDate string `json:"start_date"`
+    EndDate   string `json:"end_date"`
+}
+
+type UserStatOutput struct {
+    Username   string `json:"username"`
+    DaysActive int    `json:"days_active"`
+}
+
+type ProviderStatOutput struct {
+    ServiceProvider string          `json:"service_provider"`
+    Users           []UserStatOutput `json:"users"`
+}
+
+type SimplifiedOutputData struct {
+    QueryInfo struct {
+        Domain    string `json:"domain"`
+        Days      int    `json:"days"`
+        StartDate string `json:"start_date"`
+        EndDate   string `json:"end_date"`
+    } `json:"query_info"`
+    Description string `json:"description"`
+    UserStats   []struct {
+        Username   string   `json:"username"`
+        DaysActive int      `json:"days_active"`
+        Providers  []string `json:"providers"`
+    } `json:"user_stats"`
+    ProviderStats []struct {
+        Provider string   `json:"provider"`
+        Users    []string `json:"users"`
+    } `json:"provider_stats"`
+}
+
+func createSimplifiedOutputData(result *Result, domain string, days int, startTimestamp, endTimestamp int64) SimplifiedOutputData {
+    output := SimplifiedOutputData{}
+    
+    output.QueryInfo.Domain = domain
+    output.QueryInfo.Days = days
+    output.QueryInfo.StartDate = time.Unix(startTimestamp, 0).Format("2006-01-02 15:04:05")
+    output.QueryInfo.EndDate = time.Unix(endTimestamp, 0).Format("2006-01-02 15:04:05")
+    
+    output.Description = "Aggregated Access-Accept events for the specified domain and time range."
+
+    // Process user stats
+    for username, stats := range result.Users {
+        providers := make([]string, 0, len(stats.Providers))
+        for provider := range stats.Providers {
+            providers = append(providers, provider)
+        }
+        output.UserStats = append(output.UserStats, struct {
+            Username   string   `json:"username"`
+            DaysActive int      `json:"days_active"`
+            Providers  []string `json:"providers"`
+        }{
+            Username:   username,
+            DaysActive: stats.DaysActive,
+            Providers:  providers,
+        })
+    }
+
+    // Sort user stats by days active
+    sort.Slice(output.UserStats, func(i, j int) bool {
+        return output.UserStats[i].DaysActive > output.UserStats[j].DaysActive
+    })
+
+    // Process provider stats
+    for provider, stats := range result.Providers {
+        users := make([]string, 0, len(stats.Users))
+        for user := range stats.Users {
+            users = append(users, user)
+        }
+        output.ProviderStats = append(output.ProviderStats, struct {
+            Provider string   `json:"provider"`
+            Users    []string `json:"users"`
+        }{
+            Provider: provider,
+            Users:    users,
+        })
+    }
+
+    // Sort provider stats by number of users
+    sort.Slice(output.ProviderStats, func(i, j int) bool {
+        return len(output.ProviderStats[i].Users) > len(output.ProviderStats[j].Users)
+    })
+
+    return output
+}
+
+func readProperties(filePath string) (Properties, error) {
+    file, err := os.Open(filePath)
+    if err != nil {
+        return Properties{}, err
+    }
+    defer file.Close()
+
+    props := Properties{}
+    scanner := bufio.NewScanner(file)
+    for scanner.Scan() {
+        line := scanner.Text()
+        if line != "" && !strings.HasPrefix(line, "#") {
+            parts := strings.SplitN(line, "=", 2)
+            if len(parts) == 2 {
+                key := strings.TrimSpace(parts[0])
+                value := strings.TrimSpace(parts[1])
+                switch key {
+                case "QW_USER":
+                    props.QWUser = value
+                case "QW_PASS":
+                    props.QWPass = value
+                case "QW_URL":
+                    props.QWURL = strings.TrimPrefix(value, "=")
+                }
+            }
+        }
+    }
+    return props, scanner.Err()
+}
+
+func getQuickwitResults(query map[string]interface{}, auth Properties, resultChan chan<- LogEntry, errChan chan<- error) {
+    client := &http.Client{}
+    jsonQuery, _ := json.Marshal(query)
+    req, err := http.NewRequest("POST", auth.QWURL+"/api/v1/nro-logs/search", strings.NewReader(string(jsonQuery)))
+    if err != nil {
+        errChan <- fmt.Errorf("error creating request: %v", err)
+        return
+    }
+
+    req.SetBasicAuth(auth.QWUser, auth.QWPass)
+    req.Header.Set("Content-Type", "application/json")
+    req.Header.Set("Accept", "application/json")
+
+    log.Printf("Query: %v", query)
+
+    resp, err := client.Do(req)
+    if err != nil {
+        errChan <- fmt.Errorf("error sending request: %v", err)
+        return
+    }
+    defer resp.Body.Close()
+
+    log.Printf("Response status: %s", resp.Status)
+
+    bodyBytes, _ := io.ReadAll(resp.Body)
+    log.Printf("Response body: %s", string(bodyBytes))
+
+    var result map[string]interface{}
+    if err := json.Unmarshal(bodyBytes, &result); err != nil {
+        errChan <- fmt.Errorf("error decoding response: %v", err)
+        close(resultChan)
+        return
+    }
+
+    hits, ok := result["hits"].([]interface{})
+    if !ok {
+        errChan <- fmt.Errorf("unexpected response structure: hits not found or not an array")
+        close(resultChan)
+        return
+    }
+
+    log.Printf("Received %d entries from Quickwit", len(hits))
+
+    for _, hit := range hits {
+        hitMap, ok := hit.(map[string]interface{})
+        if !ok {
+            log.Printf("Skipping invalid hit structure")
+            continue
+        }
+
+        entry := LogEntry{
+            Username:        hitMap["username"].(string),
+            ServiceProvider: hitMap["service_provider"].(string),
+        }
+
+        if timestampStr, ok := hitMap["timestamp"].(string); ok {
+            if timestamp, err := time.Parse(time.RFC3339, timestampStr); err == nil {
+                entry.Timestamp = timestamp
+            } else {
+                log.Printf("Error parsing timestamp: %v", err)
+            }
+        }
+
+        resultChan <- entry
+    }
+
+    close(resultChan)
+}
+
+
+func processResults(resultChan <-chan LogEntry, result *Result, mu *sync.Mutex, wg *sync.WaitGroup) {
+    defer wg.Done()
+    localUserDays := make(map[string]map[string]bool)
+    localUsers := make(map[string]*UserStats)
+    localProviders := make(map[string]*ProviderStats)
+
+    for entry := range resultChan {
+        // Process user stats
+        if _, exists := localUsers[entry.Username]; !exists {
+            localUsers[entry.Username] = &UserStats{
+                DaysActive: 0,
+                Providers:  make(map[string]bool),
+            }
+            localUserDays[entry.Username] = make(map[string]bool)
+        }
+        day := entry.Timestamp.Format("2006-01-02")
+        if !localUserDays[entry.Username][day] {
+            localUserDays[entry.Username][day] = true
+            localUsers[entry.Username].DaysActive++
+        }
+        localUsers[entry.Username].Providers[entry.ServiceProvider] = true
+
+        // Process provider stats
+        if _, exists := localProviders[entry.ServiceProvider]; !exists {
+            localProviders[entry.ServiceProvider] = &ProviderStats{
+                Users: make(map[string]bool),
+            }
+        }
+        localProviders[entry.ServiceProvider].Users[entry.Username] = true
+    }
+
+    // Merge local results into global result
+    mu.Lock()
+    defer mu.Unlock()
+    for username, stats := range localUsers {
+        if _, exists := result.Users[username]; !exists {
+            result.Users[username] = stats
+        } else {
+            result.Users[username].DaysActive += stats.DaysActive
+            for provider := range stats.Providers {
+                result.Users[username].Providers[provider] = true
+            }
+        }
+    }
+    for provider, stats := range localProviders {
+        if _, exists := result.Providers[provider]; !exists {
+            result.Providers[provider] = stats
+        } else {
+            for user := range stats.Users {
+                result.Providers[provider].Users[user] = true
+            }
+        }
+    }
+}
+
+func getTimestampRange(days int) (int64, int64) {
+    endTimestamp := time.Now().Unix()
+    startTimestamp := endTimestamp - int64(days*24*60*60)
+    return startTimestamp, endTimestamp
+}
+
+func timestampToHumanReadable(timestamp int64) string {
+    return time.Unix(timestamp, 0).Format("2006-01-02 15:04:05")
+}
+
+func getDomain(input string) string {
+    if input == "etlr1" {
+        return "etlr1.eduroam.org"
+    }
+    return fmt.Sprintf("eduroam.%s.ac.th", input)
+}
+
+func createOutputData(result *Result, domain string, days int, startTimestamp, endTimestamp int64) OutputData {
+    usernameStats := make([]UserStatOutput, 0)
+    for username, stats := range result.Users {
+        usernameStats = append(usernameStats, UserStatOutput{
+            Username:   username,
+            DaysActive: stats.DaysActive,
+        })
+    }
+    sort.Slice(usernameStats, func(i, j int) bool {
+        return usernameStats[i].DaysActive > usernameStats[j].DaysActive
+    })
+
+    providerStats := make([]ProviderStatOutput, 0)
+    for provider, stats := range result.Providers {
+        users := make([]UserStatOutput, 0)
+        for username := range stats.Users {
+            users = append(users, UserStatOutput{
+                Username:   username,
+                DaysActive: result.Users[username].DaysActive,
+            })
+        }
+        sort.Slice(users, func(i, j int) bool {
+            return users[i].DaysActive > users[j].DaysActive
+        })
+        providerStats = append(providerStats, ProviderStatOutput{
+            ServiceProvider: provider,
+            Users:           users,
+        })
+    }
+
+    return OutputData{
+        QueryInfo: QueryInfo{
+            Domain:    domain,
+            Days:      days,
+            StartDate: time.Unix(startTimestamp, 0).Format("2006-01-02"),
+            EndDate:   time.Unix(endTimestamp, 0).Format("2006-01-02"),
+        },
+        Description:     "This file contains aggregated data of Access-Accept events for users from the specified domain.",
+        QuerySummary:    fmt.Sprintf("Event Type: Access-Accept, Domain: %s, Time Range: %s to %s, Data Period: Last %d days", domain, timestampToHumanReadable(startTimestamp), timestampToHumanReadable(endTimestamp), days),
+        AggregationLogic: "1. Collected all Access-Accept events for the specified domain.\n2. Counted unique days of activity for each user.\n3. Grouped users by service provider.\n4. Sorted results by days active.",
+        Note:            "This data represents successful authentications and may be useful for analyzing usage patterns.",
+        StartTimestamp:  startTimestamp,
+        EndTimestamp:    endTimestamp,
+        StartTime:       timestampToHumanReadable(startTimestamp),
+        EndTime:         timestampToHumanReadable(endTimestamp),
+        UsernameStats:   usernameStats,
+        ServiceProviderStats: providerStats,
+    }
+}
+
+func main() {
+    log.SetFlags(log.LstdFlags | log.Lshortfile)
+    overallStart := time.Now()
+
+    if len(os.Args) < 2 || len(os.Args) > 3 {
+        fmt.Println("Usage: ./agg-uid <domain> [days]")
+        os.Exit(1)
+    }
+
+    domain := os.Args[1]
+    days := 1
+    if len(os.Args) == 3 {
+        var err error
+        days, err = strconv.Atoi(os.Args[2])
+        if err != nil {
+            log.Fatalf("Invalid days parameter: %v", err)
+        }
+    }
+
+    props, err := readProperties("qw-auth.properties")
+    if err != nil {
+        log.Fatalf("Error reading properties: %v", err)
+    }
+
+    startTimestamp, endTimestamp := getTimestampRange(days)
+    
+    log.Printf("Searching from %s to %s", time.Unix(startTimestamp, 0), time.Unix(endTimestamp, 0))
+
+    query := map[string]interface{}{
+        "query":           fmt.Sprintf(`message_type:"Access-Accept" AND realm:"%s" NOT service_provider:"client"`, getDomain(domain)),
+        "start_timestamp": startTimestamp,
+        "end_timestamp":   endTimestamp,
+        "max_hits":        10000, // หรือค่าที่เหมาะสม
+        "sort_by_field":   "_timestamp",
+    }
+        
+    resultChan := make(chan LogEntry, 100)
+    errChan := make(chan error, 1)
+
+    queryStart := time.Now()
+    go getQuickwitResults(query, props, resultChan, errChan)
+
+    result := &Result{
+        Users:     make(map[string]*UserStats),
+        Providers: make(map[string]*ProviderStats),
+    }
+    log.Printf("Result struct initialized: Users: %v, Providers: %v", result.Users, result.Providers)
+
+    var mu sync.Mutex
+    var wg sync.WaitGroup
+
+    numWorkers := 5
+    processStart := time.Now()
+
+    for i := 0; i < numWorkers; i++ {
+        wg.Add(1)
+        go processResults(resultChan, result, &mu, &wg)
+    }
+
+    // รอให้การประมวลผลเสร็จสิ้นหรือเกิดข้อผิดพลาด
+    go func() {
+        wg.Wait()
+        close(errChan)
+    }()
+
+    // รอให้ getQuickwitResults เสร็จสิ้นและตรวจสอบข้อผิดพลาด
+    if err := <-errChan; err != nil {
+        log.Printf("Error occurred: %v", err)
+        return
+    }
+
+    // รอให้ worker goroutines ทำงานเสร็จ
+    wg.Wait()
+
+    queryDuration := time.Since(queryStart)
+    processDuration := time.Since(processStart)
+
+    log.Printf("Number of users: %d", len(result.Users))
+    log.Printf("Number of providers: %d", len(result.Providers))
+
+    // เปลี่ยนจาก createOutputData เป็น createSimplifiedOutputData
+    outputData := createSimplifiedOutputData(result, domain, days, startTimestamp, endTimestamp)
+
+    outputDir := fmt.Sprintf("output/%s", domain)
+    if err := os.MkdirAll(outputDir, 0755); err != nil {
+        log.Fatalf("Error creating output directory: %v", err)
+    }
+
+    currentTime := time.Now().Format("20060102-150405")
+    filename := fmt.Sprintf("%s/%s-%dd.json", outputDir, currentTime, days)
+
+    jsonData, err := json.MarshalIndent(outputData, "", "  ")
+    if err != nil {
+        log.Fatalf("Error marshaling JSON: %v", err)
+    }
+
+    err = os.WriteFile(filename, jsonData, 0644)
+    if err != nil {
+        log.Fatalf("Error writing file: %v", err)
+    }
+
+    overallDuration := time.Since(overallStart)
+
+    fmt.Printf("Results have been saved to %s\n", filename)
+    fmt.Printf("Time taken:\n")
+    fmt.Printf("  Quickwit query: %v\n", queryDuration)
+    fmt.Printf("  Local processing: %v\n", processDuration)
+    fmt.Printf("  Overall: %v\n", overallDuration)
+}

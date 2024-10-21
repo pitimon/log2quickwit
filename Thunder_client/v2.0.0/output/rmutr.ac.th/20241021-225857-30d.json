@@ -1,0 +1,1457 @@
+{
+  "query_info": {
+    "domain": "rmutr.ac.th",
+    "days": 30,
+    "start_date": "2024-09-22 22:58:55",
+    "end_date": "2024-10-21 22:58:55"
+  },
+  "description": "Aggregated Access-Accept events for the specified domain and time range.",
+  "summary": {
+    "total_users": 150,
+    "total_providers": 28
+  },
+  "provider_stats": [
+    {
+      "provider": "eduroam.chula.ac.th",
+      "user_count": 42,
+      "users": [
+        "kanjana.pun@rmutr.ac.th",
+        "suthee.ruk@rmutr.ac.th",
+        "4651070943101@rmutr.ac.th",
+        "2661031741140@rmutr.ac.th",
+        "2641031541138@rmutr.ac.th",
+        "patchareeya.cha@rmutr.ac.th",
+        "1631020151118@rmutr.ac.th",
+        "1651010141152@rmutr.ac.th",
+        "1671053141111@rmutr.ac.th",
+        "4661070441101@rmutr.ac.th",
+        "parichart.mun@rmutr.ac.th",
+        "3651051041183@rmutr.ac.th",
+        "virata.pan@rmutr.ac.th",
+        "satakhun.suw@rmutr.ac.th",
+        "3671051041115@rmutr.ac.th",
+        "2661031341185@rmutr.ac.th",
+        "payao.say@rmutr.ac.th",
+        "watcharaporn.som@rmutr.ac.th",
+        "navaporn.kun@rmutr.ac.th",
+        "3641051521114@rmutr.ac.th",
+        "2671052741332@rmutr.ac.th",
+        "2641031541115@rmutr.ac.th",
+        "3641060241169@rmutr.ac.th",
+        "than.wr@rmutr.ac.th",
+        "3651051341165@rmutr.ac.th",
+        "1651050641161@rmutr.ac.th",
+        "3671050743122@rmutr.ac.th",
+        "3661060341134@rmutr.ac.th",
+        "anuchit.aur@rmutr.ac.th",
+        "1671050641326@rmutr.ac.th",
+        "preeyapron.chu@rmutr.ac.th",
+        "topaz.won@rmutr.ac.th",
+        "thanapad.see@rmutr.ac.th",
+        "piamchan.boo@rmutr.ac.th",
+        "krittika.ma-@rmutr.ac.th",
+        "1651010641127@rmutr.ac.th",
+        "orawan.kle@rmutr.ac.th",
+        "3671050741108@rmutr.ac.th",
+        "4641071741101@rmutr.ac.th",
+        "nalinee.s@rmutr.ac.th",
+        "4631071941121@rmutr.ac.th",
+        "lanlalit.l@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.su.ac.th",
+      "user_count": 23,
+      "users": [
+        "orawan.kle@rmutr.ac.th",
+        "alisa.roo@rmutr.ac.th",
+        "2661031741149@rmutr.ac.th",
+        "1651010841314@rmutr.ac.th",
+        "juanthima.sai@rmutr.ac.th",
+        "krittika.ma-@rmutr.ac.th",
+        "natcha.mua@rmutr.ac.th",
+        "1641051641122@rmutr.ac.th",
+        "kedsarin.pho@rmutr.ac.th",
+        "1661052841200@rmutr.ac.th",
+        "phornwimon.pra@rmutr.ac.th",
+        "2671052741342@rmutr.ac.th",
+        "3641050641221@rmutr.ac.th",
+        "anuvat.thu@rmutr.ac.th",
+        "2661040341302@rmutr.ac.th",
+        "2661051341159@rmutr.ac.th",
+        "rattikarn.kha@rmutr.ac.th",
+        "topaz.won@rmutr.ac.th",
+        "2671010141185@rmutr.ac.th",
+        "4651070943101@rmutr.ac.th",
+        "nipharat.sai@rmutr.ac.th",
+        "2671031741330@rmutr.ac.th",
+        "naparat.t@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.rmutp.ac.th",
+      "user_count": 20,
+      "users": [
+        "rattikarn.kha@rmutr.ac.th",
+        "samphan.c@rmutr.ac.th",
+        "anuvat.thu@rmutr.ac.th",
+        "siriwal.sri@rmutr.ac.th",
+        "mongkol.fon@rmutr.ac.th",
+        "nopnapa.jul@rmutr.ac.th",
+        "nuth.tha@rmutr.ac.th",
+        "pimporn.wat@rmutr.ac.th",
+        "4641070941120@rmutr.ac.th",
+        "maneenin.pho@rmutr.ac.th",
+        "than.wr@rmutr.ac.th",
+        "tanutcha.tet@rmutr.ac.th",
+        "tanakorn.s@rmutr.ac.th",
+        "parichart.mun@rmutr.ac.th",
+        "Wipada.khi@rmutr.ac.th",
+        "sawitree.sen@rmutr.ac.th",
+        "sawat.cho@rmutr.ac.th",
+        "orapin.imc@rmutr.ac.th",
+        "siripen.rot@rmutr.ac.th",
+        "lanlalit.l@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.dusit.ac.th",
+      "user_count": 17,
+      "users": [
+        "1671011441150@rmutr.ac.th",
+        "suttivadee.tai@rmutr.ac.th",
+        "2661050641208@rmutr.ac.th",
+        "pimporn.wat@rmutr.ac.th",
+        "pitipon.pat@rmutr.ac.th",
+        "2671010141184@rmutr.ac.th",
+        "office.p@rmutr.ac.th",
+        "2671052741361@rmutr.ac.th",
+        "1651010641127@rmutr.ac.th",
+        "1641051741124@rmutr.ac.th",
+        "nampon.mua@rmutr.ac.th",
+        "payao.say@rmutr.ac.th",
+        "ornpapha.pin@rmutr.ac.th",
+        "navaporn.kun@rmutr.ac.th",
+        "1651052241303@rmutr.ac.th",
+        "1651010441112@rmutr.ac.th",
+        "2651032441308@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.dru.ac.th",
+      "user_count": 15,
+      "users": [
+        "montakarn.pir@rmutr.ac.th",
+        "wanwisa.pan@rmutr.ac.th",
+        "3651051041172@rmutr.ac.th",
+        "3651060141133@rmutr.ac.th",
+        "anuvat.thu@rmutr.ac.th",
+        "3651060341162@rmutr.ac.th",
+        "orapin.imc@rmutr.ac.th",
+        "4631071941121@rmutr.ac.th",
+        "3641060241169@rmutr.ac.th",
+        "2661052741325@rmutr.ac.th",
+        "4641072141101@rmutr.ac.th",
+        "3651060241206@rmutr.ac.th",
+        "panuwat.kit@rmutr.ac.th",
+        "3641051521114@rmutr.ac.th",
+        "4641071741111@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.ku.ac.th",
+      "user_count": 15,
+      "users": [
+        "soratja.kla@rmutr.ac.th",
+        "sarinya.pip@rmutr.ac.th",
+        "parinya.kaw@rmutr.ac.th",
+        "1631051841106@rmutr.ac.th",
+        "sitchai.boo@rmutr.ac.th",
+        "1631051441119@rmutr.ac.th",
+        "1661052841126@rmutr.ac.th",
+        "1651051641158@rmutr.ac.th",
+        "1651010441138@rmutr.ac.th",
+        "1661052841163@rmutr.ac.th",
+        "1621010141207@rmutr.ac.th",
+        "1661010441156@rmutr.ac.th",
+        "3641050641212@rmutr.ac.th",
+        "3671051341123@rmutr.ac.th",
+        "2671031741303@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.nstda.or.th",
+      "user_count": 6,
+      "users": [
+        "2661032441341@rmutr.ac.th",
+        "supawat.suk@rmutr.ac.th",
+        "komsun.tub@rmutr.ac.th",
+        "2661032441336@rmutr.ac.th",
+        "pornchai.chet@rmutr.ac.th",
+        "2661032441350@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.kmutt.ac.th",
+      "user_count": 5,
+      "users": [
+        "anuchit.aur@rmutr.ac.th",
+        "3641060241169@rmutr.ac.th",
+        "3651050641146@rmutr.ac.th",
+        "auscharaporn.kla@rmutr.ac.th",
+        "3641050641225@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.rmutk.ac.th",
+      "user_count": 5,
+      "users": [
+        "3671050743122@rmutr.ac.th",
+        "chalermpol.kla@rmutr.ac.th",
+        "4641071741111@rmutr.ac.th",
+        "warantee.cha@rmutr.ac.th",
+        "4641071741101@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.tu.ac.th",
+      "user_count": 5,
+      "users": [
+        "jutamas.won@rmutr.ac.th",
+        "3641050641221@rmutr.ac.th",
+        "2611031441320@rmutr.ac.th",
+        "sarinya.pip@rmutr.ac.th",
+        "patchareeya.cha@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.buu.ac.th",
+      "user_count": 5,
+      "users": [
+        "papatsarin.w@rmutr.ac.th",
+        "1641010441132@rmutr.ac.th",
+        "2661051341219@rmutr.ac.th",
+        "1661050641167@rmutr.ac.th",
+        "1661010541250@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.pbru.ac.th",
+      "user_count": 5,
+      "users": [
+        "2661010142130@rmutr.ac.th",
+        "2661010142161@rmutr.ac.th",
+        "2661031741149@rmutr.ac.th",
+        "pathitta.cho@rmutr.ac.th",
+        "Ittipon.tho@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.swu.ac.th",
+      "user_count": 3,
+      "users": [
+        "polnusak.won@rmutr.ac.th",
+        "1641050643126@rmutr.ac.th",
+        "tasanees.sin@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.kku.ac.th",
+      "user_count": 3,
+      "users": [
+        "siripen.rot@rmutr.ac.th",
+        "office.p@rmutr.ac.th",
+        "jutamas.won@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.kmitl.ac.th",
+      "user_count": 2,
+      "users": [
+        "bancha.lua@rmutr.ac.th",
+        "supak.pia@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "etlr1.eduroam.org",
+      "user_count": 2,
+      "users": [
+        "supak.pia@rmutr.ac.th",
+        "siengpin.cha@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.ru.ac.th",
+      "user_count": 2,
+      "users": [
+        "4641071741111@rmutr.ac.th",
+        "1671050641304@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.nu.ac.th",
+      "user_count": 1,
+      "users": [
+        "napharat.cho@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.rmuti.ac.th",
+      "user_count": 1,
+      "users": [
+        "kanapot.yod@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.rmutt.ac.th",
+      "user_count": 1,
+      "users": [
+        "3611050621104@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.cmkl.ac.th",
+      "user_count": 1,
+      "users": [
+        "supak.pia@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.rmutl.ac.th",
+      "user_count": 1,
+      "users": [
+        "kanapot.yod@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.rmutsb.ac.th",
+      "user_count": 1,
+      "users": [
+        "2661052741322@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.tsu.ac.th",
+      "user_count": 1,
+      "users": [
+        "kanapot.yod@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.skru.ac.th",
+      "user_count": 1,
+      "users": [
+        "2671010141230@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.cdti.ac.th",
+      "user_count": 1,
+      "users": [
+        "tanutcha.tet@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.cri.or.th",
+      "user_count": 1,
+      "users": [
+        "noppasak.tan@rmutr.ac.th"
+      ]
+    },
+    {
+      "provider": "eduroam.psru.ac.th",
+      "user_count": 1,
+      "users": [
+        "paweena.khu@rmutr.ac.th"
+      ]
+    }
+  ],
+  "user_stats": [
+    {
+      "username": "panuwat.kit@rmutr.ac.th",
+      "days_active": 15,
+      "providers": [
+        "eduroam.dru.ac.th"
+      ]
+    },
+    {
+      "username": "warantee.cha@rmutr.ac.th",
+      "days_active": 14,
+      "providers": [
+        "eduroam.rmutk.ac.th"
+      ]
+    },
+    {
+      "username": "supak.pia@rmutr.ac.th",
+      "days_active": 9,
+      "providers": [
+        "etlr1.eduroam.org",
+        "eduroam.kmitl.ac.th",
+        "eduroam.cmkl.ac.th"
+      ]
+    },
+    {
+      "username": "jutamas.won@rmutr.ac.th",
+      "days_active": 7,
+      "providers": [
+        "eduroam.tu.ac.th",
+        "eduroam.kku.ac.th"
+      ]
+    },
+    {
+      "username": "sarinya.pip@rmutr.ac.th",
+      "days_active": 7,
+      "providers": [
+        "eduroam.tu.ac.th",
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "2671010141185@rmutr.ac.th",
+      "days_active": 6,
+      "providers": [
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "siengpin.cha@rmutr.ac.th",
+      "days_active": 6,
+      "providers": [
+        "etlr1.eduroam.org"
+      ]
+    },
+    {
+      "username": "2661031741149@rmutr.ac.th",
+      "days_active": 5,
+      "providers": [
+        "eduroam.su.ac.th",
+        "eduroam.pbru.ac.th"
+      ]
+    },
+    {
+      "username": "2611031441320@rmutr.ac.th",
+      "days_active": 5,
+      "providers": [
+        "eduroam.tu.ac.th"
+      ]
+    },
+    {
+      "username": "4651070943101@rmutr.ac.th",
+      "days_active": 5,
+      "providers": [
+        "eduroam.su.ac.th",
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "1651010841314@rmutr.ac.th",
+      "days_active": 5,
+      "providers": [
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "rattikarn.kha@rmutr.ac.th",
+      "days_active": 5,
+      "providers": [
+        "eduroam.rmutp.ac.th",
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "3671050743122@rmutr.ac.th",
+      "days_active": 5,
+      "providers": [
+        "eduroam.chula.ac.th",
+        "eduroam.rmutk.ac.th"
+      ]
+    },
+    {
+      "username": "siripen.rot@rmutr.ac.th",
+      "days_active": 4,
+      "providers": [
+        "eduroam.kku.ac.th",
+        "eduroam.rmutp.ac.th"
+      ]
+    },
+    {
+      "username": "2661031341185@rmutr.ac.th",
+      "days_active": 4,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "3641050641221@rmutr.ac.th",
+      "days_active": 4,
+      "providers": [
+        "eduroam.tu.ac.th",
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "3641060241169@rmutr.ac.th",
+      "days_active": 4,
+      "providers": [
+        "eduroam.chula.ac.th",
+        "eduroam.kmutt.ac.th",
+        "eduroam.dru.ac.th"
+      ]
+    },
+    {
+      "username": "2671010141230@rmutr.ac.th",
+      "days_active": 4,
+      "providers": [
+        "eduroam.skru.ac.th"
+      ]
+    },
+    {
+      "username": "watcharaporn.som@rmutr.ac.th",
+      "days_active": 4,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "kanapot.yod@rmutr.ac.th",
+      "days_active": 4,
+      "providers": [
+        "eduroam.rmutl.ac.th",
+        "eduroam.tsu.ac.th",
+        "eduroam.rmuti.ac.th"
+      ]
+    },
+    {
+      "username": "montakarn.pir@rmutr.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.dru.ac.th"
+      ]
+    },
+    {
+      "username": "1651010641127@rmutr.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.chula.ac.th",
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "3651060341162@rmutr.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.dru.ac.th"
+      ]
+    },
+    {
+      "username": "patchareeya.cha@rmutr.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.chula.ac.th",
+        "eduroam.tu.ac.th"
+      ]
+    },
+    {
+      "username": "3641050641212@rmutr.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "4641071741111@rmutr.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.ru.ac.th",
+        "eduroam.rmutk.ac.th",
+        "eduroam.dru.ac.th"
+      ]
+    },
+    {
+      "username": "orapin.imc@rmutr.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.rmutp.ac.th",
+        "eduroam.dru.ac.th"
+      ]
+    },
+    {
+      "username": "orawan.kle@rmutr.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.su.ac.th",
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "napharat.cho@rmutr.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.nu.ac.th"
+      ]
+    },
+    {
+      "username": "anuvat.thu@rmutr.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.rmutp.ac.th",
+        "eduroam.dru.ac.th",
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "kedsarin.pho@rmutr.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "2661052741325@rmutr.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.dru.ac.th"
+      ]
+    },
+    {
+      "username": "topaz.won@rmutr.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.su.ac.th",
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "nampon.mua@rmutr.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "pimporn.wat@rmutr.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.rmutp.ac.th",
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "2661010142161@rmutr.ac.th",
+      "days_active": 3,
+      "providers": [
+        "eduroam.pbru.ac.th"
+      ]
+    },
+    {
+      "username": "piamchan.boo@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "bancha.lua@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.kmitl.ac.th"
+      ]
+    },
+    {
+      "username": "lanlalit.l@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.rmutp.ac.th",
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "auscharaporn.kla@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.kmutt.ac.th"
+      ]
+    },
+    {
+      "username": "4631071941121@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.chula.ac.th",
+        "eduroam.dru.ac.th"
+      ]
+    },
+    {
+      "username": "payao.say@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.chula.ac.th",
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "3641051521114@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.dru.ac.th",
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "office.p@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.kku.ac.th",
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "3651060141133@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.dru.ac.th"
+      ]
+    },
+    {
+      "username": "2661050641208@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "suttivadee.tai@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "than.wr@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.chula.ac.th",
+        "eduroam.rmutp.ac.th"
+      ]
+    },
+    {
+      "username": "3651051341165@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "4641071741101@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.rmutk.ac.th",
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "1641050643126@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.swu.ac.th"
+      ]
+    },
+    {
+      "username": "navaporn.kun@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.chula.ac.th",
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "krittika.ma-@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.chula.ac.th",
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "sawitree.sen@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.rmutp.ac.th"
+      ]
+    },
+    {
+      "username": "1671011441150@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "anuchit.aur@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.chula.ac.th",
+        "eduroam.kmutt.ac.th"
+      ]
+    },
+    {
+      "username": "2671052741342@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "2671052741361@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "polnusak.won@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.swu.ac.th"
+      ]
+    },
+    {
+      "username": "tanutcha.tet@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.cdti.ac.th",
+        "eduroam.rmutp.ac.th"
+      ]
+    },
+    {
+      "username": "2661052741322@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.rmutsb.ac.th"
+      ]
+    },
+    {
+      "username": "4641072141101@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.dru.ac.th"
+      ]
+    },
+    {
+      "username": "natcha.mua@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "1651051641158@rmutr.ac.th",
+      "days_active": 2,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "4641070941120@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutp.ac.th"
+      ]
+    },
+    {
+      "username": "1651050641161@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "Ittipon.tho@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.pbru.ac.th"
+      ]
+    },
+    {
+      "username": "maneenin.pho@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutp.ac.th"
+      ]
+    },
+    {
+      "username": "naparat.t@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "1661010541250@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.buu.ac.th"
+      ]
+    },
+    {
+      "username": "1641051641122@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "noppasak.tan@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.cri.or.th"
+      ]
+    },
+    {
+      "username": "mongkol.fon@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutp.ac.th"
+      ]
+    },
+    {
+      "username": "2651032441308@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "2671010141184@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "1661010441156@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "1661052841126@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "phornwimon.pra@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "kanjana.pun@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "virata.pan@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "1671050641304@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.ru.ac.th"
+      ]
+    },
+    {
+      "username": "1621010141207@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "nipharat.sai@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "pathitta.cho@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.pbru.ac.th"
+      ]
+    },
+    {
+      "username": "1651010441112@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "3671051041115@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "ornpapha.pin@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "Wipada.khi@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutp.ac.th"
+      ]
+    },
+    {
+      "username": "1641051741124@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "1651010441138@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "2641031541115@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "nuth.tha@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutp.ac.th"
+      ]
+    },
+    {
+      "username": "3671050741108@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "parichart.mun@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutp.ac.th",
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "1661052841200@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "1661052841163@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "soratja.kla@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "supawat.suk@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.nstda.or.th"
+      ]
+    },
+    {
+      "username": "2661040341302@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "1651010141152@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "2661031741140@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "thanapad.see@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "3671051341123@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "4661070441101@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "pitipon.pat@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.dusit.ac.th"
+      ]
+    },
+    {
+      "username": "3651051041183@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "1631051441119@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "1631020151118@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "tasanees.sin@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.swu.ac.th"
+      ]
+    },
+    {
+      "username": "chalermpol.kla@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutk.ac.th"
+      ]
+    },
+    {
+      "username": "3651051041172@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.dru.ac.th"
+      ]
+    },
+    {
+      "username": "tanakorn.s@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutp.ac.th"
+      ]
+    },
+    {
+      "username": "2671031741330@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "1661050641167@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.buu.ac.th"
+      ]
+    },
+    {
+      "username": "satakhun.suw@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "suthee.ruk@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "alisa.roo@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "1671050641326@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "papatsarin.w@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.buu.ac.th"
+      ]
+    },
+    {
+      "username": "2661051341159@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "2671031741303@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "nalinee.s@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "preeyapron.chu@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "wanwisa.pan@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.dru.ac.th"
+      ]
+    },
+    {
+      "username": "paweena.khu@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.psru.ac.th"
+      ]
+    },
+    {
+      "username": "3651060241206@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.dru.ac.th"
+      ]
+    },
+    {
+      "username": "sawat.cho@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutp.ac.th"
+      ]
+    },
+    {
+      "username": "2671052741332@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "2661010142130@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.pbru.ac.th"
+      ]
+    },
+    {
+      "username": "nopnapa.jul@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutp.ac.th"
+      ]
+    },
+    {
+      "username": "sitchai.boo@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "siriwal.sri@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutp.ac.th"
+      ]
+    },
+    {
+      "username": "samphan.c@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutp.ac.th"
+      ]
+    },
+    {
+      "username": "juanthima.sai@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.su.ac.th"
+      ]
+    },
+    {
+      "username": "1641010441132@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.buu.ac.th"
+      ]
+    },
+    {
+      "username": "3651050641146@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.kmutt.ac.th"
+      ]
+    },
+    {
+      "username": "2661032441350@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.nstda.or.th"
+      ]
+    },
+    {
+      "username": "parinya.kaw@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "komsun.tub@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.nstda.or.th"
+      ]
+    },
+    {
+      "username": "1671053141111@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "pornchai.chet@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.nstda.or.th"
+      ]
+    },
+    {
+      "username": "2661032441341@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.nstda.or.th"
+      ]
+    },
+    {
+      "username": "2661032441336@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.nstda.or.th"
+      ]
+    },
+    {
+      "username": "3661060341134@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "2641031541138@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.chula.ac.th"
+      ]
+    },
+    {
+      "username": "3611050621104@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.rmutt.ac.th"
+      ]
+    },
+    {
+      "username": "1631051841106@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.ku.ac.th"
+      ]
+    },
+    {
+      "username": "2661051341219@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.buu.ac.th"
+      ]
+    },
+    {
+      "username": "3641050641225@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.kmutt.ac.th"
+      ]
+    },
+    {
+      "username": "1651052241303@rmutr.ac.th",
+      "days_active": 1,
+      "providers": [
+        "eduroam.dusit.ac.th"
+      ]
+    }
+  ]
+}

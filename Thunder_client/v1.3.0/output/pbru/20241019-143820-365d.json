@@ -1,0 +1,268 @@
+{
+  "description": "This file contains aggregated data of Access-Reject events for users from the specified domain.",
+  "query_summary": "- Event Type: Access-Reject for user\n- Domain: pbru\n- Source: from eduroam.pbru\n- Time Range: 2023-10-20 14:38:20 to 2024-10-19 14:38:20\n- Data Period: Last 365 days from the query execution date",
+  "aggregation_logic": "1. Collected all \"Access-Reject\" events for users from the specified domain within the given time range.\n2. Extracted unique usernames (in the format user@domain.ac.th) from the full message of each event.\n3. Counted the occurrences of each unique username.\n4. Sorted the results by count in descending order.\nNote: Data was collected in 30-day intervals to ensure completeness and improve performance.",
+  "note": "This data represents authentication failures and may be useful for identifying potential issues with user accounts or analyzing patterns in failed login attempts.",
+  "start_timestamp": 1697787500,
+  "end_timestamp": 1729323500,
+  "start_time": "2023-10-20 14:38:20",
+  "end_time": "2024-10-19 14:38:20",
+  "results": [
+    {
+      "user": "atcharawan.phe@pbru.ac.th",
+      "count": 11483
+    },
+    {
+      "user": "soontorn@pbru.ac.th",
+      "count": 3002
+    },
+    {
+      "user": "ranchida.kud@pbru.ac.th",
+      "count": 527
+    },
+    {
+      "user": "674512134@pbru.ac.th",
+      "count": 474
+    },
+    {
+      "user": "pakorn.pro@pbru.ac.th",
+      "count": 378
+    },
+    {
+      "user": "thanapasit.pho@pbru.ac.th",
+      "count": 376
+    },
+    {
+      "user": "teerawat.kla@pbru.ac.th",
+      "count": 350
+    },
+    {
+      "user": "manyad.lim@pbru.ac.th",
+      "count": 310
+    },
+    {
+      "user": "pattamaporn@pbru.ac.th",
+      "count": 292
+    },
+    {
+      "user": "damrong.tumt@pbru.ac.th",
+      "count": 258
+    },
+    {
+      "user": "nathakon.nil@pbru.ac.th",
+      "count": 258
+    },
+    {
+      "user": "jutiporn.i@pbru.ac.th",
+      "count": 156
+    },
+    {
+      "user": "apinya.s@pbru.ac.th",
+      "count": 138
+    },
+    {
+      "user": "674187117@pbru.ac.th",
+      "count": 128
+    },
+    {
+      "user": "pailin.r@pbru.ac.th",
+      "count": 126
+    },
+    {
+      "user": "664815115@pbru.ac.th",
+      "count": 122
+    },
+    {
+      "user": "635100416@pbru.ac.th",
+      "count": 106
+    },
+    {
+      "user": "chittawan@pbru.ac.th",
+      "count": 102
+    },
+    {
+      "user": "624242013@pbru.ac.th",
+      "count": 98
+    },
+    {
+      "user": "chet@pbru.ac.th",
+      "count": 94
+    },
+    {
+      "user": "634H76125@pbru.ac.th",
+      "count": 72
+    },
+    {
+      "user": "jetsadarat.k@pbru.ac.th",
+      "count": 63
+    },
+    {
+      "user": "thanika.sap@pbru.ac.th",
+      "count": 58
+    },
+    {
+      "user": "674110117@pbru.ac.th",
+      "count": 52
+    },
+    {
+      "user": "panompon.mun@pbru.ac.th",
+      "count": 50
+    },
+    {
+      "user": "suthida@pbru.ac.th",
+      "count": 44
+    },
+    {
+      "user": "rachen@pbru.ac.th",
+      "count": 44
+    },
+    {
+      "user": "somporn@pbru.ac.th",
+      "count": 42
+    },
+    {
+      "user": "674722314@pbru.ac.th",
+      "count": 38
+    },
+    {
+      "user": "rasmee.isl@pbru.ac.th",
+      "count": 38
+    },
+    {
+      "user": "674659126@pbru.ac.th",
+      "count": 36
+    },
+    {
+      "user": "peerasut@pbru.ac.th",
+      "count": 34
+    },
+    {
+      "user": "pisit.rod@pbru.ac.th",
+      "count": 32
+    },
+    {
+      "user": "674110221@pbru.ac.th",
+      "count": 30
+    },
+    {
+      "user": "674189227@pbru.ac.th",
+      "count": 26
+    },
+    {
+      "user": "664110214@pbru.ac.th",
+      "count": 22
+    },
+    {
+      "user": "supawan@pbru.ac.th",
+      "count": 22
+    },
+    {
+      "user": "674722122@pbru.ac.th",
+      "count": 20
+    },
+    {
+      "user": "chermdhong@pbru.ac.th",
+      "count": 20
+    },
+    {
+      "user": "624101122@pbru.ac.th",
+      "count": 18
+    },
+    {
+      "user": "wanida.t@pbru.ac.th",
+      "count": 16
+    },
+    {
+      "user": "644653117@pbru.ac.th",
+      "count": 15
+    },
+    {
+      "user": "kitisak.pha@pbru.ac.th",
+      "count": 13
+    },
+    {
+      "user": "664375103@pbru.ac.th",
+      "count": 11
+    },
+    {
+      "user": "weerawat.cha@pbru.ac.th",
+      "count": 10
+    },
+    {
+      "user": "niroot@pbru.ac.th",
+      "count": 10
+    },
+    {
+      "user": "634664113@pbru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "apiwat@pbru.ac.th",
+      "count": 7
+    },
+    {
+      "user": "675052115@pbru.ac.th",
+      "count": 7
+    },
+    {
+      "user": "674101210@pbru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "674433126@pbru.ac.th",
+      "count": 5
+    },
+    {
+      "user": "674653113@pbru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "prempol.wib@pbru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "nattapon.arb@pbru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "chananut@pbru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "info@pbru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "pisit.b@pbru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "674186215@pbru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "piyanun.sen@pbru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "praseart.sre@pbru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "suebsak.l@pbru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "654973106@pbru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "napapha@pbru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "chitraporn.cha@pbru.ac.th",
+      "count": 1
+    }
+  ]
+}

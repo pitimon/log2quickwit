@@ -1,0 +1,1868 @@
+{
+  "description": "This file contains aggregated data of Access-Reject events for users from the specified domain.",
+  "query_summary": "- Event Type: Access-Reject for user\n- Domain: lru\n- Source: from eduroam.lru\n- Time Range: 2023-10-20 12:11:45 to 2024-10-19 12:11:45\n- Data Period: Last 365 days from the query execution date",
+  "aggregation_logic": "1. Collected all \"Access-Reject\" events for users from the specified domain within the given time range.\n2. Extracted unique usernames (in the format user@domain.ac.th) from the full message of each event.\n3. Counted the occurrences of each unique username.\n4. Sorted the results by count in descending order.\nNote: Data was collected in 30-day intervals to ensure completeness and improve performance.",
+  "note": "This data represents authentication failures and may be useful for identifying potential issues with user accounts or analyzing patterns in failed login attempts.",
+  "start_timestamp": 1697778705,
+  "end_timestamp": 1729314705,
+  "start_time": "2023-10-20 12:11:45",
+  "end_time": "2024-10-19 12:11:45",
+  "results": [
+    {
+      "user": "sb6340102102@lru.ac.th",
+      "count": 3848
+    },
+    {
+      "user": "sb655070208@lru.ac.th",
+      "count": 2874
+    },
+    {
+      "user": "pathapong@lru.ac.th",
+      "count": 1174
+    },
+    {
+      "user": "sb6080142109@lru.ac.th",
+      "count": 964
+    },
+    {
+      "user": "sc6540710202@lru.ac.th",
+      "count": 925
+    },
+    {
+      "user": "nattachai.pot@lru.ac.th",
+      "count": 919
+    },
+    {
+      "user": "sb6440340105@lru.ac.th",
+      "count": 698
+    },
+    {
+      "user": "sb6640141125@lru.ac.th",
+      "count": 642
+    },
+    {
+      "user": "sb6650707201@lru.ac.th",
+      "count": 624
+    },
+    {
+      "user": "sb5880140122@lru.ac.th",
+      "count": 612
+    },
+    {
+      "user": "sb6440105130@lru.ac.th",
+      "count": 543
+    },
+    {
+      "user": "sb6240143122@lru.ac.th",
+      "count": 512
+    },
+    {
+      "user": "pongpun.sao@lru.ac.th",
+      "count": 502
+    },
+    {
+      "user": "sukhum.pro@lru.ac.th",
+      "count": 473
+    },
+    {
+      "user": "sb6640708134@lru.ac.th",
+      "count": 420
+    },
+    {
+      "user": "sb6640707124@lru.ac.th",
+      "count": 378
+    },
+    {
+      "user": "p5420300011765@lru.ac.th",
+      "count": 368
+    },
+    {
+      "user": "sb6530801202@lru.ac.th",
+      "count": 366
+    },
+    {
+      "user": "p3430100265201@lru.ac.th",
+      "count": 306
+    },
+    {
+      "user": "sb5730248110@lru.ac.th",
+      "count": 292
+    },
+    {
+      "user": "auction@lru.ac.th",
+      "count": 279
+    },
+    {
+      "user": "sb6540335123@lru.ac.th",
+      "count": 278
+    },
+    {
+      "user": "sb6180120104@lru.ac.th",
+      "count": 276
+    },
+    {
+      "user": "sb6630501312@lru.ac.th",
+      "count": 252
+    },
+    {
+      "user": "p3410400666465@lru.ac.th",
+      "count": 246
+    },
+    {
+      "user": "sb5880188125@lru.ac.th",
+      "count": 242
+    },
+    {
+      "user": "Sb5880102126@lru.ac.th",
+      "count": 238
+    },
+    {
+      "user": "sb6440144102@lru.ac.th",
+      "count": 223
+    },
+    {
+      "user": "sb6640110128@lru.ac.th",
+      "count": 220
+    },
+    {
+      "user": "patchateeya.boon@lru.ac.th",
+      "count": 215
+    },
+    {
+      "user": "sb6731201111@lru.ac.th",
+      "count": 190
+    },
+    {
+      "user": "p3420100023526@lru.ac.th",
+      "count": 180
+    },
+    {
+      "user": "sb6541201213@lru.ac.th",
+      "count": 177
+    },
+    {
+      "user": "sb6240270140@lru.ac.th",
+      "count": 170
+    },
+    {
+      "user": "chaleomwut.mah@lru.ac.th",
+      "count": 168
+    },
+    {
+      "user": "sb6080188122@lru.ac.th",
+      "count": 166
+    },
+    {
+      "user": "sb6030267114@lru.ac.th",
+      "count": 158
+    },
+    {
+      "user": "sb6180148118@lru.ac.th",
+      "count": 150
+    },
+    {
+      "user": "sb6341102105@lru.ac.th",
+      "count": 150
+    },
+    {
+      "user": "sb6540140103@lru.ac.th",
+      "count": 146
+    },
+    {
+      "user": "sb6340188121@lru.ac.th",
+      "count": 138
+    },
+    {
+      "user": "sb6741201332@lru.ac.th",
+      "count": 134
+    },
+    {
+      "user": "sb5880102132@lru.ac.th",
+      "count": 130
+    },
+    {
+      "user": "Sb6040267331@lru.ac.th",
+      "count": 122
+    },
+    {
+      "user": "sirilux.rat@lru.ac.th",
+      "count": 119
+    },
+    {
+      "user": "sb6340302211@lru.ac.th",
+      "count": 110
+    },
+    {
+      "user": "sb6540330109@lru.ac.th",
+      "count": 106
+    },
+    {
+      "user": "sb6240267135@lru.ac.th",
+      "count": 102
+    },
+    {
+      "user": "sb5880102119@lru.ac.th",
+      "count": 94
+    },
+    {
+      "user": "tusna.kul@lru.ac.th",
+      "count": 94
+    },
+    {
+      "user": "wirot.apa@lru.ac.th",
+      "count": 91
+    },
+    {
+      "user": "sb6340102131@lru.ac.th",
+      "count": 90
+    },
+    {
+      "user": "pt3409900221967@lru.ac.th",
+      "count": 86
+    },
+    {
+      "user": "sb6640901107@lru.ac.th",
+      "count": 86
+    },
+    {
+      "user": "sb5740706304@lru.ac.th",
+      "count": 80
+    },
+    {
+      "user": "sb6340602108@lru.ac.th",
+      "count": 76
+    },
+    {
+      "user": "varanoot.san@lru.ac.th",
+      "count": 75
+    },
+    {
+      "user": "sb6043143113@lru.ac.th",
+      "count": 74
+    },
+    {
+      "user": "sb6441002101@lru.ac.th",
+      "count": 70
+    },
+    {
+      "user": "praweenutch.was@lru.ac.th",
+      "count": 70
+    },
+    {
+      "user": "sc6540710101@lru.ac.th",
+      "count": 68
+    },
+    {
+      "user": "kittika.pro@lru.ac.th",
+      "count": 66
+    },
+    {
+      "user": "Jutaporn.wil@lru.ac.th",
+      "count": 66
+    },
+    {
+      "user": "p2461200016133@lru.ac.th",
+      "count": 64
+    },
+    {
+      "user": "sb5980102128@lru.ac.th",
+      "count": 62
+    },
+    {
+      "user": "Sb5940242111@lru.ac.th",
+      "count": 60
+    },
+    {
+      "user": "sb6440144209@lru.ac.th",
+      "count": 60
+    },
+    {
+      "user": "sb6441201339@lru.ac.th",
+      "count": 60
+    },
+    {
+      "user": "sb5740270212@lru.ac.th",
+      "count": 58
+    },
+    {
+      "user": "Sb6180110127@lru.ac.th",
+      "count": 56
+    },
+    {
+      "user": "sb6640110124@lru.ac.th",
+      "count": 56
+    },
+    {
+      "user": "sb5980102109@lru.ac.th",
+      "count": 55
+    },
+    {
+      "user": "sb6340102211@lru.ac.th",
+      "count": 54
+    },
+    {
+      "user": "sb6640101228@lru.ac.th",
+      "count": 53
+    },
+    {
+      "user": "sb6140706427@lru.ac.th",
+      "count": 53
+    },
+    {
+      "user": "sb6540302144@lru.ac.th",
+      "count": 52
+    },
+    {
+      "user": "sb6440339144@lru.ac.th",
+      "count": 48
+    },
+    {
+      "user": "sb6540140124@lru.ac.th",
+      "count": 47
+    },
+    {
+      "user": "sb6040706331@lru.ac.th",
+      "count": 46
+    },
+    {
+      "user": "Sb6340102102@lru.ac.th",
+      "count": 46
+    },
+    {
+      "user": "sb6651301207@lru.ac.th",
+      "count": 46
+    },
+    {
+      "user": "sd628319107@lru.ac.th",
+      "count": 46
+    },
+    {
+      "user": "sb5580144110@lru.ac.th",
+      "count": 44
+    },
+    {
+      "user": "sakunthai.pom@lru.ac.th",
+      "count": 44
+    },
+    {
+      "user": "sb6180105120@lru.ac.th",
+      "count": 42
+    },
+    {
+      "user": "sb6540104117@lru.ac.th",
+      "count": 42
+    },
+    {
+      "user": "5940501255@lru.ac.th",
+      "count": 42
+    },
+    {
+      "user": "sb6340101213@lru.ac.th",
+      "count": 42
+    },
+    {
+      "user": "sb6440144119@lru.ac.th",
+      "count": 38
+    },
+    {
+      "user": "sb6540335109@lru.ac.th",
+      "count": 38
+    },
+    {
+      "user": "sb5940302136@lru.ac.th",
+      "count": 38
+    },
+    {
+      "user": "pattama.pan@lru.ac.th",
+      "count": 37
+    },
+    {
+      "user": "username@lru.ac.th",
+      "count": 36
+    },
+    {
+      "user": "sb6530801213@lru.ac.th",
+      "count": 36
+    },
+    {
+      "user": "sb6340248117@lru.ac.th",
+      "count": 35
+    },
+    {
+      "user": "jittranon.wan@lru.ac.th",
+      "count": 34
+    },
+    {
+      "user": "sb6180186109@lru.ac.th",
+      "count": 34
+    },
+    {
+      "user": "sb5880106111@lru.ac.th",
+      "count": 32
+    },
+    {
+      "user": "sb5780141130@lru.ac.th",
+      "count": 32
+    },
+    {
+      "user": "sb58800148105@lru.ac.th",
+      "count": 32
+    },
+    {
+      "user": "sb6740302118@lru.ac.th",
+      "count": 32
+    },
+    {
+      "user": "sb5980141136@lru.ac.th",
+      "count": 32
+    },
+    {
+      "user": "visionnet4@lru.ac.th",
+      "count": 32
+    },
+    {
+      "user": "sb657601214@lru.ac.th",
+      "count": 31
+    },
+    {
+      "user": "sb6440105102@lru.ac.th",
+      "count": 30
+    },
+    {
+      "user": "sb6240340115@lru.ac.th",
+      "count": 30
+    },
+    {
+      "user": "sb6240706128@lru.ac.th",
+      "count": 30
+    },
+    {
+      "user": "sb667601419@lru.ac.th",
+      "count": 30
+    },
+    {
+      "user": "sb6651301214@lru.ac.th",
+      "count": 30
+    },
+    {
+      "user": "sb6040801241@lru.ac.th",
+      "count": 30
+    },
+    {
+      "user": "sb6540270115@lru.ac.th",
+      "count": 28
+    },
+    {
+      "user": "sb6240706211@lru.ac.th",
+      "count": 27
+    },
+    {
+      "user": "sb6180102110@lru.ac.th",
+      "count": 26
+    },
+    {
+      "user": "sb5980141122@lru.ac.th",
+      "count": 26
+    },
+    {
+      "user": "sb6540101206@lru.ac.th",
+      "count": 26
+    },
+    {
+      "user": "sb6240340103@lru.ac.th",
+      "count": 26
+    },
+    {
+      "user": "sb6180101115@lru.ac.th",
+      "count": 26
+    },
+    {
+      "user": "sb6540110120@lru.ac.th",
+      "count": 24
+    },
+    {
+      "user": "sb6240188120@lru.ac.th",
+      "count": 24
+    },
+    {
+      "user": "sb6140801334@lru.ac.th",
+      "count": 24
+    },
+    {
+      "user": "sb6640186116@lru.ac.th",
+      "count": 24
+    },
+    {
+      "user": "sb6550707224@lru.ac.th",
+      "count": 24
+    },
+    {
+      "user": "pt2554038@lru.ac.th",
+      "count": 24
+    },
+    {
+      "user": "sd5980106106@lru.ac.th",
+      "count": 22
+    },
+    {
+      "user": "sb6140267213@lru.ac.th",
+      "count": 22
+    },
+    {
+      "user": "eduroamping@lru.ac.th",
+      "count": 22
+    },
+    {
+      "user": "sb6340188119@lru.ac.th",
+      "count": 22
+    },
+    {
+      "user": "sb6240188128@lru.ac.th",
+      "count": 22
+    },
+    {
+      "user": "ammarin.kha@lru.ac.th",
+      "count": 22
+    },
+    {
+      "user": "so640181105@lru.ac.th",
+      "count": 22
+    },
+    {
+      "user": "sc6740710215@lru.ac.th",
+      "count": 20
+    },
+    {
+      "user": "sb65401444117@lru.ac.th",
+      "count": 20
+    },
+    {
+      "user": "sb6340140120@lru.ac.th",
+      "count": 20
+    },
+    {
+      "user": "sb6360706121@lru.ac.th",
+      "count": 20
+    },
+    {
+      "user": "sb5880110212@lru.ac.th",
+      "count": 18
+    },
+    {
+      "user": "weeranuch.yam@lru.ac.th",
+      "count": 18
+    },
+    {
+      "user": "janyarat.boo@lru.ac.th",
+      "count": 18
+    },
+    {
+      "user": "sb6440284111@lru.ac.th",
+      "count": 18
+    },
+    {
+      "user": "pe2555070@lru.ac.th",
+      "count": 18
+    },
+    {
+      "user": "sb6080189116@lru.ac.th",
+      "count": 18
+    },
+    {
+      "user": "sb5640267142@lru.ac.th",
+      "count": 17
+    },
+    {
+      "user": "pe3411700453522@lru.ac.th",
+      "count": 16
+    },
+    {
+      "user": "sb6550707210@lru.ac.th",
+      "count": 16
+    },
+    {
+      "user": "sb6440189107@lru.ac.th",
+      "count": 16
+    },
+    {
+      "user": "sb6180101124@lru.ac.th",
+      "count": 16
+    },
+    {
+      "user": "sb6040289116@lru.ac.th",
+      "count": 16
+    },
+    {
+      "user": "sb5980143117@lru.ac.th",
+      "count": 16
+    },
+    {
+      "user": "sb6240801209@lru.ac.th",
+      "count": 16
+    },
+    {
+      "user": "sb6640283215@lru.ac.th",
+      "count": 16
+    },
+    {
+      "user": "sb6340104114@lru.ac.th",
+      "count": 16
+    },
+    {
+      "user": "sb5980141133@lru.ac.th",
+      "count": 16
+    },
+    {
+      "user": "sb5840708125@lru.ac.th",
+      "count": 15
+    },
+    {
+      "user": "khomyuth.cha@lru.ac.th",
+      "count": 14
+    },
+    {
+      "user": "sb6340283233@lru.ac.th",
+      "count": 14
+    },
+    {
+      "user": "Sb6080142101@lru.ac.th",
+      "count": 14
+    },
+    {
+      "user": "sb6140283217@lru.ac.th",
+      "count": 14
+    },
+    {
+      "user": "sb6740148113@lru.ac.th",
+      "count": 14
+    },
+    {
+      "user": "sb5830248104@lru.ac.th",
+      "count": 14
+    },
+    {
+      "user": "sb6340189127@lru.ac.th",
+      "count": 14
+    },
+    {
+      "user": "sb6180148115@lru.ac.th",
+      "count": 14
+    },
+    {
+      "user": "puyfai.ane@lru.ac.th",
+      "count": 14
+    },
+    {
+      "user": "aree.lan@lru.ac.th",
+      "count": 14
+    },
+    {
+      "user": "p5420400005287@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "sb6461103106@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "sb5880189108@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "sb6180142106@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "sb6240105110@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "sb6040270123@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "wilailux.zim@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "sb6340188132@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "sb6741201131@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "sb5930501223@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "sb6440143106@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "Sirikwan.jun@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "sb5880102125@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "sb5780144125@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "sb6080144231@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "sb6080148115@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "supaporn.mua@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "sb6640707127@lru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "sb6240601109@lru.ac.th",
+      "count": 10
+    },
+    {
+      "user": "sb6550707216@lru.ac.th",
+      "count": 10
+    },
+    {
+      "user": "pe2553061@lru.ac.th",
+      "count": 10
+    },
+    {
+      "user": "chatchai.pee@lru.ac.th",
+      "count": 10
+    },
+    {
+      "user": "sb6040706405@lru.ac.th",
+      "count": 10
+    },
+    {
+      "user": "visionnet2@lru.ac.th",
+      "count": 10
+    },
+    {
+      "user": "pt3460300518855@lru.ac.th",
+      "count": 10
+    },
+    {
+      "user": "sb5880102124@lru.ac.th",
+      "count": 10
+    },
+    {
+      "user": "sb6180148116@lru.ac.th",
+      "count": 10
+    },
+    {
+      "user": "sb6240708124@lru.ac.th",
+      "count": 10
+    },
+    {
+      "user": "sb6240706242@lru.ac.th",
+      "count": 10
+    },
+    {
+      "user": "sb5780102135@lru.ac.th",
+      "count": 10
+    },
+    {
+      "user": "p3429900170505@lru.ac.th",
+      "count": 10
+    },
+    {
+      "user": "sb6180143118@lru.ac.th",
+      "count": 9
+    },
+    {
+      "user": "sb6240141127@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb5980101125@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6651301211@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb5940267333@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "pt2554001@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6180110121@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "angsuthorn.mat@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb5940801203@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "duangporn.boo@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb5780144238@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6080141102@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb5680144232@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6640142110@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "kamolsri.lat@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb5980144108@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6740188101@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6540302114@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6340101109@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "thapanaruk.sri@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6080148114@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "Sb5980105135@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6340708109@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6440189105@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6230801106@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6240102119@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb5840267130@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6440101122@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "pattranuch.pon@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb5580140110@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6641002114@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6240267224@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6180105117@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "arinchai.ham@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6340186103@lru.ac.th",
+      "count": 8
+    },
+    {
+      "user": "sb6180110114@lru.ac.th",
+      "count": 7
+    },
+    {
+      "user": "pt2554118@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb5880101218@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6440105111@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "visionnet5@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6080141120@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb5980101121@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6080148112@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb5880144216@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "supannee.pru@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6340708131@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6340335112@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6540105101@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "Sb5940704129@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "kiattisak.rat@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6040602115@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6540707145@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6340102121@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb667601123@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb5940302345@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6340242110@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb637601105@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "napatson.c@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "pitak.noi@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6440148117@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6440707149@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6640110112@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6080142101@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb5940302421@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "nadchanan.won@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6440143112@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "amporn.but@lru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb5880101127@lru.ac.th",
+      "count": 5
+    },
+    {
+      "user": "sb6641104105@lru.ac.th",
+      "count": 5
+    },
+    {
+      "user": "sb6440105107@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sarawut.wan@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6240501131@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6240143105@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6440302236@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb667601408@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6340339126@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "narong.boo@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "kanokporn.pro@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "chao.iny@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6340148230@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "p3429900072716@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb5840307102@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6240140134@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6340706230@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "teerapat.anu@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "nongluk.chi@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6340101118@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6740140108@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6080148105@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "nuttapong.pen@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6340141106@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6740140211@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6650707205@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6541103105@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6741201304@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6340101208@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6240283240@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6641301121@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6540110206@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sm667911102@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "somyong.see@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb5980101106@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6180143114@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "p3160400302369@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6640707111@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6240105116@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6080189106@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "prayut.wan@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6040267331@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6640189213@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6140501236@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6640501102@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6560705113@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6340302221@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6240335103@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6040339112@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6140706319@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "guest01@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "siriporn.cha@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "valeerat.Cha@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6340186131@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6740302138@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6240289120@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "p3429900096836@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb657601205@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "phasita.too@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb5980101137@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6440101121@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6130706107@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "wanida.sir@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb667601523@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6740259128@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6040248129@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "Pe2555001@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb5880140101@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6080188131@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "amornrat.san@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "thosang.phi@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6340110210@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6340148106@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb5940266124@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6340141107@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6640270112@lru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6340708117@lru.ac.th",
+      "count": 3
+    },
+    {
+      "user": "sb6140302116@lru.ac.th",
+      "count": 3
+    },
+    {
+      "user": "sb6140302142@lru.ac.th",
+      "count": 3
+    },
+    {
+      "user": "sb6340105102@lru.ac.th",
+      "count": 3
+    },
+    {
+      "user": "naiyana.aja@lru.ac.th",
+      "count": 3
+    },
+    {
+      "user": "sb6440339104@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "massaya.rat@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6340186125@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6340603103@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6240242109@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "wimonnan@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "pt2555099@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "kluay@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "6240104101@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6550707227@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb535402107@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sm66701105@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6340186204@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb548142108@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6240142111@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6180101106@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6240307108@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "maturot.cha@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb65401041a7@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb5680140115@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6540104123@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6030801201@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6460707124@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6440286105@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6240101128@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6340259117@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6540603110@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6240302244@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6240110104@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6641002122@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6140708224@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb5880140208@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sm66791105@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb65104117@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb657601316@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6240105130@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6240259102@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb5980101116@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6340266101@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6540148127@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "pt2555095@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sd6440110218@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6440801116@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "p3420900340933@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "p3409900644485@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb5780142141@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6030705108@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6140707108@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "pt3429900094124@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb5780104124@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "so640181108@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6640339111@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6440186128@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6340143125@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6040302318@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": " sc6640710107@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "P3420100664092@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "paweena.the@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6740302141@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6140340116@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6240801207@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6080188123@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6180102126@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sd6240340123@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6340302130@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb5880144202@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6540186113@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb5680148116@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb5780144209@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6641201316@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb5840247135@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "5840243122@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6440140222@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6140340134@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "p5400299009804@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "rungrueang.pho@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6740284103@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "visionnet3@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6340339128@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6240141122@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb5840330231@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6540801213@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6240140119@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6340110224@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sm658318107@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6740110125@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb667601304@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "p3420901092739@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6540186112@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6630501117@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6640110114@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6340283225@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6340901108@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6240110129@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6180101127@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6340267323@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6640144113@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb5780106111@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6630501301@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6540170106@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb5940707304@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6540603104@lru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6340188128@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sb6340335135@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sompong.dul@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sb5980110102@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sb5980110101@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sb5840707315@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sb6440105104@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sb6440105113@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sb6440307102@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sb6540110125@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sb6340186205@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sb6640186107@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sb5980110126@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sb6240705104@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sb6340289119@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sb657601326@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sb6140302128@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sb6441201115@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "pt3401700451171@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "p1429900013357@lru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "chompoonut.the@lru.ac.th",
+      "count": 1
+    }
+  ]
+}

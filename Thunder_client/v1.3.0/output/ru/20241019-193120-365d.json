@@ -1,0 +1,196 @@
+{
+  "description": "This file contains aggregated data of Access-Reject events for users from the specified domain.",
+  "query_summary": "- Event Type: Access-Reject for user\n- Domain: ru\n- Source: from eduroam.ru\n- Time Range: 2023-10-20 19:31:20 to 2024-10-19 19:31:20\n- Data Period: Last 365 days from the query execution date",
+  "aggregation_logic": "1. Collected all \"Access-Reject\" events for users from the specified domain within the given time range.\n2. Extracted unique usernames (in the format user@domain.ac.th) from the full message of each event.\n3. Counted the occurrences of each unique username.\n4. Sorted the results by count in descending order.\nNote: Data was collected in 30-day intervals to ensure completeness and improve performance.",
+  "note": "This data represents authentication failures and may be useful for identifying potential issues with user accounts or analyzing patterns in failed login attempts.",
+  "start_timestamp": 1697805080,
+  "end_timestamp": 1729341080,
+  "start_time": "2023-10-20 19:31:20",
+  "end_time": "2024-10-19 19:31:20",
+  "results": [
+    {
+      "user": "eduroam-mon@ru.ac.th",
+      "count": 3036
+    },
+    {
+      "user": "1100702403790@ru.ac.th",
+      "count": 958
+    },
+    {
+      "user": "1340800137456@ru.ac.th",
+      "count": 252
+    },
+    {
+      "user": "1710500191753@ru.ac.th",
+      "count": 71
+    },
+    {
+      "user": "1770401287451@ru.ac.th",
+      "count": 67
+    },
+    {
+      "user": "1102002239051@ru.ac.th",
+      "count": 61
+    },
+    {
+      "user": "3200900756023@ru.ac.th",
+      "count": 56
+    },
+    {
+      "user": "1739900568089@ru.ac.th",
+      "count": 46
+    },
+    {
+      "user": "atcom@ru.ac.th",
+      "count": 25
+    },
+    {
+      "user": "3100601648491@ru.ac.th",
+      "count": 24
+    },
+    {
+      "user": "3102200454931@ru.ac.th",
+      "count": 20
+    },
+    {
+      "user": "kanokorn.r@ru.ac.th",
+      "count": 16
+    },
+    {
+      "user": "sb6740284101@ru.ac.th",
+      "count": 14
+    },
+    {
+      "user": "1118700068249@ru.ac.th",
+      "count": 13
+    },
+    {
+      "user": "3249900308231@ru.ac.th",
+      "count": 12
+    },
+    {
+      "user": "1103300152957@ru.ac.th",
+      "count": 10
+    },
+    {
+      "user": "1103300147139@ru.ac.th",
+      "count": 7
+    },
+    {
+      "user": "sb6531201111@ru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6440705119@ru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6640259108@ru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6540248115@ru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "pt1401600151269@ru.ac.th",
+      "count": 6
+    },
+    {
+      "user": "sb6740801254@ru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "1101401057583@ru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "1471500005431@ru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "eakarinrbru@ru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6740266106@ru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "1102003443051@ru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6640704145@ru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sb6741201222@ru.ac.th",
+      "count": 4
+    },
+    {
+      "user": "panatcha.a@ru.ac.th",
+      "count": 3
+    },
+    {
+      "user": "sb6240188128@ru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6750707215@ru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "panatcha@ru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "6590461510@ru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6440801338@ru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6440302233@ru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6740140219@ru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "1441000091168@ru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb40140219@ru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6440302202@ru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sb6740110210@ru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "1800700221701@ru.ac.th",
+      "count": 2
+    },
+    {
+      "user": "natarot.cho@ru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "3180500069186@ru.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sb6540141106@ru.ac.th",
+      "count": 1
+    }
+  ]
+}

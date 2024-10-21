@@ -1,0 +1,1280 @@
+{
+  "description": "This file contains aggregated data of Access-Reject events for users from the specified domain.",
+  "query_summary": "- Event Type: Access-Reject for user\n        - Domain: cmu\n        - Source: from eduroam.cmu\n        - Time Range: 2023-10-20 09:37:10 to 2024-10-19 09:37:10\n        - Data Period: Last 365 days from the query execution date",
+  "aggregation_logic": "1. Collected all \"Access-Reject\" events for users from the specified domain within the given time range.\n        2. Extracted unique usernames (in the format user@domain.ac.th) from the full message of each event.\n        3. Counted the occurrences of each unique username.\n        4. Sorted the results by count in descending order.\n        Note: Data was collected in 30-day intervals to ensure completeness and improve performance.",
+  "note": "This data represents authentication failures and may be useful for identifying potential issues with user accounts or analyzing patterns in failed login attempts.",
+  "start_timestamp": 1697769430,
+  "end_timestamp": 1729305430,
+  "start_time": "2023-10-20 09:37:10",
+  "end_time": "2024-10-19 09:37:10",
+  "results": [
+    {
+      "user": "thitipun_y@cmu.ac.th",
+      "count": 25193
+    },
+    {
+      "user": "Wiphawee_j@cmu.ac.th",
+      "count": 13558
+    },
+    {
+      "user": "wanchaloem_n@cmu.ac.th",
+      "count": 3665
+    },
+    {
+      "user": "supachot_suksawat@cmu.ac.th",
+      "count": 3444
+    },
+    {
+      "user": "Supawat_Jeersriwong@cmu.ac.th",
+      "count": 3171
+    },
+    {
+      "user": "tanyaluck_me@cmu.ac.th",
+      "count": 3054
+    },
+    {
+      "user": "dheerawan.b@cmu.ac.th",
+      "count": 2984
+    },
+    {
+      "user": "phansa_u@cmu.ac.th",
+      "count": 1850
+    },
+    {
+      "user": "rattasit_s@cmu.ac.th",
+      "count": 1787
+    },
+    {
+      "user": "praewa_ch@cmu.ac.th",
+      "count": 1655
+    },
+    {
+      "user": "natdanai_khamluang@cmu.ac.th",
+      "count": 1560
+    },
+    {
+      "user": "patarakorn_d@cmu.ac.th",
+      "count": 1356
+    },
+    {
+      "user": "phatcharaphun_tuepae@cmu.ac.th",
+      "count": 1317
+    },
+    {
+      "user": "titikan_k@cmu.ac.th",
+      "count": 1230
+    },
+    {
+      "user": "piti_tho@cmu.ac.th",
+      "count": 1156
+    },
+    {
+      "user": "panitta_chaichana@cmu.ac.th",
+      "count": 1095
+    },
+    {
+      "user": "naphatraphee_t@cmu.ac.th",
+      "count": 974
+    },
+    {
+      "user": "yotsaphat_jant@cmu.ac.th",
+      "count": 904
+    },
+    {
+      "user": "pittikorn_p@cmu.ac.th",
+      "count": 881
+    },
+    {
+      "user": "waristha_k@cmu.ac.th",
+      "count": 808
+    },
+    {
+      "user": "wilasinee_sen@cmu.ac.th",
+      "count": 786
+    },
+    {
+      "user": "pathompong_jantapoon@cmu.ac.th",
+      "count": 781
+    },
+    {
+      "user": "chanoknart.w@cmu.ac.th",
+      "count": 740
+    },
+    {
+      "user": "waewploy_suk@cmu.ac.th",
+      "count": 723
+    },
+    {
+      "user": "Puttamon_p@cmu.ac.th",
+      "count": 676
+    },
+    {
+      "user": "amataporn_j@cmu.ac.th",
+      "count": 649
+    },
+    {
+      "user": "khanuengnit.kha@cmu.ac.th",
+      "count": 593
+    },
+    {
+      "user": "kamon_yakul@cmu.ac.th",
+      "count": 588
+    },
+    {
+      "user": "natthakan_r@cmu.ac.th",
+      "count": 568
+    },
+    {
+      "user": "apithep_piyap@cmu.ac.th",
+      "count": 548
+    },
+    {
+      "user": "nisitha_phansuwan@cmu.ac.th",
+      "count": 509
+    },
+    {
+      "user": "jidapa_ch@cmu.ac.th",
+      "count": 494
+    },
+    {
+      "user": "warut.song@cmu.ac.th",
+      "count": 465
+    },
+    {
+      "user": "your_username@cmu.ac.th",
+      "count": 446
+    },
+    {
+      "user": "punnat_changsalak@cmu.ac.th",
+      "count": 419
+    },
+    {
+      "user": "weerapan.c@cmu.ac.th",
+      "count": 390
+    },
+    {
+      "user": "nattapong_wangnai@cmu.ac.th",
+      "count": 376
+    },
+    {
+      "user": "pipath_p@cmu.ac.th",
+      "count": 353
+    },
+    {
+      "user": "pakakan_k@cmu.ac.th",
+      "count": 332
+    },
+    {
+      "user": "supasilp_thamthiwat@cmu.ac.th",
+      "count": 293
+    },
+    {
+      "user": "Jinnaput_t@cmu.ac.th",
+      "count": 284
+    },
+    {
+      "user": "rathanakorn_i@cmu.ac.th",
+      "count": 264
+    },
+    {
+      "user": "narongrit_peansin@cmu.ac.th",
+      "count": 252
+    },
+    {
+      "user": "Suthicha_La@cmu.ac.th",
+      "count": 250
+    },
+    {
+      "user": "jirayu_o@cmu.ac.th",
+      "count": 230
+    },
+    {
+      "user": "sirikorn_sukha@cmu.ac.th",
+      "count": 226
+    },
+    {
+      "user": "chayut_panmoung@cmu.ac.th",
+      "count": 224
+    },
+    {
+      "user": "sastra_p@cmu.ac.th",
+      "count": 218
+    },
+    {
+      "user": "suphitcha_moonngam@cmu.ac.th",
+      "count": 216
+    },
+    {
+      "user": "wannapa_b@cmu.ac.th",
+      "count": 214
+    },
+    {
+      "user": "pw@cmu.ac.th",
+      "count": 208
+    },
+    {
+      "user": "natthaphat_sem@cmu.ac.th",
+      "count": 202
+    },
+    {
+      "user": "donlaya_trakoonchai@cmu.ac.th",
+      "count": 201
+    },
+    {
+      "user": "anchitta_s@cmu.ac.th",
+      "count": 188
+    },
+    {
+      "user": "Suthicha_la@cmu.ac.th",
+      "count": 182
+    },
+    {
+      "user": "nurphatornee_ch@cmu.ac.th",
+      "count": 181
+    },
+    {
+      "user": "junmongkol_th@cmu.ac.th",
+      "count": 176
+    },
+    {
+      "user": "adinan_ha@cmu.ac.th",
+      "count": 175
+    },
+    {
+      "user": "Ourapin_s@cmu.ac.th",
+      "count": 168
+    },
+    {
+      "user": "wissuta_k@cmu.ac.th",
+      "count": 154
+    },
+    {
+      "user": "thidarat_phin@cmu.ac.th",
+      "count": 145
+    },
+    {
+      "user": "natchanon.@cmu.ac.th",
+      "count": 143
+    },
+    {
+      "user": "takron.op@cmu.ac.th",
+      "count": 135
+    },
+    {
+      "user": "komsun_chaihan@cmu.ac.th",
+      "count": 126
+    },
+    {
+      "user": "puracheth.r@cmu.ac.th",
+      "count": 122
+    },
+    {
+      "user": "veerapat_th@cmu.ac.th",
+      "count": 115
+    },
+    {
+      "user": "thitiphong_khong@cmu.ac.th",
+      "count": 114
+    },
+    {
+      "user": "natwara_onman@cmu.ac.th",
+      "count": 112
+    },
+    {
+      "user": "warakorn_udthamajai@cmu.ac.th",
+      "count": 111
+    },
+    {
+      "user": "thanyawat.r@cmu.ac.th",
+      "count": 108
+    },
+    {
+      "user": "chanakan_sri@cmu.ac.th",
+      "count": 102
+    },
+    {
+      "user": "warayut_promthong@cmu.ac.th",
+      "count": 102
+    },
+    {
+      "user": "Manasanan_nam@cmu.ac.th",
+      "count": 95
+    },
+    {
+      "user": "chiraphat.b@cmu.ac.th",
+      "count": 93
+    },
+    {
+      "user": "kritnicha_wa@cmu.ac.th",
+      "count": 92
+    },
+    {
+      "user": "piriya.boon@cmu.ac.th",
+      "count": 89
+    },
+    {
+      "user": "Kunjira_ja@cmu.ac.th",
+      "count": 87
+    },
+    {
+      "user": "phuwamin_w@cmu.ac.th",
+      "count": 87
+    },
+    {
+      "user": "sitavee_k@cmu.ac.th",
+      "count": 85
+    },
+    {
+      "user": "anak_n@cmu.ac.th",
+      "count": 80
+    },
+    {
+      "user": "rujirang_t@cmu.ac.th",
+      "count": 79
+    },
+    {
+      "user": "jirakit_on@cmu.ac.th",
+      "count": 79
+    },
+    {
+      "user": "phattharaphon_k@cmu.ac.th",
+      "count": 78
+    },
+    {
+      "user": "Narongrit_Peansin@cmu.ac.th",
+      "count": 78
+    },
+    {
+      "user": "thanapoom_detupakarn@cmu.ac.th",
+      "count": 77
+    },
+    {
+      "user": "rinrada_wong@cmu.ac.th",
+      "count": 72
+    },
+    {
+      "user": "fedulww@cmu.ac.th",
+      "count": 70
+    },
+    {
+      "user": "pattaraporn_pan@cmu.ac.th",
+      "count": 70
+    },
+    {
+      "user": "songkran_sara@cmu.ac.th",
+      "count": 70
+    },
+    {
+      "user": "napassanan_s@cmu.ac.th",
+      "count": 66
+    },
+    {
+      "user": "nuttawut_kham@cmu.ac.th",
+      "count": 63
+    },
+    {
+      "user": "Chonyitree@cmu.ac.th",
+      "count": 61
+    },
+    {
+      "user": "napat_inta@cmu.ac.th",
+      "count": 60
+    },
+    {
+      "user": "phrut.s@cmu.ac.th",
+      "count": 55
+    },
+    {
+      "user": "tanittha_p@cmu.ac.th",
+      "count": 54
+    },
+    {
+      "user": "pichet@cmu.ac.th",
+      "count": 52
+    },
+    {
+      "user": "jirathorn_damri@cmu.ac.th",
+      "count": 52
+    },
+    {
+      "user": "acharaporn.s@cmu.ac.th",
+      "count": 51
+    },
+    {
+      "user": "pichapar_och@cmu.ac.th",
+      "count": 49
+    },
+    {
+      "user": "pingnakara_lert@cmu.ac.th",
+      "count": 46
+    },
+    {
+      "user": "prueksa_su@cmu.ac.th",
+      "count": 44
+    },
+    {
+      "user": "tanapat_pan@cmu.ac.th",
+      "count": 43
+    },
+    {
+      "user": "titiporn.s@cmu.ac.th",
+      "count": 43
+    },
+    {
+      "user": "nithipon_j@cmu.ac.th",
+      "count": 42
+    },
+    {
+      "user": "atthachai_bunprasert@cmu.ac.th",
+      "count": 41
+    },
+    {
+      "user": "Amataporn_j@cmu.ac.th",
+      "count": 40
+    },
+    {
+      "user": "kanokphol_kamsuwan@cmu.ac.th",
+      "count": 40
+    },
+    {
+      "user": "rawiwan.o@cmu.ac.th",
+      "count": 40
+    },
+    {
+      "user": "ku_koyka@cmu.ac.th",
+      "count": 39
+    },
+    {
+      "user": "suphawat_sanko@cmu.ac.th",
+      "count": 38
+    },
+    {
+      "user": "apivit_chansai@cmu.ac.th",
+      "count": 37
+    },
+    {
+      "user": "Pichapar_och@cmu.ac.th",
+      "count": 36
+    },
+    {
+      "user": "wanna.suri@cmu.ac.th",
+      "count": 36
+    },
+    {
+      "user": "boonsuchada.i@cmu.ac.th",
+      "count": 35
+    },
+    {
+      "user": "Titikran_ku@cmu.ac.th",
+      "count": 34
+    },
+    {
+      "user": "monthira_kowarit@cmu.ac.th",
+      "count": 34
+    },
+    {
+      "user": "nuttapong_ph@cmu.ac.th",
+      "count": 33
+    },
+    {
+      "user": "sanphawat_phrom@cmu.ac.th",
+      "count": 33
+    },
+    {
+      "user": "jeerasak.l@cmu.ac.th",
+      "count": 33
+    },
+    {
+      "user": "yottana.k@cmu.ac.th",
+      "count": 32
+    },
+    {
+      "user": "peerapas_y@cmu.ac.th",
+      "count": 32
+    },
+    {
+      "user": "pornnapa_panya@cmu.ac.th",
+      "count": 32
+    },
+    {
+      "user": "boonsita_saehoe@cmu.ac.th",
+      "count": 31
+    },
+    {
+      "user": "panuwat_kawin@cmu.ac.th",
+      "count": 30
+    },
+    {
+      "user": "perapol_p@cmu.ac.th",
+      "count": 30
+    },
+    {
+      "user": "sataton_p@cmu.ac.th",
+      "count": 26
+    },
+    {
+      "user": "sineenat_roskhrua@cmu.ac.th",
+      "count": 26
+    },
+    {
+      "user": "patawee.prin@cmu.ac.th",
+      "count": 25
+    },
+    {
+      "user": "newin_yamaguchi@cmu.ac.th",
+      "count": 24
+    },
+    {
+      "user": "jennarong_s@cmu.ac.th",
+      "count": 20
+    },
+    {
+      "user": "CMU\\warakorn.kid@cmu.ac.th",
+      "count": 20
+    },
+    {
+      "user": "natthanon_khu@cmu.ac.th",
+      "count": 20
+    },
+    {
+      "user": "chaya.v@cmu.ac.th",
+      "count": 20
+    },
+    {
+      "user": "pimmada_r@cmu.ac.th",
+      "count": 18
+    },
+    {
+      "user": "disatorn_dejvajara@cmu.ac.th",
+      "count": 17
+    },
+    {
+      "user": "kedsaraporn.ud@cmu.ac.th",
+      "count": 17
+    },
+    {
+      "user": "somporn_pea@cmu.ac.th",
+      "count": 16
+    },
+    {
+      "user": "witchaya_phas@cmu.ac.th",
+      "count": 16
+    },
+    {
+      "user": "ratchanon_r@cmu.ac.th",
+      "count": 16
+    },
+    {
+      "user": "yutti.amornlert@cmu.ac.th",
+      "count": 16
+    },
+    {
+      "user": "supitchaya_popaibul@cmu.ac.th",
+      "count": 14
+    },
+    {
+      "user": "piriya_boon@cmu.ac.th",
+      "count": 14
+    },
+    {
+      "user": "phanthip_jaikaew@cmu.ac.th",
+      "count": 14
+    },
+    {
+      "user": "naruporn_pow@cmu.ac.th",
+      "count": 14
+    },
+    {
+      "user": "noppason_pa@cmu.ac.th",
+      "count": 14
+    },
+    {
+      "user": "nopparuek_chai@cmu.ac.th",
+      "count": 14
+    },
+    {
+      "user": "pathiphat_k@cmu.ac.th",
+      "count": 14
+    },
+    {
+      "user": "charakrit_pan@cmu.ac.th",
+      "count": 12
+    },
+    {
+      "user": "chonnikarn_su@cmu.ac.th",
+      "count": 11
+    },
+    {
+      "user": "Phonlawat_Soilueang@cmu.ac.th",
+      "count": 10
+    },
+    {
+      "user": "patcharin_wiang@cmu.ac.th",
+      "count": 10
+    },
+    {
+      "user": "narawich_pr@cmu.ac.th",
+      "count": 10
+    },
+    {
+      "user": "phakkaporn_ar@cmu.ac.th",
+      "count": 10
+    },
+    {
+      "user": "Ratree_m@cmu.ac.th",
+      "count": 10
+    },
+    {
+      "user": "teerarat_p@cmu.ac.th",
+      "count": 10
+    },
+    {
+      "user": "papangkorn.i@cmu.ac.th",
+      "count": 10
+    },
+    {
+      "user": "kanokporn_intakaew@cmu.ac.th",
+      "count": 8
+    },
+    {
+      "user": "nopawit_kh@cmu.ac.th",
+      "count": 8
+    },
+    {
+      "user": "Titikan_k@cmu.ac.th",
+      "count": 8
+    },
+    {
+      "user": "theeraphat_m@cmu.ac.th",
+      "count": 8
+    },
+    {
+      "user": "anupong.w@cmu.ac.th",
+      "count": 8
+    },
+    {
+      "user": "Smita_t@cmu.ac.th",
+      "count": 8
+    },
+    {
+      "user": "thanaphong_s@cmu.ac.th",
+      "count": 7
+    },
+    {
+      "user": "Jantima_jit@cmu.ac.th",
+      "count": 7
+    },
+    {
+      "user": "nirut.p@cmu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "anon_sujitjoon@cmu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "ne.Tnapha.k@cmu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "nuttaphan.k@cmu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "Chamaikan_p@cmu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "maitree.s@cmu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "Sutee_Chumjai@cmu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "disatorn_ dejvajara@cmu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "thanwarat_si@cmu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "arpiruk.hok@cmu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "pornpoom_w@cmu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "poom_pr@cmu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "Boonyavee_ch@cmu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "Supasin_sukara@cmu.ac.th",
+      "count": 6
+    },
+    {
+      "user": "piyapong.n@cmu.ac.th",
+      "count": 5
+    },
+    {
+      "user": "warin_singh@cmu.ac.th",
+      "count": 5
+    },
+    {
+      "user": "arnan.s@cmu.ac.th",
+      "count": 5
+    },
+    {
+      "user": "panuwat_j@cmu.ac.th",
+      "count": 5
+    },
+    {
+      "user": "Pathompong_jantapoon@cmu.ac.th",
+      "count": 5
+    },
+    {
+      "user": "piyaphat_r@cmu.ac.th",
+      "count": 5
+    },
+    {
+      "user": "sasiprapa_kul@cmu.ac.th",
+      "count": 5
+    },
+    {
+      "user": "natthida_y@cmu.ac.th",
+      "count": 5
+    },
+    {
+      "user": "mathias.jenny@cmu.ac.th",
+      "count": 5
+    },
+    {
+      "user": "suthida.c@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "neeraparng_@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "kochakon_moo@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "chatchawan.c@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "kanlayporn_kongmali@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "phaewa_c@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "teerapong.suksumran@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "tidaratt_s@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "kittinat_t@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "panutda_yaku@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "kunlanit_suwann@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "phuping_meeasa@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "patthawee_m@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "nawapon_nakharutai@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "kasama_molikul@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "michael_armstrong@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "suphanwasa_s@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "Kamolnate_s@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "atsana.p@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sinaphon_c@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "nittaya_sri@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "Phansa_u@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "weenun.b@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "manissaward.j@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "jatuporn.saisu@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "sunittra_n@cmu.ac.th",
+      "count": 4
+    },
+    {
+      "user": "phansa.u@cmu.ac.th",
+      "count": 3
+    },
+    {
+      "user": "witsawa_phokmanee@cmu.ac.th",
+      "count": 3
+    },
+    {
+      "user": "sorawit_wa@cmu.ac.th",
+      "count": 3
+    },
+    {
+      "user": "nawee.kungwan@cmu.ac.th",
+      "count": 3
+    },
+    {
+      "user": "siriporn.peab@cmu.ac.th",
+      "count": 3
+    },
+    {
+      "user": "anonymous@cmu.ac.th",
+      "count": 3
+    },
+    {
+      "user": "suttipat.jun@cmu.ac.th",
+      "count": 3
+    },
+    {
+      "user": "nitchanan.pr@cmu.ac.th",
+      "count": 3
+    },
+    {
+      "user": "Watsawalee_j@cmu.ac.th",
+      "count": 3
+    },
+    {
+      "user": "panuwat.j@cmu.ac.th",
+      "count": 3
+    },
+    {
+      "user": "patcharaporn_sa@cmu.ac.th",
+      "count": 3
+    },
+    {
+      "user": "kawiporn.ch@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "tawan.j@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sahatchai.t@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "natcha_roekwing@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "noppason.pa@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "Natthakitm@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "tama.d@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "pittaya_ap@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "nanghomnon_n@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "piyatida_tha@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "aphiwit_noijun@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "mizuki_m@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "khomsun_chaiwong@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "jiraphat_chao@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "supachai@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "suthid.c@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "siriprapha_ch@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "natathaphon-_thongbai@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "natcha-_roekwiang@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sitthidat_t@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sidarat_@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "donlapark.p@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sakgasem.ramingwong@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "panupong_ke@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "annop.t@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "kunanon_jong@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "thanwa_ma@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "witaya.s@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "wattana_p@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "pongpuk_doungkaew@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "Chawanlux_Chancow@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "warisa.w@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "patcharaporn_am@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "woraprom_pa@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "thanapat.sang@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "waris_sin@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "kiattisak_huanhong@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "nithikorn_th@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "Suphanwasa_s@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "Chisannuphong_k@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": ",0,benjamas.s@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "ranchana@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "witthaya.b@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sutasinee.th@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "piyawan.ket@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "phuchit_@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "boonyakorn_d@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "anuyut_yootoum@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "yupa.c@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "Kasama_molikul@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sidarat_k@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "panuwat.p@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "wanchana.s@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "kongphop_i@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "sutthaya_p@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "naruemon_wikan@cmu.ac.th",
+      "count": 2
+    },
+    {
+      "user": "wankawee_s@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "chachanok_u@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "kittisak_tontan@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "saranya.kongjit@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "631710092@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "wayupak@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "patthawee_mueang@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "usanee.k@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "WarachD@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "saweat.intaarasiri@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "anan_ l@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "mathawee_ka@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "Tanakrit_intip@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "pongruk.s@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "saiiphyoezinaung_s@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "phreeranat_montatip@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "patthawee_mueangkhiao@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "wanpen.c@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "thammanoon_chuasaard@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "arinya.p@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "eduroam.monitor@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "yonlada_poonsawat@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "pornthip_on@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "piyawan_ke@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "611910128@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "busayaporn_sa@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "siraphob_b@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "tawanwit_l@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "542010041@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "saranphonh.yimklan@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sutthathorn.c@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "natthaphong_se@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "yotsawadee_kan@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sasithorn.h@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "chonlada.b@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "panithan_sawat@cmu.ac.th",
+      "count": 1
+    },
+    {
+      "user": "sutthinee.c@cmu.ac.th",
+      "count": 1
+    }
+  ]
+}

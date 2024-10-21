@@ -21,4 +21,5 @@
 go.work
 
 .DS_Store
-Thunder_client/*
+#Thunder_client/*
+qw-auth.properties

@@ -1,0 +1,61 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Properties {
+  +QWUser: string
+  +QWPass: string
+  +QWURL: string
+}
+
+class LogEntry {
+  +Username: string
+  +ServiceProvider: string
+  +Timestamp: time.Time
+}
+
+class UserStats {
+  +DaysActive: int
+  +Providers: map[string]bool
+}
+
+class ProviderStats {
+  +Users: map[string]bool
+}
+
+class Result {
+  +Users: map[string]*UserStats
+  +Providers: map[string]*ProviderStats
+}
+
+class SimplifiedOutputData {
+  +QueryInfo: struct
+  +Description: string
+  +Summary: struct
+  +ProviderStats: []struct
+  +UserStats: []struct
+}
+
+class Job {
+  +StartTimestamp: int64
+  +EndTimestamp: int64
+}
+
+class Main {
+  +main()
+  -readProperties(filePath: string): (Properties, error)
+  -getQuickwitResults(query: map[string]interface{}, auth: Properties, resultChan: chan<- LogEntry): error
+  -processResults(resultChan: <-chan LogEntry, result: *Result, mu: *sync.Mutex, startDate, endDate: time.Time)
+  -getTimestampRange(days: int): (int64, int64)
+  -getDomain(input: string): string
+  -createSimplifiedOutputData(result: *Result, domain: string, days: int, startTimestamp, endTimestamp: int64): SimplifiedOutputData
+  -worker(jobs: <-chan Job, results: chan<- LogEntry, errorChan: chan<- error, query: map[string]interface{}, props: Properties, wg: *sync.WaitGroup, progressChan: chan<- int)
+}
+
+Main --> Properties: uses
+Main --> LogEntry: processes
+Main --> UserStats: manages
+Main --> ProviderStats: manages
+Main --> Result: aggregates
+Main --> SimplifiedOutputData: creates
+Main --> Job: creates and processes
+@enduml

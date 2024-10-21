@@ -23,3 +23,5 @@ go.work
 .DS_Store
 #Thunder_client/*
 qw-auth.properties
+eduroam-accept
+agg-uid

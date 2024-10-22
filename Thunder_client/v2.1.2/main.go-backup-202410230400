@@ -349,157 +349,62 @@ func createSimplifiedOutputData(result *Result, domain string, startDate, endDat
 
 // worker function to process jobs
 func worker(job Job, resultChan chan<- LogEntry, query map[string]interface{}, props Properties) (int64, error) {
-    currentQuery := map[string]interface{}{
-        "query": query["query"],
-        "start_timestamp": job.StartTimestamp,
-        "end_timestamp": job.EndTimestamp,
-        "max_hits": 0,  // ไม่ต้องการ hits เพราะใช้ aggregation
-        "aggs": map[string]interface{}{
-            "unique_users": map[string]interface{}{
-                "terms": map[string]interface{}{
-                    "field": "username",
-                    "size": 10000,
-                },
-                "aggs": map[string]interface{}{
-                    "providers": map[string]interface{}{
-                        "terms": map[string]interface{}{
-                            "field": "service_provider",
-                            "size": 1000,
-                        },
-                    },
-                    "daily": map[string]interface{}{
-                        "date_histogram": map[string]interface{}{
-                            "field": "timestamp",
-                            "fixed_interval": "86400s",  // 24 ชั่วโมงในหน่วยวินาที
-                        },
-                    },
-                },
-            },
-        },
+    currentQuery := make(map[string]interface{})
+    for k, v := range query {
+        currentQuery[k] = v
     }
-
-    // Debug
-    if os.Getenv("DEBUG") != "" {
-        jsonQuery, _ := json.MarshalIndent(currentQuery, "", "  ")
-        log.Printf("Query: %s", string(jsonQuery))
-    }
-
-    return processAggregationResults(currentQuery, props, resultChan)
-}
-
-// processAggregationResults processes the aggregation results from Quickwit
-func processAggregationResults(query map[string]interface{}, props Properties, resultChan chan<- LogEntry) (int64, error) {
-    client := &http.Client{}
-    jsonQuery, _ := json.Marshal(query)
     
-    req, err := http.NewRequest("POST", props.QWURL+"/api/v1/nro-logs/search", strings.NewReader(string(jsonQuery)))
-    if err != nil {
-        return 0, fmt.Errorf("error creating request: %v", err)
-    }
-
-    req.SetBasicAuth(props.QWUser, props.QWPass)
-    req.Header.Set("Content-Type", "application/json")
-    req.Header.Set("Accept", "application/json")
-
-    resp, err := client.Do(req)
-    if err != nil {
-        return 0, fmt.Errorf("error sending request: %v", err)
-    }
-    defer resp.Body.Close()
-
-    bodyBytes, err := io.ReadAll(resp.Body)
-    if err != nil {
-        return 0, fmt.Errorf("error reading response: %v", err)
-    }
-
-    if resp.StatusCode != http.StatusOK {
-        return 0, fmt.Errorf("quickwit error (status %d): %s", resp.StatusCode, string(bodyBytes))
-    }
-
-    var result map[string]interface{}
-    if err := json.Unmarshal(bodyBytes, &result); err != nil {
-        return 0, fmt.Errorf("error decoding response: %v", err)
-    }
-
-    // Debug response
-    if os.Getenv("DEBUG") != "" {
-        response, _ := json.MarshalIndent(result, "", "  ")
-        log.Printf("Response: %s", string(response))
-    }
-
-    // Check for Quickwit error
-    if errorMsg, hasError := result["error"].(string); hasError {
-        return 0, fmt.Errorf("quickwit error: %s", errorMsg)
-    }
-
-    // Get aggregations
-    aggs, ok := result["aggregations"].(map[string]interface{})
-    if !ok {
-        return 0, fmt.Errorf("no aggregations in response")
-    }
-
-    // Process unique_users aggregation
-    uniqueUsers, ok := aggs["unique_users"].(map[string]interface{})
-    if !ok {
-        return 0, fmt.Errorf("no unique_users aggregation")
-    }
-
-    buckets, ok := uniqueUsers["buckets"].([]interface{})
-    if !ok {
-        return 0, fmt.Errorf("no buckets in unique_users aggregation")
-    }
-
+    // แบ่งช่วงเวลาเป็นวัน (24 ชั่วโมง)
     var totalHits int64
+    currentTime := job.StartTimestamp
+    baseInterval := int64(86400) // 24 ชั่วโมง
+    interval := baseInterval
 
-    // Process each user bucket
-    for _, bucketInterface := range buckets {
-        bucket, ok := bucketInterface.(map[string]interface{})
-        if !ok {
-            continue
+    for currentTime < job.EndTimestamp {
+        endTime := currentTime + interval
+        if endTime > job.EndTimestamp {
+            endTime = job.EndTimestamp
         }
 
-        username := bucket["key"].(string)
-        docCount := int64(bucket["doc_count"].(float64))
-        totalHits += docCount
+        currentQuery["start_timestamp"] = currentTime
+        currentQuery["end_timestamp"] = endTime
+        currentQuery["max_hits"] = 10000
+        delete(currentQuery, "start_offset") // ลบ start_offset ถ้ามี
 
-        // Process providers
-        if providersAgg, ok := bucket["providers"].(map[string]interface{}); ok {
-            if providerBuckets, ok := providersAgg["buckets"].([]interface{}); ok {
-                for _, providerBucketInterface := range providerBuckets {
-                    providerBucket, ok := providerBucketInterface.(map[string]interface{})
-                    if !ok {
-                        continue
-                    }
-                    provider := providerBucket["key"].(string)
-
-                    // Process daily activity
-                    if dailyAgg, ok := bucket["daily"].(map[string]interface{}); ok {
-                        if dailyBuckets, ok := dailyAgg["buckets"].([]interface{}); ok {
-                            for _, dailyBucketInterface := range dailyBuckets {
-                                dailyBucket, ok := dailyBucketInterface.(map[string]interface{})
-                                if !ok || dailyBucket["doc_count"].(float64) == 0 {
-                                    continue
-                                }
-
-                                // Convert timestamp from milliseconds to time.Time
-                                timestamp := time.Unix(int64(dailyBucket["key"].(float64)/1000), 0)
-
-                                // Send log entry
-                                resultChan <- LogEntry{
-                                    Username:        username,
-                                    ServiceProvider: provider,
-                                    Timestamp:      timestamp,
-                                }
-                            }
-                        }
-                    }
+        hits, err := getQuickwitResults(currentQuery, props, resultChan)
+        if err != nil {
+            // ถ้าเกิด error และได้ข้อมูลเกิน 10000 ให้ลดช่วงเวลาลง
+            if strings.Contains(err.Error(), "max_hits") {
+                interval = interval / 2
+                if interval < 3600 { // ไม่ให้น้อยกว่า 1 ชั่วโมง
+                    interval = 3600
                 }
+                continue // ลองใหม่ด้วยช่วงเวลาที่สั้นลง
+            }
+            return totalHits, err
+        }
+
+        totalHits += hits
+        currentTime = endTime
+
+        // ปรับ interval ตามผลลัพธ์
+        if hits >= 9000 { // ถ้าใกล้เต็ม
+            interval = interval / 2
+            if interval < 3600 {
+                interval = 3600
+            }
+        } else if hits < 5000 && interval < baseInterval {
+            interval = interval * 2
+            if interval > baseInterval {
+                interval = baseInterval
             }
         }
     }
-
+    
     return totalHits, nil
 }
+
+
 
 // processResults processes the search results and updates the result struct
 func processResults(resultChan <-chan LogEntry, result *Result, mu *sync.Mutex, startDate, endDate time.Time) {
@@ -508,13 +413,10 @@ func processResults(resultChan <-chan LogEntry, result *Result, mu *sync.Mutex, 
 
     // รับข้อมูลจนกว่า channel จะถูกปิด
     for entry := range resultChan {
-        // ข้อมูลจาก aggregation จะอยู่ในช่วงเวลาที่ถูกต้องแล้ว ไม่จำเป็นต้องตรวจสอบซ้ำ
-        // แต่ถ้าต้องการความแน่ใจ สามารถเปิดการตรวจสอบได้
-        /*
+        // ตรวจสอบว่า entry อยู่ในช่วงเวลาที่กำหนดหรือไม่
         if entry.Timestamp.Before(startDate) || entry.Timestamp.After(endDate) {
             continue
         }
-        */
 
         // สร้างข้อมูลผู้ใช้ถ้ายังไม่มี
         if _, exists := userActivities[entry.Username]; !exists {
@@ -524,7 +426,7 @@ func processResults(resultChan <-chan LogEntry, result *Result, mu *sync.Mutex, 
             }
         }
 
-        // บันทึกวันที่มีการใช้งานและ provider
+        // บันทึกวันที่มีการใช้งาน
         day := entry.Timestamp.Format("2006-01-02")
         userActivities[entry.Username].ActiveDays[day] = true
         userActivities[entry.Username].Providers[entry.ServiceProvider] = true
@@ -536,19 +438,21 @@ func processResults(resultChan <-chan LogEntry, result *Result, mu *sync.Mutex, 
 
     // รวมข้อมูลเข้ากับ result
     for username, activity := range userActivities {
-        // สร้าง user stats ถ้ายังไม่มี
         if _, exists := result.Users[username]; !exists {
             result.Users[username] = &UserStats{
                 DaysActive: len(activity.ActiveDays),
                 Providers:  make(map[string]bool),
             }
+        } else {
+            // นับจำนวนวันที่ active
+            result.Users[username].DaysActive = len(activity.ActiveDays)
         }
 
-        // copy providers และอัพเดท providers stats
+        // copy providers
         for provider := range activity.Providers {
             result.Users[username].Providers[provider] = true
             
-            // สร้างหรืออัพเดท provider stats
+            // update provider stats
             if _, exists := result.Providers[provider]; !exists {
                 result.Providers[provider] = &ProviderStats{
                     Users: make(map[string]bool),
@@ -713,9 +617,9 @@ func main() {
     queryDuration := time.Since(queryStart)
 
     fmt.Printf("\n") // New line after progress bar
-    fmt.Printf("Total hits: %d\n", totalHits.Load())
-    fmt.Printf("Number of users: %d\n", len(result.Users))
-    fmt.Printf("Number of providers: %d\n", len(result.Providers))
+    log.Printf("Total hits: %d", totalHits.Load())
+    log.Printf("Number of users: %d", len(result.Users))
+    log.Printf("Number of providers: %d", len(result.Providers))
 
     // Start measuring local processing time
     processStart := time.Now()

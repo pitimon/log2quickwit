@@ -26,3 +26,5 @@ qw-auth.properties
 eduroam-accept
 agg-uid
 go.mod
+eduroam-sp
+*.sh

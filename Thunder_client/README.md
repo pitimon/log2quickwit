@@ -1,5 +1,6 @@
 # สรุปความสามารถของโปรแกรม eduroam-accept v2.2.0
 - [v2.1.2](./v2.1.2/v2.1.2.md)
+---
 - [v2.2.0 query technic](#เทคนิคการ-query-ที่เพิ่มประสิทธิภาพ)
 - [v2.2.0 max_hits limit](#การจัดการข้อจำกัดของ-quickwit)
 - [v2.2.0 Go code](./v2.2.0/main.go)

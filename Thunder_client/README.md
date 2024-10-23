@@ -74,6 +74,7 @@ Time taken:
 - ข้อจำกัดของ Quickwit ในการ query (เช่น max_hits)
 
 ---
+
 # เทคนิคการ Query และการจัดการข้อจำกัดใน eduroam-accept v2.2.0
 
 ## เทคนิคการ Query ที่เพิ่มประสิทธิภาพ

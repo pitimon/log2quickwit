@@ -1,0 +1,73 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "User" as user
+actor "Quickwit Search Engine" as quickwit
+
+rectangle "eduroam-accept System v2.2.0" {
+    usecase "Input Domain Name" as UC1
+    usecase "Specify Time Range" as UC2
+    usecase "Process Access-Accept Events" as UC3
+    usecase "View Progress" as UC4
+    usecase "Generate Output" as UC5
+    
+    usecase "Enter Days to Look Back" as UC2_1
+    usecase "Enter Specific Date" as UC2_2
+    
+    usecase "Validate Input" as UC6
+    usecase "Read Properties" as UC7
+    usecase "Send Aggregation Queries" as UC8
+    usecase "Process Results" as UC9
+    usecase "Generate JSON Output" as UC10
+    usecase "Save Results" as UC11
+    usecase "Display Execution Summary" as UC12
+    usecase "Report Progress" as UC13
+    usecase "Handle Errors" as UC14
+    usecase "Manage Worker Pool" as UC15
+}
+
+' Primary use cases
+user --> UC1
+user --> UC2
+user --> UC4
+user --> UC5
+
+' Time range specification
+UC2 <|-- UC2_1
+UC2 <|-- UC2_2
+
+' Include relationships
+UC3 ..> UC6 : <<include>>
+UC3 ..> UC7 : <<include>>
+UC3 ..> UC8 : <<include>>
+UC3 ..> UC9 : <<include>>
+UC3 ..> UC13 : <<include>>
+UC3 ..> UC14 : <<include>>
+UC3 ..> UC15 : <<include>>
+
+UC5 ..> UC10 : <<include>>
+UC5 ..> UC11 : <<include>>
+UC5 ..> UC12 : <<include>>
+
+' External system interactions
+UC8 --> quickwit : sends queries
+quickwit --> UC8 : returns results
+
+' Database interactions
+database "Properties File" as props
+database "Output Files" as files
+
+UC7 ..> props : reads
+UC11 ..> files : writes
+
+note "New in v2.2.0:\n* Optimized worker pool\n* Enhanced aggregation queries\n* Improved progress reporting" as N1
+N1 .. UC3
+
+note "Time Range Options:\n* Number of days (max 366)\n* Specific date (DD-MM-YYYY)" as N2
+N2 .. UC2
+
+note "Output Features:\n* Simplified JSON format\n* User and provider statistics\n* Query summary and timing info" as N3
+N3 .. UC5
+
+@enduml

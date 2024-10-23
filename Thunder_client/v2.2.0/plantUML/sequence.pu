@@ -1,0 +1,47 @@
+@startuml
+title eduroam-accept v2.2.0 - Sequence Diagram
+
+actor User
+participant "Main Program" as Main
+participant "Worker Pool" as Workers
+participant "Quickwit API" as Quickwit
+participant "Result Processor" as Processor
+participant "File System" as FS
+
+User -> Main: Run program with domain and days/date
+activate Main
+
+Main -> Main: Parse arguments and validate
+Main -> Main: Read properties file
+Main -> Main: Calculate time range
+Main -> Main: Initialize channels and worker pool
+
+loop For each day in range
+    Main -> Workers: Submit job
+    activate Workers
+    
+    Workers -> Quickwit: Send aggregation query
+    activate Quickwit
+    Quickwit --> Workers: Return aggregated results
+    deactivate Quickwit
+    
+    Workers -> Workers: Process aggregations
+    Workers -> Processor: Send LogEntries
+    Workers -> Main: Update progress
+    deactivate Workers
+end
+
+Main -> Processor: Process all results
+activate Processor
+Processor -> Processor: Aggregate statistics
+Processor --> Main: Return Result
+deactivate Processor
+
+Main -> Main: Create output data
+Main -> FS: Write JSON file
+FS --> Main: Confirm write
+
+Main -> User: Display summary and timing
+deactivate Main
+
+@enduml

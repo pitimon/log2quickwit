@@ -1,0 +1,46 @@
+@startuml
+title eduroam-accept v2.2.0 - Activity Diagram
+
+start
+:Validate Command Arguments;
+
+if (Valid Arguments?) then (yes)
+  :Parse Domain and Time Range;
+  :Read Properties File;
+  
+  fork
+    :Initialize Worker Pool;
+    :Create Result Channels;
+  fork again
+    :Setup Progress Reporting;
+  end fork
+  
+  :Create Quickwit Query;
+  
+  partition "Data Processing" {
+    while (Days to Process?) is (yes)
+      :Submit Job to Worker;
+      :Worker Sends Aggregation Query;
+      :Process Query Results;
+      :Update Progress;
+    endwhile (no)
+  }
+  
+  :Wait for All Workers;
+  :Aggregate Final Results;
+  
+  partition "Output Generation" {
+    :Create Output Directory;
+    :Generate JSON Structure;
+    :Write Output File;
+  }
+  
+  :Display Summary and Timing;
+  
+else (no)
+  :Display Usage Information;
+endif
+
+stop
+
+@enduml

@@ -2,6 +2,8 @@
 - [v2.1.2](./v2.1.2/v2.1.2.md)
 - [v2.2.0 query technic](#เทคนิคการ-query-ที่เพิ่มประสิทธิภาพ)
 - [v2.2.0 max_hits limit](#การจัดการข้อจำกัดของ-quickwit)
+- ![usercase](./v2.2.0/plantUML/usecase.png)
+- ![seq](./v2.2.0/plantUML/sequence.png)
 
 ## วัตถุประสงค์
 โปรแกรมถูกพัฒนาขึ้นเพื่อรวบรวมและวิเคราะห์เหตุการณ์ Access-Accept ของผู้ใช้ eduroam จากโดเมนที่ระบุ โดยใช้ Quickwit search engine ในการค้นหาและประมวลผลข้อมูล

@@ -1,0 +1,60 @@
+@startuml
+skinparam classAttributeIconSize 0
+title eduroam-accept v2.2.0 - Class Diagram
+
+class Properties {
+  +QWUser: string
+  +QWPass: string
+  +QWURL: string
+}
+
+class LogEntry {
+  +Username: string
+  +ServiceProvider: string
+  +Timestamp: time.Time
+}
+
+class UserStats {
+  +Providers: map[string]bool
+}
+
+class ProviderStats {
+  +Users: map[string]bool
+}
+
+class Result {
+  +Users: map[string]*UserStats
+  +Providers: map[string]*ProviderStats
+}
+
+class SimplifiedOutputData {
+  +QueryInfo: struct
+  +Description: string
+  +Summary: struct
+  +ProviderStats: []struct
+  +UserStats: []struct
+}
+
+class Job {
+  +StartTimestamp: int64
+  +EndTimestamp: int64
+}
+
+class Program {
+  +main()
+  +readProperties(filePath: string): (Properties, error)
+  +sendQuickwitRequest(query: map[string]interface{}, props: Properties): (map[string]interface{}, error)
+  +processAggregations(result: map[string]interface{}, resultChan: chan<- LogEntry): (int64, error)
+  +processResults(resultChan: <-chan LogEntry, result: *Result, mu: *sync.Mutex)
+  +worker(job: Job, resultChan: chan<- LogEntry, query: map[string]interface{}, props: Properties): (int64, error)
+  +createOutputData(result: *Result, domain: string, startDate, endDate: time.Time, days: int): SimplifiedOutputData
+}
+
+Program --> Properties: uses
+Program --> LogEntry: processes
+Program --> Job: creates
+Program --> Result: manages
+Program --> SimplifiedOutputData: generates
+Result --> UserStats: contains
+Result --> ProviderStats: contains
+@enduml

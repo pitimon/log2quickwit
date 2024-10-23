@@ -1,4 +1,6 @@
 # สรุปความสามารถของโปรแกรม eduroam-accept v2.1.2
+- ![](./plantUML/usecase.png)
+- ![](./plantUML/class.png)
 
 ## วัตถุประสงค์
 - รวบรวมข้อมูลเหตุการณ์ Access-Accept สำหรับผู้ใช้จากโดเมนที่ระบุ โดยใช้ Quickwit search engine

@@ -6,10 +6,11 @@ Description: This program aggregates Access-Accept events for users from a speci
              over a specified time range, processes the results, and outputs the aggregated 
              data to a JSON file.
 
-Usage: ./eduroam-accept <domain> [days|DD-MM-YYYY]
-  <domain>: The domain to search for (e.g., 'example.ac.th' or 'etlr1' or 'etlr2')
-  [days]: Optional. The number of days to look back from the current date. Default is 1. Max is 366.
-  [DD-MM-YYYY]: Optional. A specific date to process data for.
+Usage: ./eduroam-accept <domain> [days|Ny|DD-MM-YYYY]
+      <domain>: The domain to search for (e.g., 'example.ac.th' or 'etlr1' or 'etlr2')
+      [days]: Optional. The number of days (1-3650) to look back from the current date.
+      [Ny]: Optional. The number of years (1y-10y) to look back from the current date.
+      [DD-MM-YYYY]: Optional. A specific date to process data for.
 
 Features:
 - Efficient data aggregation using Quickwit's aggregation queries
@@ -20,6 +21,8 @@ Features:
 - Enhanced performance through code optimization
 
 Changes in version 2.2.0:
+- Added support for year-based time range specification (1y-10y)
+- Increased maximum supported time range to 10 years (3650 days)
 - Implemented Quickwit aggregation queries for improved data collection
 - Enhanced performance with optimized worker pool management
 - Streamlined code structure and reduced complexity
@@ -439,7 +442,10 @@ func createOutputData(result *Result, domain string, startDate, endDate time.Tim
 
 func main() {
     if len(os.Args) < 2 || len(os.Args) > 3 {
-        fmt.Println("Usage: ./eduroam-accept <domain> [days|DD-MM-YYYY]")
+        fmt.Println("Usage: ./eduroam-accept <domain> [days|Ny|DD-MM-YYYY]")
+        fmt.Println("  days: number of days (1-3650)")
+        fmt.Println("  Ny: number of years (1y-10y)")
+        fmt.Println("  DD-MM-YYYY: specific date")
         os.Exit(1)
     }
 
@@ -449,14 +455,36 @@ func main() {
     var specificDate bool
 
     if len(os.Args) == 3 {
-        if d, err := strconv.Atoi(os.Args[2]); err == nil && d <= 366 {
-            days = d
-            endDate = time.Now()
-            startDate = endDate.AddDate(0, 0, -days+1)
+        param := os.Args[2]
+        
+        // ตรวจสอบรูปแบบปี (Ny)
+        if strings.HasSuffix(param, "y") {
+            yearStr := strings.TrimSuffix(param, "y")
+            if years, err := strconv.Atoi(yearStr); err == nil {
+                if years >= 1 && years <= 10 {
+                    days = years * 365
+                    endDate = time.Now()
+                    startDate = endDate.AddDate(0, 0, -days+1)
+                } else {
+                    log.Fatalf("Invalid year range. Must be between 1y and 10y")
+                }
+            } else {
+                log.Fatalf("Invalid year format. Use 1y-10y")
+            }
+        } else if d, err := strconv.Atoi(param); err == nil {
+            // ตรวจสอบจำนวนวัน
+            if d >= 1 && d <= 3650 {
+                days = d
+                endDate = time.Now()
+                startDate = endDate.AddDate(0, 0, -days+1)
+            } else {
+                log.Fatalf("Invalid number of days. Must be between 1 and 3650")
+            }
         } else {
+            // ตรวจสอบรูปแบบวันที่
             specificDate = true
             var err error
-            startDate, err = time.Parse("02-01-2006", os.Args[2])
+            startDate, err = time.Parse("02-01-2006", param)
             if err != nil {
                 log.Fatalf("Invalid date format. Use DD-MM-YYYY: %v", err)
             }
@@ -464,6 +492,7 @@ func main() {
             days = 1
         }
     } else {
+        // ค่าเริ่มต้น: 1 วัน
         days = 1
         endDate = time.Now()
         startDate = endDate.AddDate(0, 0, -1)

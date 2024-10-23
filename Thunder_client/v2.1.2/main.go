@@ -1,6 +1,6 @@
 /*
 Program: eduroam-accept (User Accept Roaming)
-Version: 2.1.3
+Version: 2.2.0
 Description: This program aggregates Access-Accept events for users from a specified domain
              using the Quickwit search engine's aggregation capabilities. It collects data 
              over a specified time range, processes the results, and outputs the aggregated 
@@ -12,20 +12,48 @@ Usage: ./eduroam-accept <domain> [days|DD-MM-YYYY]
   [DD-MM-YYYY]: Optional. A specific date to process data for.
 
 Features:
-- Efficient data collection using Quickwit's aggregation queries
-- Concurrent processing using optimized worker pools
+- Efficient data aggregation using Quickwit's aggregation queries
+- Optimized concurrent processing with worker pools
 - Flexible time range specification: number of days or specific date
 - Real-time progress reporting with accurate hit counts
-- Simplified output structure focusing on essential information
-- Improved performance through reduced code complexity
+- Streamlined output format focusing on essential information
+- Enhanced performance through code optimization
 
-Changes in version 2.1.3:
-- Implemented Quickwit aggregation queries for improved performance
-- Optimized concurrent processing with streamlined worker pools
-- Reduced code duplication and complexity
-- Enhanced progress reporting with accurate hit counting
-- Improved memory efficiency in data processing
-- Simplified output format for better readability
+Changes in version 2.2.0:
+- Implemented Quickwit aggregation queries for improved data collection
+- Enhanced performance with optimized worker pool management
+- Streamlined code structure and reduced complexity
+- Fixed date histogram aggregation using fixed intervals
+- Improved progress reporting with accurate hit counting
+- Reduced memory usage in data processing
+- Simplified output format and console display
+
+Changes in version 2.1.2:
+- Added support for specifying a single date in DD-MM-YYYY format
+- Improved date parsing and validation
+- Updated progress reporting to handle both day range and specific date cases
+- Modified output file naming convention for specific date queries
+- Enhanced error handling for invalid date inputs
+
+Changes in version 2.1.1:
+- Implemented worker pool for improved performance
+- Added progress reporting
+- Improved documentation
+- Refactored code structure
+
+Changes in version 2.1.0:
+- Changed output format to a simplified structure
+- Improved comments and documentation
+- Added support for 'etlr2' domain
+- Modified getDomain function to handle different domain formats
+- Added summary information in the output
+
+Changes in version 2.0.0:
+- Changed query from "Access-Reject" to "Access-Accept"
+- Updated result processing to count days of activity instead of event occurrences
+- Added service provider information to the output
+- Restructured output to show data by username and service provider 
+- Improved error handling and logging
 
 Author: [P.Itarun]
 Date: [23 Oct 2024]
@@ -509,4 +537,66 @@ func main() {
 
     currentDate := startDate
     for currentDate.Before(endDate) {
-        nextDate := currentDate.Add(24 * time.
+        nextDate := currentDate.Add(24 * time.Hour)
+        if nextDate.After(endDate) {
+            nextDate = endDate
+        }
+        jobs <- Job{
+            StartTimestamp: currentDate.Unix(),
+            EndTimestamp:   nextDate.Unix(),
+        }
+        currentDate = nextDate
+    }
+    close(jobs)
+
+    wg.Wait()
+    close(resultChan)
+
+    <-processDone
+
+    select {
+    case err := <-errChan:
+        if err != nil {
+            log.Fatalf("Error occurred: %v", err)
+        }
+    default:
+    }
+
+    queryDuration := time.Since(queryStart)
+
+    fmt.Printf("\n")
+    fmt.Printf("Number of users: %d\n", len(result.Users))
+    fmt.Printf("Number of providers: %d\n", len(result.Providers))
+
+    processStart := time.Now()
+    outputData := createOutputData(result, domain, startDate, endDate, days)
+    processDuration := time.Since(processStart)
+
+    outputDir := fmt.Sprintf("output/%s", domain)
+    if err := os.MkdirAll(outputDir, 0755); err != nil {
+        log.Fatalf("Error creating output directory: %v", err)
+    }
+
+    currentTime := time.Now().Format("20060102-150405")
+    var filename string
+    if specificDate {
+        filename = fmt.Sprintf("%s/%s-%s.json", outputDir, currentTime, startDate.Format("20060102"))
+    } else {
+        filename = fmt.Sprintf("%s/%s-%dd.json", outputDir, currentTime, days)
+    }
+
+    jsonData, err := json.MarshalIndent(outputData, "", "  ")
+    if err != nil {
+        log.Fatalf("Error marshaling JSON: %v", err)
+    }
+
+    if err := os.WriteFile(filename, jsonData, 0644); err != nil {
+        log.Fatalf("Error writing file: %v", err)
+    }
+
+    fmt.Printf("Results have been saved to %s\n", filename)
+    fmt.Printf("Time taken:\n")
+    fmt.Printf("  Quickwit query: %v\n", queryDuration)
+    fmt.Printf("  Local processing: %v\n", processDuration)
+    fmt.Printf("  Overall: %v\n", time.Since(queryStart))
+}

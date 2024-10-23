@@ -1,0 +1,45 @@
+Searching from 2024-10-23 to 2024-10-24
+Progress: 1/1 days processed, Progress hits: 20Progress: 2/1 days processed, Progress hits: 25
+Number of users: 3
+Number of realms: 1
+Results have been saved to output/eduroam-tsu-ac-th/20241024-054557-1d.json
+Time taken:
+  Quickwit query: 356.745125ms
+  Local processing: 5.875µs
+  Overall: 357.225375ms
+Searching from 2024-10-18 to 2024-10-24
+Progress: 1/7 days processed, Progress hits: 75Progress: 2/7 days processed, Progress hits: 95Progress: 3/7 days processed, Progress hits: 97Progress: 4/7 days processed, Progress hits: 102Progress: 5/7 days processed, Progress hits: 239Progress: 6/7 days processed, Progress hits: 344Progress: 7/7 days processed, Progress hits: 738
+Number of users: 49
+Number of realms: 19
+Results have been saved to output/eduroam-tsu-ac-th/20241024-054559-7d.json
+Time taken:
+  Quickwit query: 657.338792ms
+  Local processing: 36.333µs
+  Overall: 658.308875ms
+Searching from 2024-10-11 to 2024-10-24
+Progress: 1/14 days processed, Progress hits: 3Progress: 2/14 days processed, Progress hits: 5Progress: 3/14 days processed, Progress hits: 399Progress: 4/14 days processed, Progress hits: 536Progress: 5/14 days processed, Progress hits: 625Progress: 6/14 days processed, Progress hits: 645Progress: 7/14 days processed, Progress hits: 720Progress: 8/14 days processed, Progress hits: 825Progress: 9/14 days processed, Progress hits: 946Progress: 10/14 days processed, Progress hits: 1010Progress: 11/14 days processed, Progress hits: 1015Progress: 12/14 days processed, Progress hits: 1083Progress: 13/14 days processed, Progress hits: 1131Progress: 14/14 days processed, Progress hits: 1352
+Number of users: 71
+Number of realms: 23
+Results have been saved to output/eduroam-tsu-ac-th/20241024-054603-14d.json
+Time taken:
+  Quickwit query: 1.628557083s
+  Local processing: 41.875µs
+  Overall: 1.629167958s
+Searching from 2024-09-25 to 2024-10-24
+Progress: 1/30 days processed, Progress hits: 410Progress: 2/30 days processed, Progress hits: 459Progress: 3/30 days processed, Progress hits: 483Progress: 4/30 days processed, Progress hits: 537Progress: 5/30 days processed, Progress hits: 839Progress: 6/30 days processed, Progress hits: 1001Progress: 7/30 days processed, Progress hits: 1049Progress: 8/30 days processed, Progress hits: 1082Progress: 9/30 days processed, Progress hits: 1125Progress: 10/30 days processed, Progress hits: 1254Progress: 11/30 days processed, Progress hits: 1256Progress: 12/30 days processed, Progress hits: 1304Progress: 13/30 days processed, Progress hits: 1307Progress: 14/30 days processed, Progress hits: 1460Progress: 15/30 days processed, Progress hits: 1467Progress: 16/30 days processed, Progress hits: 1688Progress: 17/30 days processed, Progress hits: 1777Progress: 19/30 days processed, Progress hits: 1915Progress: 20/30 days processed, Progress hits: 2018Progress: 21/30 days processed, Progress hits: 2139Progress: 22/30 days processed, Progress hits: 2203Progress: 18/30 days processed, Progress hits: 1800Progress: 23/30 days processed, Progress hits: 2271Progress: 24/30 days processed, Progress hits: 2408Progress: 25/30 days processed, Progress hits: 2410Progress: 26/30 days processed, Progress hits: 2515Progress: 27/30 days processed, Progress hits: 2535Progress: 28/30 days processed, Progress hits: 2610Progress: 29/30 days processed, Progress hits: 3004Progress: 30/30 days processed, Progress hits: 3009
+Number of users: 86
+Number of realms: 24
+Results have been saved to output/eduroam-tsu-ac-th/20241024-054607-30d.json
+Time taken:
+  Quickwit query: 2.388910333s
+  Local processing: 37.375µs
+  Overall: 2.389589125s
+Searching from 2024-07-27 to 2024-10-24
+Progress: 1/90 days processed, Progress hits: 204Progress: 2/90 days processed, Progress hits: 566Progress: 3/90 days processed, Progress hits: 612Progress: 4/90 days processed, Progress hits: 648Progress: 5/90 days processed, Progress hits: 1358Progress: 6/90 days processed, Progress hits: 1630Progress: 7/90 days processed, Progress hits: 1962Progress: 8/90 days processed, Progress hits: 2024Progress: 9/90 days processed, Progress hits: 2570Progress: 10/90 days processed, Progress hits: 3412Progress: 11/90 days processed, Progress hits: 3870Progress: 12/90 days processed, Progress hits: 4420Progress: 13/90 days processed, Progress hits: 4882Progress: 14/90 days processed, Progress hits: 5444Progress: 15/90 days processed, Progress hits: 5634Progress: 16/90 days processed, Progress hits: 5644Progress: 17/90 days processed, Progress hits: 5668Progress: 18/90 days processed, Progress hits: 6044Progress: 19/90 days processed, Progress hits: 6406Progress: 20/90 days processed, Progress hits: 6432Progress: 21/90 days processed, Progress hits: 6792Progress: 22/90 days processed, Progress hits: 6940Progress: 23/90 days processed, Progress hits: 6954Progress: 24/90 days processed, Progress hits: 6966Progress: 25/90 days processed, Progress hits: 7026Progress: 26/90 days processed, Progress hits: 7516Progress: 27/90 days processed, Progress hits: 8186Progress: 28/90 days processed, Progress hits: 8602Progress: 29/90 days processed, Progress hits: 9014Progress: 30/90 days processed, Progress hits: 9272Progress: 31/90 days processed, Progress hits: 9424Progress: 32/90 days processed, Progress hits: 9642Progress: 33/90 days processed, Progress hits: 10020Progress: 34/90 days processed, Progress hits: 10126Progress: 35/90 days processed, Progress hits: 10266Progress: 36/90 days processed, Progress hits: 10482Progress: 37/90 days processed, Progress hits: 10622Progress: 38/90 days processed, Progress hits: 10884Progress: 39/90 days processed, Progress hits: 11342Progress: 40/90 days processed, Progress hits: 11374Progress: 41/90 days processed, Progress hits: 11804Progress: 42/90 days processed, Progress hits: 11950Progress: 43/90 days processed, Progress hits: 12282Progress: 44/90 days processed, Progress hits: 12306Progress: 45/90 days processed, Progress hits: 12502Progress: 46/90 days processed, Progress hits: 12853Progress: 47/90 days processed, Progress hits: 13097Progress: 48/90 days processed, Progress hits: 13193Progress: 49/90 days processed, Progress hits: 13299Progress: 50/90 days processed, Progress hits: 13313Progress: 51/90 days processed, Progress hits: 13379Progress: 52/90 days processed, Progress hits: 13453Progress: 53/90 days processed, Progress hits: 13657Progress: 54/90 days processed, Progress hits: 13777Progress: 55/90 days processed, Progress hits: 14051Progress: 56/90 days processed, Progress hits: 14213Progress: 57/90 days processed, Progress hits: 14339Progress: 58/90 days processed, Progress hits: 14641Progress: 60/90 days processed, Progress hits: 15485Progress: 61/90 days processed, Progress hits: 15539Progress: 59/90 days processed, Progress hits: 15051Progress: 62/90 days processed, Progress hits: 15733Progress: 63/90 days processed, Progress hits: 16089Progress: 64/90 days processed, Progress hits: 16122Progress: 65/90 days processed, Progress hits: 16722Progress: 66/90 days processed, Progress hits: 16746Progress: 67/90 days processed, Progress hits: 16875Progress: 68/90 days processed, Progress hits: 16923Progress: 69/90 days processed, Progress hits: 16930Progress: 70/90 days processed, Progress hits: 16973Progress: 71/90 days processed, Progress hits: 16975Progress: 72/90 days processed, Progress hits: 17024Progress: 73/90 days processed, Progress hits: 17177Progress: 74/90 days processed, Progress hits: 17398Progress: 75/90 days processed, Progress hits: 17421Progress: 76/90 days processed, Progress hits: 17524Progress: 77/90 days processed, Progress hits: 17639Progress: 78/90 days processed, Progress hits: 17642Progress: 80/90 days processed, Progress hits: 17754Progress: 81/90 days processed, Progress hits: 17843Progress: 79/90 days processed, Progress hits: 17706Progress: 82/90 days processed, Progress hits: 17964Progress: 83/90 days processed, Progress hits: 18032Progress: 84/90 days processed, Progress hits: 18034Progress: 85/90 days processed, Progress hits: 18171Progress: 86/90 days processed, Progress hits: 18565Progress: 87/90 days processed, Progress hits: 18670Progress: 88/90 days processed, Progress hits: 18690Progress: 89/90 days processed, Progress hits: 18695Progress: 90/90 days processed, Progress hits: 18770
+Number of users: 222
+Number of realms: 27
+Results have been saved to output/eduroam-tsu-ac-th/20241024-054617-90d.json
+Time taken:
+  Quickwit query: 7.863450083s
+  Local processing: 199.375µs
+  Overall: 7.865740333s

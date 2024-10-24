@@ -612,7 +612,7 @@ func main() {
     var filename string
     if specificDate {
         filename = fmt.Sprintf("%s/%s-%s.json", outputDir, currentTime, startDate.Format("20060102"))
-    } else if strings.HasPrefix(os.Args[2], "y") && len(os.Args[2]) == 5 {
+    } else if len(os.Args) > 2 && strings.HasPrefix(os.Args[2], "y") && len(os.Args[2]) == 5 {
         // กรณี yxxxx
         year := os.Args[2][1:] // ตัด y ออกเหลือแค่ปี
         filename = fmt.Sprintf("%s/%s-%s.json", outputDir, currentTime, year)

@@ -421,220 +421,196 @@ func getDomain(input string) string {
 }
 
 func main() {
-	if len(os.Args) < 2 || len(os.Args) > 3 {
-		fmt.Println("Usage: ./eduroam-sp <service_provider> [days|Ny|yxxxx|DD-MM-YYYY]")
-		fmt.Println("  service_provider: domain name (e.g., 'ku.ac.th', 'etlr1')")
-		fmt.Println("  days: number of days (1-3650)")
-		fmt.Println("  Ny: number of years (1y-10y)")
-		fmt.Println("  yxxxx: specific year (e.g., y2024)")
-		fmt.Println("  DD-MM-YYYY: specific date")
-		os.Exit(1)
-	}
- 
-	// ประกาศตัวแปร
-	var serviceProvider string
-	var startDate, endDate time.Time
-	var days int
-	var specificDate bool
- 
-	// กำหนดค่า serviceProvider
-	serviceProvider = getDomain(os.Args[1])
- 
-	if len(os.Args) == 3 {
-		param := os.Args[2]
-		
-		// เพิ่มการตรวจสอบรูปแบบ yxxxx สำหรับปี
-		if strings.HasPrefix(param, "y") && len(param) == 5 {
-			yearStr := param[1:]  // ตัด y ออกเพื่อเอาเฉพาะตัวเลขปี
-			if year, err := strconv.Atoi(yearStr); err == nil {
-				// ตรวจสอบว่าเป็นปีที่มีเหตุผล (เช่น 2000-2100)
-				if year >= 2000 && year <= 2100 {
-					// กำหนดช่วงวันที่สำหรับปีที่ระบุ
-					startDate = time.Date(year, 1, 1, 0, 0, 0, 0, time.Local)
-					endDate = time.Date(year, 12, 31, 23, 59, 59, 999999999, time.Local)
-					days = 365
-					if isLeapYear(year) {
-						days = 366
-					}
-				} else {
-					log.Fatalf("Invalid year range. Must be between 2000 and 2100")
-				}
-			} else {
-				log.Fatalf("Invalid year format. Use y followed by 4 digits (e.g., y2024)")
-			}
-		} else if strings.HasSuffix(param, "y") {
-			yearStr := strings.TrimSuffix(param, "y")
-			if years, err := strconv.Atoi(yearStr); err == nil {
-				if years >= 1 && years <= 10 {
-					days = years * 365
-					endDate = time.Now()
-					startDate = endDate.AddDate(0, 0, -days+1)
-				} else {
-					log.Fatalf("Invalid year range. Must be between 1y and 10y")
-				}
-			} else {
-				log.Fatalf("Invalid year format. Use 1y-10y")
-			}
-		} else if d, err := strconv.Atoi(param); err == nil {
-			if d >= 1 && d <= 3650 {
-				days = d
-				endDate = time.Now()
-				startDate = endDate.AddDate(0, 0, -days+1)
-			} else {
-				log.Fatalf("Invalid number of days. Must be between 1 and 3650")
-			}
-		} else {
-			specificDate = true
-			var err error
-			startDate, err = time.Parse("02-01-2006", param)
-			if err != nil {
-				log.Fatalf("Invalid date format. Use DD-MM-YYYY: %v", err)
-			}
-			endDate = startDate.AddDate(0, 0, 1)
-			days = 1
-		}
-	} else {
-		// Default: 1 day
-		days = 1
-		endDate = time.Now()
-		startDate = endDate.AddDate(0, 0, -1)
-	}
- 
-	startDate = time.Date(startDate.Year(), startDate.Month(), startDate.Day(), 0, 0, 0, 0, startDate.Location())
-	endDate = time.Date(endDate.Year(), endDate.Month(), endDate.Day(), 23, 59, 59, 999999999, endDate.Location())
- 
-	props, err := readProperties("qw-auth.properties")
-	if err != nil {
-		log.Fatalf("Error reading properties: %v", err)
-	}
- 
-	if specificDate {
-		fmt.Printf("Searching for date: %s\n", startDate.Format("2006-01-02"))
-	} else {
-		fmt.Printf("Searching from %s to %s\n", startDate.Format("2006-01-02"), endDate.Format("2006-01-02"))
-	}
- 
-	query := map[string]interface{}{
-		"query":           fmt.Sprintf(`message_type:"Access-Accept" AND service_provider:"%s"`, serviceProvider),
-		"start_timestamp": startDate.Unix(),
-		"end_timestamp":   endDate.Unix(),
-		"max_hits":        10000,
-	}
- 
-	resultChan := make(chan LogEntry, 10000)
-	errChan := make(chan error, 1)
-	var totalHits atomic.Int64
-	var mu sync.Mutex
-	var wg sync.WaitGroup
- 
-	jobs := make(chan Job, days)
-	numWorkers := 10
- 
-	var processedDays int32
-	queryStart := time.Now()
- 
-	result := &Result{
-		Users:  make(map[string]*UserStats),
-		Realms: make(map[string]*RealmStats),
-	}
- 
-	// Start worker pool
-	for w := 1; w <= numWorkers; w++ {
-		wg.Add(1)
-		go func() {
-			defer wg.Done()
-			for job := range jobs {
-				hits, err := worker(job, resultChan, query, props)
-				if err != nil {
-					select {
-					case errChan <- err:
-					default:
-					}
-					return
-				}
-				totalHits.Add(hits)
-				current := atomic.AddInt32(&processedDays, 1)
-				fmt.Printf("\rProgress: %d/%d days processed, Progress hits: %d", 
-					current, days, totalHits.Load())
-			}
-		}()
-	}
- 
-	processDone := make(chan struct{})
-	go func() {
-		processResults(resultChan, result, &mu)
-		close(processDone)
-	}()
- 
-	currentDate := startDate
-	for currentDate.Before(endDate) {
-		nextDate := currentDate.Add(24 * time.Hour)
-		if nextDate.After(endDate) {
-			nextDate = endDate
-		}
-		jobs <- Job{
-			StartTimestamp: currentDate.Unix(),
-			EndTimestamp:   nextDate.Unix(),
-		}
-		currentDate = nextDate
-	}
-	close(jobs)
- 
-	wg.Wait()
-	close(resultChan)
- 
-	<-processDone
- 
-	select {
-	case err := <-errChan:
-		if err != nil {
-			log.Fatalf("Error occurred: %v", err)
-		}
-	default:
-	}
- 
-	queryDuration := time.Since(queryStart)
- 
-	fmt.Printf("\n")
-	fmt.Printf("Number of users: %d\n", len(result.Users))
-	fmt.Printf("Number of realms: %d\n", len(result.Realms))
- 
-	processStart := time.Now()
-	outputData := createOutputData(result, serviceProvider, startDate, endDate, days)
-	processDuration := time.Since(processStart)
- 
-	outputDir := fmt.Sprintf("output/%s", strings.Replace(serviceProvider, ".", "-", -1))
-	if err := os.MkdirAll(outputDir, 0755); err != nil {
-		log.Fatalf("Error creating output directory: %v", err)
-	}
- 
-	currentTime := time.Now().Format("20060102-150405")
+    if len(os.Args) < 2 || len(os.Args) > 3 {
+        fmt.Println("Usage: ./eduroam-sp <service_provider> [days|Ny|DD-MM-YYYY]")
+        fmt.Println("  service_provider: domain name (e.g., 'ku.ac.th', 'etlr1')")
+        fmt.Println("  days: number of days (1-3650)")
+        fmt.Println("  Ny: number of years (1y-10y)")
+        fmt.Println("  DD-MM-YYYY: specific date")
+        os.Exit(1)
+    }
+
+    // ประกาศและกำหนดค่า serviceProvider ครั้งเดียว
+    serviceProvider := getDomain(os.Args[1])
+    var startDate, endDate time.Time
+    var days int
+    var specificDate bool
+
+    if len(os.Args) == 3 {
+        param := os.Args[2]
+        
+        // Check for year format (Ny)
+        if strings.HasSuffix(param, "y") {
+            yearStr := strings.TrimSuffix(param, "y")
+            if years, err := strconv.Atoi(yearStr); err == nil {
+                if years >= 1 && years <= 10 {
+                    days = years * 365
+                    endDate = time.Now()
+                    startDate = endDate.AddDate(0, 0, -days+1)
+                } else {
+                    log.Fatalf("Invalid year range. Must be between 1y and 10y")
+                }
+            } else {
+                log.Fatalf("Invalid year format. Use 1y-10y")
+            }
+        } else if d, err := strconv.Atoi(param); err == nil {
+            // Check for days
+            if d >= 1 && d <= 3650 {
+                days = d
+                endDate = time.Now()
+                startDate = endDate.AddDate(0, 0, -days+1)
+            } else {
+                log.Fatalf("Invalid number of days. Must be between 1 and 3650")
+            }
+        } else {
+            // Check for specific date
+            specificDate = true
+            var err error
+            startDate, err = time.Parse("02-01-2006", param)
+            if err != nil {
+                log.Fatalf("Invalid date format. Use DD-MM-YYYY: %v", err)
+            }
+            endDate = startDate.AddDate(0, 0, 1)
+            days = 1
+        }
+    } else {
+        // Default: 1 day
+        days = 1
+        endDate = time.Now()
+        startDate = endDate.AddDate(0, 0, -1)
+    }
+
+    startDate = time.Date(startDate.Year(), startDate.Month(), startDate.Day(), 0, 0, 0, 0, startDate.Location())
+    endDate = time.Date(endDate.Year(), endDate.Month(), endDate.Day(), 23, 59, 59, 999999999, endDate.Location())
+
+    props, err := readProperties("qw-auth.properties")
+    if err != nil {
+        log.Fatalf("Error reading properties: %v", err)
+    }
+
+    if specificDate {
+        fmt.Printf("Searching for date: %s\n", startDate.Format("2006-01-02"))
+    } else {
+        fmt.Printf("Searching from %s to %s\n", startDate.Format("2006-01-02"), endDate.Format("2006-01-02"))
+    }
+
+    query := map[string]interface{}{
+        "query":           fmt.Sprintf(`message_type:"Access-Accept" AND service_provider:"%s"`, serviceProvider),
+        "start_timestamp": startDate.Unix(),
+        "end_timestamp":   endDate.Unix(),
+        "max_hits":        10000,
+    }
+
+    resultChan := make(chan LogEntry, 10000)
+    errChan := make(chan error, 1)
+    var totalHits atomic.Int64
+    var mu sync.Mutex
+    var wg sync.WaitGroup
+
+    jobs := make(chan Job, days)
+    numWorkers := 10
+
+    var processedDays int32
+    queryStart := time.Now()
+
+    result := &Result{
+        Users:  make(map[string]*UserStats),
+        Realms: make(map[string]*RealmStats),
+    }
+
+    // Start worker pool
+    for w := 1; w <= numWorkers; w++ {
+        wg.Add(1)
+        go func() {
+            defer wg.Done()
+            for job := range jobs {
+                hits, err := worker(job, resultChan, query, props)
+                if err != nil {
+                    select {
+                    case errChan <- err:
+                    default:
+                    }
+                    return
+                }
+                totalHits.Add(hits)
+                current := atomic.AddInt32(&processedDays, 1)
+                fmt.Printf("\rProgress: %d/%d days processed, Progress hits: %d", 
+                    current, days, totalHits.Load())
+            }
+        }()
+    }
+
+    processDone := make(chan struct{})
+    go func() {
+        processResults(resultChan, result, &mu)
+        close(processDone)
+    }()
+
+    currentDate := startDate
+    for currentDate.Before(endDate) {
+        nextDate := currentDate.Add(24 * time.Hour)
+        if nextDate.After(endDate) {
+            nextDate = endDate
+        }
+        jobs <- Job{
+            StartTimestamp: currentDate.Unix(),
+            EndTimestamp:   nextDate.Unix(),
+        }
+        currentDate = nextDate
+    }
+    close(jobs)
+
+    wg.Wait()
+    close(resultChan)
+
+    <-processDone
+
+    select {
+    case err := <-errChan:
+        if err != nil {
+            log.Fatalf("Error occurred: %v", err)
+        }
+    default:
+    }
+
+    queryDuration := time.Since(queryStart)
+
+    fmt.Printf("\n")
+    fmt.Printf("Number of users: %d\n", len(result.Users))
+    fmt.Printf("Number of realms: %d\n", len(result.Realms))
+
+    processStart := time.Now()
+    outputData := createOutputData(result, serviceProvider, startDate, endDate, days)
+    processDuration := time.Since(processStart)
+
+    outputDir := fmt.Sprintf("output/%s", strings.Replace(serviceProvider, ".", "-", -1))
+    if err := os.MkdirAll(outputDir, 0755); err != nil {
+        log.Fatalf("Error creating output directory: %v", err)
+    }
+
+    currentTime := time.Now().Format("20060102-150405")
     var filename string
     if specificDate {
         filename = fmt.Sprintf("%s/%s-%s.json", outputDir, currentTime, startDate.Format("20060102"))
-    } else if strings.HasPrefix(os.Args[2], "y") && len(os.Args[2]) == 5 {
-        // กรณี yxxxx
-        year := os.Args[2][1:] // ตัด y ออกเหลือแค่ปี
-        filename = fmt.Sprintf("%s/%s-%s.json", outputDir, currentTime, year)
     } else {
         filename = fmt.Sprintf("%s/%s-%dd.json", outputDir, currentTime, days)
     }
- 
-	jsonData, err := json.MarshalIndent(outputData, "", "  ")
-	if err != nil {
-		log.Fatalf("Error marshaling JSON: %v", err)
-	}
- 
-	if err := os.WriteFile(filename, jsonData, 0644); err != nil {
-		log.Fatalf("Error writing file: %v", err)
-	}
- 
-	fmt.Printf("Results have been saved to %s\n", filename)
-	fmt.Printf("Time taken:\n")
-	fmt.Printf("  Quickwit query: %v\n", queryDuration)
-	fmt.Printf("  Local processing: %v\n", processDuration)
-	fmt.Printf("  Overall: %v\n", time.Since(queryStart))
- }
+
+    jsonData, err := json.MarshalIndent(outputData, "", "  ")
+    if err != nil {
+        log.Fatalf("Error marshaling JSON: %v", err)
+    }
+
+    if err := os.WriteFile(filename, jsonData, 0644); err != nil {
+        log.Fatalf("Error writing file: %v", err)
+    }
+
+    fmt.Printf("Results have been saved to %s\n", filename)
+    fmt.Printf("Time taken:\n")
+    fmt.Printf("  Quickwit query: %v\n", queryDuration)
+    fmt.Printf("  Local processing: %v\n", processDuration)
+    fmt.Printf("  Overall: %v\n", time.Since(queryStart))
+}
 
 // เพิ่มฟังก์ชันสำหรับตรวจสอบปีอธิกสุรทิน
 func isLeapYear(year int) bool {

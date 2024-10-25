@@ -27,4 +27,5 @@ eduroam-accept
 agg-uid
 go.mod
 eduroam-sp
+eduroam-idp
 *.sh

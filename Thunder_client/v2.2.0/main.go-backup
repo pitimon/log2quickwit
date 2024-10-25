@@ -442,11 +442,9 @@ func createOutputData(result *Result, domain string, startDate, endDate time.Tim
 
 func main() {
     if len(os.Args) < 2 || len(os.Args) > 3 {
-        fmt.Println("Usage: ./eduroam-idp <domain> [days|Ny|yxxxx|DD-MM-YYYY]")
-        fmt.Println("  domain: domain name (e.g., 'ku.ac.th', 'etlr1')")
+        fmt.Println("Usage: ./eduroam-accept <domain> [days|Ny|DD-MM-YYYY]")
         fmt.Println("  days: number of days (1-3650)")
         fmt.Println("  Ny: number of years (1y-10y)")
-        fmt.Println("  yxxxx: specific year (e.g., y2024)")
         fmt.Println("  DD-MM-YYYY: specific date")
         os.Exit(1)
     }
@@ -459,26 +457,8 @@ func main() {
     if len(os.Args) == 3 {
         param := os.Args[2]
         
-        // เพิ่มการตรวจสอบรูปแบบ yxxxx สำหรับปี
-        if strings.HasPrefix(param, "y") && len(param) == 5 {
-            yearStr := param[1:]  // ตัด y ออกเพื่อเอาเฉพาะตัวเลขปี
-            if year, err := strconv.Atoi(yearStr); err == nil {
-                // ตรวจสอบว่าเป็นปีที่มีเหตุผล (เช่น 2000-2100)
-                if year >= 2000 && year <= 2100 {
-                    // กำหนดช่วงวันที่สำหรับปีที่ระบุ
-                    startDate = time.Date(year, 1, 1, 0, 0, 0, 0, time.Local)
-                    endDate = time.Date(year, 12, 31, 23, 59, 59, 999999999, time.Local)
-                    days = 365
-                    if isLeapYear(year) {
-                        days = 366
-                    }
-                } else {
-                    log.Fatalf("Invalid year range. Must be between 2000 and 2100")
-                }
-            } else {
-                log.Fatalf("Invalid year format. Use y followed by 4 digits (e.g., y2024)")
-            }
-        } else if strings.HasSuffix(param, "y") {
+        // ตรวจสอบรูปแบบปี (Ny)
+        if strings.HasSuffix(param, "y") {
             yearStr := strings.TrimSuffix(param, "y")
             if years, err := strconv.Atoi(yearStr); err == nil {
                 if years >= 1 && years <= 10 {
@@ -492,6 +472,7 @@ func main() {
                 log.Fatalf("Invalid year format. Use 1y-10y")
             }
         } else if d, err := strconv.Atoi(param); err == nil {
+            // ตรวจสอบจำนวนวัน
             if d >= 1 && d <= 3650 {
                 days = d
                 endDate = time.Now()
@@ -500,6 +481,7 @@ func main() {
                 log.Fatalf("Invalid number of days. Must be between 1 and 3650")
             }
         } else {
+            // ตรวจสอบรูปแบบวันที่
             specificDate = true
             var err error
             startDate, err = time.Parse("02-01-2006", param)
@@ -510,7 +492,7 @@ func main() {
             days = 1
         }
     } else {
-        // Default: 1 day
+        // ค่าเริ่มต้น: 1 วัน
         days = 1
         endDate = time.Now()
         startDate = endDate.AddDate(0, 0, -1)
@@ -549,11 +531,6 @@ func main() {
     var processedDays int32
     queryStart := time.Now()
 
-    result := &Result{
-        Users:     make(map[string]*UserStats),
-        Providers: make(map[string]*ProviderStats),
-    }
-
     // Start worker pool
     for w := 1; w <= numWorkers; w++ {
         wg.Add(1)
@@ -574,6 +551,11 @@ func main() {
                     current, days, totalHits.Load())
             }
         }()
+    }
+
+    result := &Result{
+        Users:     make(map[string]*UserStats),
+        Providers: make(map[string]*ProviderStats),
     }
 
     processDone := make(chan struct{})
@@ -619,7 +601,7 @@ func main() {
     outputData := createOutputData(result, domain, startDate, endDate, days)
     processDuration := time.Since(processStart)
 
-    outputDir := fmt.Sprintf("output/%s", strings.Replace(domain, ".", "-", -1))
+    outputDir := fmt.Sprintf("output/%s", domain)
     if err := os.MkdirAll(outputDir, 0755); err != nil {
         log.Fatalf("Error creating output directory: %v", err)
     }
@@ -628,10 +610,6 @@ func main() {
     var filename string
     if specificDate {
         filename = fmt.Sprintf("%s/%s-%s.json", outputDir, currentTime, startDate.Format("20060102"))
-    } else if len(os.Args) > 2 && strings.HasPrefix(os.Args[2], "y") && len(os.Args[2]) == 5 {
-        // กรณี yxxxx
-        year := os.Args[2][1:] // ตัด y ออกเหลือแค่ปี
-        filename = fmt.Sprintf("%s/%s-%s.json", outputDir, currentTime, year)
     } else {
         filename = fmt.Sprintf("%s/%s-%dd.json", outputDir, currentTime, days)
     }
@@ -650,9 +628,4 @@ func main() {
     fmt.Printf("  Quickwit query: %v\n", queryDuration)
     fmt.Printf("  Local processing: %v\n", processDuration)
     fmt.Printf("  Overall: %v\n", time.Since(queryStart))
-}
-
-// เพิ่มฟังก์ชันสำหรับตรวจสอบปีอธิกสุรทิน
-func isLeapYear(year int) bool {
-    return year%4 == 0 && (year%100 != 0 || year%400 == 0)
 }
